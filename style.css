@@ -1,0 +1,293 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    width: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+.slider-text {
+    text-align: center;
+    padding-top: 300px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.background {
+    min-height: 100vh;
+    background: url('./img/bg.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.slider-text {
+    text-align: center;
+    padding-top: 300px;
+}
+
+.slider-text .sli-title {
+    font-size: 70px;
+    color: #fffc9c;
+    font-style: italic;
+}
+
+.slider-text .sli-content {
+    font-size: 70px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 20px;
+    position: relative;
+    color: #000000;
+    padding: 25px;
+}
+
+.profileGroup h1 {
+    text-align: center;
+    padding: 15px;
+}
+
+
+
+.row {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card-img-top {
+    object-fit: cover;
+    width: 100%;
+    height: 300px;
+}
+
+.img-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.img-top img {
+    width: 300px;
+    height: auto;
+    padding: 20px;
+}
+
+.img-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.img-bottom img {
+    width: 300px;
+    height: auto;
+    padding: 20px;
+}
+
+
+h1{
+    text-align: center;
+}
+
+.sli-btn {
+    font-size: 3em;
+    padding-top: 50px;
+
+}
+
+ul {
+    display:flex;
+    justify-content: space-around; /* Căn giữa các mục */
+    padding: 0; 
+    list-style: none;
+    margin-left: 0;
+    padding-bottom: 0;
+}
+li {
+    margin: 0 15px; /* Khoảng cách giữa các mục */
+}
+
+.navbar a {
+    color: #fff; /* Màu chữ cho các liên kết */
+    font-size: 1.2rem; /* Kích thước chữ */
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.3rem 1%;
+    background: rgba(0, 0, 0, .2);
+    backdrop-filter: blur(50px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+}
+#header {
+    position: relative;
+    background: rgba(0, 0, 0, .1);
+    backdrop-filter: blur(50px);
+    background-color: #000000;
+}
+.background-h {
+    min-height: 100vh;
+    background: url('./img/hci2.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.logo {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 700;
+}
+
+.navbar ul li a i {
+    margin-right: 5px; /* Khoảng cách giữa icon và chữ */
+    color: #fff; /* Màu sắc icon */
+}
+
+footer{
+    background-color: #06021b; /* Màu nền */
+    text-align: center;
+    padding: 10px
+
+}
+
+footer p{
+    color:white;
+}
+
+
+/* ----------------About------------------- */
+.background-abo {
+    background-image: url('./img/background-about.jpg'); /* Đường dẫn đến hình ảnh */
+    background-size: cover; /* Để hình ảnh phủ toàn bộ trang */
+    background-position: center; /* Căn giữa hình ảnh */
+    background-repeat: no-repeat; /* Không lặp hình ảnh */
+    margin: 0; /* Bỏ margin mặc định của body */
+    font-family: Arial, sans-serif; /* Chọn font chữ */
+
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+}
+
+#h1-abo{
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+.container-abo {
+    display: flex;
+    flex-wrap: wrap; /* xuống dòng khi không còn chỗ */
+    justify-content: space-around; /* Căn giữa các thành viên */
+    padding: 20px;
+}
+
+.member {
+    text-align: center;
+    margin: 15px;
+    flex: 0 1 calc(33.33% - 30px); /* Chiếm 1/3 chiều rộng bố cục */
+    box-sizing: border-box; /* Đảm bảo padding và margin được tính trong chiều rộng */
+}
+
+.member img {
+    max-width: 200px ; /*giới hạn chiều rộng tối đa của ảnh*/
+    width: 100%; /* Để ảnh chiếm 100% chiều rộng của khối */
+    height: auto; /* Giữ tỷ lệ khung hình của ảnh */
+    border-radius: 20%; 
+}
+
+h2 {
+    margin: 10px 0 5px; /* Khoảng cách cho tiêu đề */
+}
+
+p {
+    margin: 5px 0; /* Khoảng cách cho các đoạn văn */
+}
+
+.btn-tt{
+    padding: 5px px; /* Tăng padding trên và dưới, bên trái và bên phải */
+    font-size: 1.5rem; /* Tăng kích thước chữ */
+    border: none; /* Bỏ viền */
+    border-radius: 5px; /* Bo tròn góc */
+    background-color: #007bff; /* Màu nền */
+    cursor: pointer; /* Con trỏ chuột khi hover */
+    transition: background-color 0.3s; /* Hiệu ứng chuyển màu nền */
+}
+
+/* --------------------Group Diary---------------- */
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #000000;
+    background-color: #f1f1f1;
+  }
+
+  /* Style the buttons inside the tab */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #ccc;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+
+  .tabcontent h3{
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  table{
+    width:100%; /*chiếm toàn bộ chiều rộng */
+
+    border-collapse: collapse; /* Bỏ khoảng cách giữa các ô */
+    margin-top: 20px; /*Khoảng cách từ tiêu đề */
+    margin-bottom: 20px;
+
+  }
+
+  th, td{
+    border: 2px, solid, #000000;
+    padding: 8px; /* Khoảng cách bên trong ô */
+    text-align: left; /* Căn trái cho nội dung */
+  }
+
+  input[type="text"] {
+    width: 100%; /* Chiếm toàn bộ chiều rộng ô */
+    padding: 8px; /* Khoảng cách bên trong */
+    margin: 0; /* Khoảng cách trên/dưới */
+    border-radius: 4px; /* Bo tròn góc */
+    box-sizing: border-box; /* Đảm bảo padding và border không làm tăng chiều rộng tổng thể */
+}
