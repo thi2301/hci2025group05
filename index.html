@@ -10,7 +10,7 @@
 <body>
     <header>
        <div class="header" id="header">
-        <a href="index.html" class="logo">GROUP 05</a>
+        <a href="index.html" class="logo"><img src="./img/Logo-Group.png" alt=""></a>
 
             <nav id="navbar" class="navbar">
                 <ul>
@@ -27,22 +27,91 @@
        </div>
     </header>
 
-    <main class="h-abo">
+    <main class="main-home">
 
-        <section class="background-h">
-            <div class="slider-text">
-                <div class="sli-content">
-                    <h1>HCI 2025</h1>
+        <div class="background-h">
+            <div class="container-home">
+                <div class="content-home">
+                    <h1>Human-Computer Interaction (HCI) 2025</h1>
                     <p>Wellcome to my group</p>
                 </div>
+                     <!-----------SlideShow --------------->
+                     <div class="slideshow-container">
+                        <h2 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: darkolivegreen; text-align: center;">Nong Lam University</h2>
+                        <div class="slide-all">
+                            <div class="slide">
+                                <p><i class="fa-solid fa-quote-left"></i> Human-computer interaction (HCI) is a multidisciplinary field of study focusing on the design of computer technology and in particular, the interaction between humans (the users) and computers <i class="fa-solid fa-quote-right"></i></p>
+                            </div>
+                        
+                            <div class="slide">
+                                <p><i class="fa-solid fa-quote-left"></i> HCI researchers observe the ways humans interact with computers and design technologies that allow humans 22 to interact with computers in novel ways <i class="fa-solid fa-quote-right"></i></p>
+                            </div>
+                            <div class="slide">
+                                <p><i class="fa-solid fa-quote-left"></i> Human-computer interaction is situated at the intersection of computer science behavioral sciences design media studies and several other fields of study <i class="fa-solid fa-quote-right"></i></p>
+                            </div>
+                        </div>
+    
+                    </div>
+                    
+                    <div class="dots">
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                    </div>
             </div>
-        </section>
+        </div>
     </main>
 
     <footer>
         <p>© Copyright GROUP 05. All Rights Reserved</p>
         <p>Designed by GROUP 05</p>
     </footer>
+
+      <!---------------Scrip Slideshow --------------- -->
+      <script>
+        let slideIndex = 0;
+        showSlides();
+    
+        function showSlides() {
+            const slides = document.getElementsByClassName("slide");
+            const dots = document.getElementsByClassName("dot");
+            
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active-dot", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active-dot";
+            setTimeout(showSlides, 5000); // Chuyển slide mỗi 5 giây
+        }
+    
+        function changeSlide(n) {
+            slideIndex += n;
+            const slides = document.getElementsByClassName("slide");
+            const dots = document.getElementsByClassName("dot");
+    
+            if (slideIndex > slides.length) {slideIndex = 1}
+            if (slideIndex < 1) {slideIndex = slides.length}
+    
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active-dot", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active-dot";
+        }
+    
+        function currentSlide(n) {
+            slideIndex = n;
+            showSlides();
+        }
+    </script>
 </body>
 
 

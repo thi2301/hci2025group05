@@ -7,7 +7,22 @@ body{
     width: auto;
 }
 
-a {
+.background-h{
+    margin: 0;
+}
+.content-home{
+    text-align: center;
+    padding: 2.5rem;
+    margin: 0;
+    font-size: 2.5rem;
+    padding: 5rem;
+}
+.content-home h1, p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+/* a {
     text-decoration: none;
 }
 
@@ -20,15 +35,15 @@ a {
 
 a {
     text-decoration: none;
-}
+} */
 
-.background {
+/* .background {
     min-height: 100vh;
     background: url('./img/bg.png') no-repeat;
     background-size: cover;
     background-position: center;
-}
-
+} */
+/* 
 .slider-text {
     text-align: center;
     padding-top: 300px;
@@ -52,9 +67,9 @@ a {
 .profileGroup h1 {
     text-align: center;
     padding: 15px;
-}
+} */
 
-
+/* 
 
 .row {
     display: flex;
@@ -89,34 +104,47 @@ a {
     width: 300px;
     height: auto;
     padding: 20px;
-}
+} */
 
 
-h1{
+/* h1{
     text-align: center;
-}
-
+    padding: 2rem;
+    margin: 0;
+} */
+/* 
 .sli-btn {
     font-size: 3em;
     padding-top: 50px;
 
-}
+} */
 
 ul {
     display:flex;
     justify-content: space-around; /* Căn giữa các mục */
     padding: 0; 
+    padding-right: 5rem;
     list-style: none;
     margin-left: 0;
     padding-bottom: 0;
 }
 li {
-    margin: 0 15px; /* Khoảng cách giữa các mục */
-}
+    margin: 0 1.2rem; /* Khoảng cách giữa các mục */
 
-.navbar a {
+}
+.navbar ul li a{
+    text-decoration: none;
     color: #fff; /* Màu chữ cho các liên kết */
     font-size: 1.2rem; /* Kích thước chữ */
+    margin: 0 0.4rem;
+}
+.navbar ul li a:hover{
+    font-size: 1.5rem;
+    padding: 0.4rem;
+    background-color: burlywood;
+    transition: background-color 0.3s; /* Thêm hiệu ứng chuyển màu */
+    border: 1px rgb(245, 170, 72) solid;
+    border-radius: 1rem;
 }
 
 .header {
@@ -125,35 +153,94 @@ li {
     left: 0;
     width: 100%;
     padding: 1.3rem 1%;
-    background: rgba(0, 0, 0, .2);
     backdrop-filter: blur(50px);
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 999;
+    padding: 0;
 }
 #header {
     position: relative;
-    background: rgba(0, 0, 0, .1);
+    background: #06021b;
     backdrop-filter: blur(50px);
-    background-color: #000000;
+    background-color: #06021b;
 }
 .background-h {
     min-height: 100vh;
-    background: url('./img/hci2.jpg') no-repeat;
+    background: url('./img/background-h.jpg') no-repeat;
     background-size: cover;
     background-position: center;
 }
 
-.logo {
-    font-size: 2rem;
+
+
+.logo img{
+    /* font-size: 2rem;
     color: #fff;
-    font-weight: 700;
+    font-weight: 700; */
+    width: 10rem;
+    height: 10rem;
+    margin: 0 1rem;
+    
 }
 
 .navbar ul li a i {
     margin-right: 5px; /* Khoảng cách giữa icon và chữ */
     color: #fff; /* Màu sắc icon */
+}
+
+/* -----------CSS Slideshow ---------- */
+.slideshow-container {
+    position: relative;
+    max-width: 600px; /* Chiều rộng tối đa của slideshow */
+    margin: auto; /* Căn giữa slideshow */
+    overflow: hidden; /* Ẩn phần tràn */
+    padding-top: 2.3rem;
+}
+
+.slide {
+    display: none; /* Ẩn tất cả các slide */
+    /* width: 50%;  */
+    height: 50%; /* Giảm chiều cao của slideshow */
+    
+}
+.slide-all{
+    display: flex; /* Sử dụng Flexbox */
+    transition: transform 0.5s ease; /* Hiệu ứng chuyển động */
+
+}
+
+.slide p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.slide p i{
+    color: coral;
+}
+
+.active {
+    display: block; /* Hiển thị slide hiện tại */
+}
+
+.dots {
+    text-align: center;
+    padding: 20px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active-dot {
+    background-color: #717171;
 }
 
 footer{
@@ -175,16 +262,18 @@ footer p{
     background-position: center; /* Căn giữa hình ảnh */
     background-repeat: no-repeat; /* Không lặp hình ảnh */
     margin: 0; /* Bỏ margin mặc định của body */
-    font-family: Arial, sans-serif; /* Chọn font chữ */
-
-    color: rgb(255, 255, 255);
+    color: rgb(231, 161, 10);
     font-size: 20px;
+
 }
 
 #h1-abo{
+    font-size: 3rem;
+    padding: 5rem 0;
     text-align: center;
     margin: 0;
-    padding: 20px;
+    /* padding: 20px; */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .container-abo {
     display: flex;
@@ -198,6 +287,10 @@ footer p{
     margin: 15px;
     flex: 0 1 calc(33.33% - 30px); /* Chiếm 1/3 chiều rộng bố cục */
     box-sizing: border-box; /* Đảm bảo padding và margin được tính trong chiều rộng */
+}
+
+.member h2, p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .member img {
@@ -216,13 +309,51 @@ p {
 }
 
 .btn-tt{
-    padding: 5px px; /* Tăng padding trên và dưới, bên trái và bên phải */
+    padding: 5px 5px; /* Tăng padding trên và dưới, bên trái và bên phải */
     font-size: 1.5rem; /* Tăng kích thước chữ */
     border: none; /* Bỏ viền */
     border-radius: 5px; /* Bo tròn góc */
-    background-color: #007bff; /* Màu nền */
+    background-color: #9a9a9a; /* Màu nền */
     cursor: pointer; /* Con trỏ chuột khi hover */
     transition: background-color 0.3s; /* Hiệu ứng chuyển màu nền */
+}
+
+#github{
+   color: white;
+}
+#github:hover{
+    color: #06021b;
+    background-color: #9a9a9a;
+    padding: 5px 5px;
+    transition: all 0.3s;
+}
+#email{
+    color: white;
+}
+#email:hover{
+    color: #06021b;
+    background-color: #9a9a9a;
+    padding: 5px 5px;
+    transition: all 0.3s;
+}
+
+#facebook{
+    color: white;
+}
+#facebook:hover{
+    color: rgb(76, 76, 244);
+    background-color: #9a9a9a;
+    padding: 5px 5px;
+    transition: all 0.3s;
+}
+#twitter{
+    color: white;
+}
+#twitter:hover{
+    color: rgb(72, 72, 255);
+    background-color: #9a9a9a;
+    padding: 5px 5px;
+    transition: all 0.3s;
 }
 
 /* --------------------Group Diary---------------- */
@@ -298,6 +429,14 @@ p {
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem;
+  }
+
+  .tablinks{
+    margin: 0 2rem;
+
   }
   
   /* Style the buttons that are used to open the tab content */
@@ -309,6 +448,17 @@ p {
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
+    padding: 1rem;
+
+    border: 1px rgb(142, 142, 142) solid;
+    border-radius: 1rem;
+  }
+  .tab button:hover{
+    background-color: burlywood;
+    transition: background-color 0.3s; /* Thêm hiệu ứng chuyển màu */
+    border: 1px rgb(245, 170, 72) solid;
+    border-radius: 1rem;
+    padding: 1.3rem;
   }
   
   /* Change background color of buttons on hover */
