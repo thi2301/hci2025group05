@@ -22,102 +22,6 @@ body{
 }
 
 
-/* a {
-    text-decoration: none;
-}
-
-active
-
-.slider-text {
-    text-align: center;
-    padding-top: 300px;
-}
-
-a {
-    text-decoration: none;
-} */
-
-/* .background {
-    min-height: 100vh;
-    background: url('./img/bg.png') no-repeat;
-    background-size: cover;
-    background-position: center;
-} */
-/* 
-.slider-text {
-    text-align: center;
-    padding-top: 300px;
-}
-
-.slider-text .sli-title {
-    font-size: 70px;
-    color: #fffc9c;
-    font-style: italic;
-}
-
-.slider-text .sli-content {
-    font-size: 70px;
-    font-family: 'Roboto', sans-serif;
-    line-height: 20px;
-    position: relative;
-    color: #000000;
-    padding: 25px;
-}
-
-.profileGroup h1 {
-    text-align: center;
-    padding: 15px;
-} */
-
-/* 
-
-.row {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.card-img-top {
-    object-fit: cover;
-    width: 100%;
-    height: 300px;
-}
-
-.img-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.img-top img {
-    width: 300px;
-    height: auto;
-    padding: 20px;
-}
-
-.img-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.img-bottom img {
-    width: 300px;
-    height: auto;
-    padding: 20px;
-} */
-
-
-/* h1{
-    text-align: center;
-    padding: 2rem;
-    margin: 0;
-} */
-/* 
-.sli-btn {
-    font-size: 3em;
-    padding-top: 50px;
-
-} */
 
 ul {
     display:flex;
@@ -138,6 +42,7 @@ li {
     font-size: 1.2rem; /* Kích thước chữ */
     margin: 0 0.4rem;
 }
+
 .navbar ul li a:hover{
     font-size: 1.5rem;
     padding: 0.4rem;
@@ -189,6 +94,7 @@ li {
     margin-right: 5px; /* Khoảng cách giữa icon và chữ */
     color: #fff; /* Màu sắc icon */
 }
+
 
 /* -----------CSS Slideshow ---------- */
 .slideshow-container {
