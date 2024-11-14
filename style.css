@@ -397,3 +397,129 @@ p {
   .table-requirement th{
     text-align: center;
   }
+
+  /* nút web project*/
+  body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #06021b;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.tab {
+    margin: 20px 0;
+}
+
+/* Nút Web Project */
+.tablinks {
+    background-color: #f39c12; /* Màu nền */
+    color: rgb(14, 13, 13); /* Màu chữ */
+    padding: 15px 25px; /* Padding cho nút */
+    margin-right: 10px; /* Khoảng cách giữa các nút */
+    border: none; /* Bỏ viền */
+    border-radius: 5px; /* Bo tròn góc */
+    font-size: 16px; /* Kích thước chữ */
+    cursor: pointer; /* Hiển thị con trỏ khi hover */
+    transition: background-color 0.3s, transform 0.3s; /* Hiệu ứng chuyển màu và phóng to */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bóng đổ */
+}
+
+.tablinks:hover {
+    background-color: #4997b0; /* Màu nền khi hover */
+    transform: translateY(-2px); /* Di chuyển nhẹ lên trên khi hover */
+}
+
+.tabcontent {
+    margin: 20px;
+}
+
+.projectTabContent {
+    margin-top: 15px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+/* Bảng đối tác khiếu nại*/
+table {
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    border-collapse: collapse; /* Bỏ khoảng cách giữa các ô */
+    margin-top: 20px; /* Khoảng cách từ tiêu đề */
+}
+
+th, td {
+    border: 1px solid #ccc; /* Đường viền cho ô */
+    padding: 10px; /* Khoảng cách bên trong ô */
+    text-align: left; /* Căn trái cho nội dung */
+}
+
+th {
+    background-color: #f2f2f2; /* Màu nền cho tiêu đề bảng */
+    font-weight: bold; /* In đậm tiêu đề */
+}
+
+/* css log in và sign up*/
+
+
+label {
+    margin-bottom: 5px; /* Khoảng cách giữa label và input */
+}
+
+input[type="text"], input[type="password "], input[type="email"] {
+    padding: 10px; /* Padding cho ô input */
+    margin-bottom: 15px; /* Khoảng cách giữa các ô input */
+    border: 1px solid #ccc; /* Đường viền cho ô input */
+    border-radius: 4px; /* Bo tròn góc cho ô input */
+}
+
+button {
+    padding: 10px; /* Padding cho nút */
+    background-color: #4CAF50; /* Màu nền cho nút */
+    color: white; /* Màu chữ cho nút */
+    border: none; /* Không có đường viền */
+    border-radius: 4px; /* Bo tròn góc cho nút */
+    cursor: pointer; /* Con trỏ khi di chuột qua nút */
+}
+
+button:hover {
+    background-color: #45a049; /* Màu nền khi di chuột qua nút */
+}
+
+/* css log in sign up*/
+form {
+    display: flex;
+    flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+    max-width: 400px; /* Chiều rộng tối đa của form */
+    margin: auto; /* Căn giữa form */
+    padding: 20px; /* Padding cho form */
+    border: 1px solid #ccc; /* Đường viền cho form */
+    border-radius: 5px; /* Bo tròn góc cho form */
+    background-color: #f9f9f9; /* Màu nền cho form */
+}
+
+label {
+    margin-bottom: 5px; /* Khoảng cách giữa label và input */
+}
+
+input[type="text"], input[type="password "], input[type="email"] {
+    padding: 10px; /* Padding cho ô input */
+    margin-bottom: 15px; /* Khoảng cách giữa các ô input */
+    border: 1px solid #ccc; /* Đường viền cho ô input */
+    border-radius: 4px; /* Bo tròn góc cho ô input */
+}
+
+button {
+    padding: 10px; /* Padding cho nút */
+    background-color: #4CAF50; /* Màu nền cho nút */
+    color: white; /* Màu chữ cho nút */
+    border: none; /* Không có đường viền */
+    border-radius: 4px; /* Bo tròn góc cho nút */
+    cursor: pointer; /* Con trỏ khi di chuột qua nút */
+}
+
+button:hover {
+    background-color: #45a049; /* Màu nền khi di chuột qua nút */
+}

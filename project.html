@@ -52,85 +52,60 @@
                     </tr>
                     <tr>
                         <td>1</td>
-                        <td>abc</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>All</td>
+                        <td>Lư Ngọc Trúc</td>
+                        <td>Lương Hà</td>
+                        <td>Lương Hà</td>
+                        <td>1 Tuần</td>
+                        <td>Đã hoàn thành</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>2</td>
+                        <td>Tour</td>
+                        <td>Lư Ngọc Trúc</td>
+                        <td>Lư Ngọc Trúc</td>
+                        <td>Lư Ngọc Trúc</td>
+                        <td>1 Tuần</td>
+                        <td>Đã hoàn thành</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>3</td>
+                        <td>Khách hàng</td>
+                        <td>Lư Ngọc Trúc</td>
+                        <td>Văn Thanh</td>
+                        <td>Văn Thanh</td>
+                        <td>1 Tuần</td>
+                        <td>Đã hoàn thành</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>4</td>
+                        <td>Đối tác</td>
+                        <td>Lư Ngọc Trúc</td>
+                        <td>Nguyễn Quang Toàn</td>
+                        <td>Nguyễn Quang Toàn</td>
+                        <td>1 Tuần</td>
+                        <td>Đã hoàn thành</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>5</td>
+                        <td>Khiếu nại</td>
+                        <td>Lư Ngọc Trúc</td>
+                        <td>Nguyễn Quang Toàn</td>
+                        <td>NGuyễn Quang Toàn</td>
+                        <td>1 Tuần</td>
+                        <td>Đã hoàn thành</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>6</td>
+                        <td>Log in
+                            Sign up</td>
+                        <td>Phan Văn Thi</td>
+                        <td>Phan Văn Thi</td>
+                        <td>Phan Văn Thi</td>
+                        <td>1 Tuần</td>
+                        <td>Đã hoàn thành</td>
                     </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                 
                 </table>
             </div>
         </div>
@@ -142,8 +117,133 @@
   
         <div id="Implementation" class="tabcontent">
             <h3>Implementation</h3>
-            
+            <button class="tablinks" onclick="showProjectTabs()">Web Project</button>
+    
+    <div id="projectTabs" style="display:none;">
+        <div class="tab">
+            <button class="tablinks" onclick="openProjectTab(event, 'All')">All</button>
+            <button class="tablinks" onclick="openProjectTab(event, 'Tour')">Tour</button>
+            <button class="tablinks" onclick="openProjectTab(event, 'KhachHang')">Khách Hàng</button>
+            <button class="tablinks" onclick="openProjectTab(event, 'DoiTac')">Đối Tác</button>
+            <button class="tablinks" onclick="openProjectTab(event, 'KhieuNai')">Khiếu Nại</button>
+            <button class="tablinks" onclick="openProjectTab(event, 'LogIn')">Log In</button>
+        <button class="tablinks" onclick="openProjectTab(event, 'SignUp')">Sign Up</button>
         </div>
+
+        <div id="All" class="projectTabContent" style="display:none;">
+            <h4>All Projects</h4>
+            <!-- Nội dung cho tab All -->
+        </div>
+        
+        <div id="Tour" class="projectTabContent" style="display:none;">
+            <h4>Tour Projects</h4>
+            <!-- Nội dung cho tab Tour -->
+        </div>
+        
+        <div id="KhachHang" class="projectTabContent" style="display:none;">
+            <h4>Khách Hàng Projects</h4>
+            <!-- Nội dung cho tab Khách Hàng -->
+        </div>
+        
+        <div id="DoiTac" class="projectTabContent" style="display:none;">
+            <h4>Đối Tác Projects</h4>
+            <table>
+                <tr>
+                    <th>STT</th>
+                    <th>Tên Đối Tác</th>
+                    <th>Thông Tin Liên Hệ</th>
+                    <th>Ghi Chú</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Nhà NGhỉ A</td>
+                    <td>0123456789</td>
+                    <td>Đối tác chiến lược</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Khu Du Lịch ABCD</td>
+                    <td>0912222222</td>
+                    <td>Hợp tác lâu dài</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Khu Du Lịch Mũi Né</td>
+                    <td>0988388388</td>
+                    <td>Hợp tác lâu dài</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Khách Sạn Thiên Lý</td>
+                    <td>0987878787</td>
+                    <td>Hợp tác lâu dài</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div id="KhieuNai" class="projectTabContent" style="display:none;">
+            <h4>Khiếu Nại Projects</h4>
+            <table>
+                <tr>
+                    <th>STT</th>
+                    <th>Tên Khách Hàng</th>
+                    <th>Nội Dung Khiếu Nại</th>
+                    <th>Trạng Thái</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Nguyễn Thị Trà Mi</td>
+                    <td>Chuyến xe không đến địa điểm du lịch đúng giờ</td>
+                    <td>Đang xử lý</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Nguyễn Quang Toàn</td>
+                    <td>Hướng dẫn viên có thái độ không tốt</td>
+                    <td>Đã giải quyết</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Văn Thi</td>
+                    <td>Khu du lịch không có dịch vụ ăn uống</td>
+                    <td>Đang xử lý</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Lư Ngọc Trúc</td>
+                    <td>Vòi hoa sen không thể sử dụng</td>
+                    <td>Đang xử lý</td>
+                </tr>
+            </table>
+        </div>
+        <div id="LogIn" class="projectTabContent" style="display:none;">
+            <h4>Log In</h4>
+            <form>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <br>
+                <button type="submit">Log In</button>
+            </form>
+        </div>
+        <div id="SignUp" class="projectTabContent" style="display:none;">
+            <h4>Sign Up</h4>
+            <form>
+                <label for="new-username">Username:</label>
+                <input type="text" id="new-username" name="new-username" required>
+                <br>
+                <label for="new-email">Email:</label>
+                <input type="email" id="new-email" name="new-email" required>
+                <br>
+                <label for="new-password">Password:</label>
+                <input type="password" id="new-password" name="new-password" required>
+                <br>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>     
     </main>
 
     <footer>
@@ -172,6 +272,44 @@
   // Show the current tab, and add an "active" class to the button that opened the tab
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
+}
+// Web project
+
+function showProjectTabs() {
+    document.getElementById('projectTabs').style.display = 'block';
+}
+
+function openProjectTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+
+    // Ẩn tất cả các tab nội dung
+    tabcontent = document.getElementsByClassName("projectTabContent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";  
+    }
+
+    // Xóa class "active" khỏi tất cả các tablinks
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Hiển thị tab nội dung hiện tại và thêm class "active" cho nút đã nhấn
+    document.getElementById(tabName).style.display = "block";  
+    evt.currentTarget.className += " active";
+}
+let projectTabsVisible = false; // Biến để theo dõi trạng thái hiển thị của các tab
+
+function showProjectTabs() {
+    const projectTabs = document.getElementById('projectTabs');
+    
+    if (projectTabsVisible) {
+        projectTabs.style.display = 'none'; // Ẩn các tab nếu chúng đang hiển thị
+        projectTabsVisible = false; // Cập nhật trạng thái
+    } else {
+        projectTabs.style.display = 'block'; // Hiển thị các tab nếu chúng không đang hiển thị
+        projectTabsVisible = true; // Cập nhật trạng thái
+    }
 }
     </script>
 </body>
