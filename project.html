@@ -20,8 +20,8 @@
                    <li><a href="project.html" >Project</a></li>
                    <li><a href="result.html" >Result</a></li>
                    <li><a href="contact.html">Contact</a></li>     
-                   <li><a style="color: chocolate; font-size: 1.4rem;  border: 1px rgb(245, 170, 72) solid;border-radius: 0.8rem; padding: 0.3rem;" href="project-group.html">Go To Project</a></li>      
-                 </ul>
+                   <li><a style="color: chocolate; font-size: 1.4rem;  border: 1px rgb(245, 170, 72) solid;border-radius: 0.8rem; padding: 0.3rem;" href="./Project-group/project-group.html" target="_blank">Go To Project</a></li>   
+                </ul>
                 
                </nav>
  
@@ -97,21 +97,58 @@
                     </tr>
                     <tr>
                         <td>6</td>
-                        <td>Log in
-                            Sign up</td>
+                        <td>Login/Register</td>
                         <td>Phan Văn Thi</td>
                         <td>Phan Văn Thi</td>
                         <td>Phan Văn Thi</td>
                         <td>1 Tuần</td>
-                        <td>Đã hoàn thành</td>
+                        <td>Đang làm</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Vé máy bay</td>
+                        <td>Phan Văn Thi</td>
+                        <td>Phan Văn Thi</td>
+                        <td>Phan Văn Thi</td>
+                        <td>1 Tuần</td>
+                        <td>Đang Làm</td>
                     </tr>
                  
                 </table>
             </div>
         </div>
-  
+
+       <!-- Tab Design -->
         <div id="Design" class="tabcontent">
-            <h3>Design</h3>
+           <div class="tab-container-tablink-design">
+                <div class="tablink-design">
+                    <button onclick="handleImageTabs(event, 'tab1')">Hình ảnh 1</button>
+                    <button onclick="handleImageTabs(event, 'tab2')">Hình ảnh 2</button>
+                    <button onclick="handleImageTabs(event, 'tab3')">Hình ảnh 3</button>
+                    <button onclick="handleImageTabs(event, 'tab4')">Hình ảnh 4</button>
+                    <button onclick="handleImageTabs(event, 'tab5')">Hình ảnh 5</button>
+                </div>
+                <div class="tab-content-tablink-design">
+                    <div id="tab1" class="tab-image-design">
+                        <img src="img1.jpg" alt="Image 1">
+                    </div>
+                    <div id="tab2" class="tab-image-design">
+                        <img src="image2.jpg" alt="Image 2">
+                    </div>
+                    <div id="tab3" class="tab-image-design">
+                        <img src="image3.jpg" alt="Image 3">
+                    </div>
+                    <div id="tab4" class="tab-image-design">
+                        <img src="image4.jpg" alt="Image 4">
+                    </div>
+                    <div id="tab5" class="tab-image-design">
+                        <img src="image5.jpg" alt="Image 5">
+                    </div>
+
+
+                    
+                </div>
+            </div>
             
         </div>
   
@@ -131,8 +168,106 @@
         </div>
 
         <div id="All" class="projectTabContent" style="display:none;">
-            <h4>All Projects</h4>
-            <!-- Nội dung cho tab All -->
+            <h4>All Projects</h4> 
+            <table id="tourTable">
+            <thead>
+                <tr>
+                    <th>Mã</th>
+                    <th>Mã tour</th>
+                    <th>Tour</th>
+                    <th>Khách hàng</th>
+                    <th>Nhân viên chăm sóc</th>
+                    <th>Trạng thái</th>
+                    <th>Ngày giờ</th>
+                    <th>Ghi chú</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>353</td>
+                    <td>3d312A</td>
+                    <td>Châu Âu 10N9D</td>
+                    <td>Nguyễn Văn Phong<br>Sđt: 0876543221</td>
+                    <td>Trần Trung Nghĩa<br>Số máy: 1234</td>
+                    <td>Đã thanh toán</td>
+                    <td>01/08/2024 9h34p am</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>352</td>
+                    <td>Fe312A</td>
+                    <td>Tour Cao Bằng Trong Ngày: Thác Bản Dốc - Di Tich Pắc Pó - Lũng Luông - Động Ngườm Ngao</td>
+                    <td>Trương Thị Hoa<br>Sđt: 0987632415</td>
+                    <td>Lương Thị Thu Hằng<br>Số máy: 12578</td>
+                    <td>Đã thanh toán</td>
+                    <td>10/09/2014 7h00p am</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>569</td>
+                    <td>62A73</td>
+                    <td>Tour Phú Thọ Trong Ngày: Đền Quốc Âu Cơ - Đồi Chè Long Cốc - Hang Lạng </td>
+                    <td>Nguyễn Thị Xoan<br>Sđt: 0975382432</td>
+                    <td>Trần Trung Kiên<br>Số máy: 12423</td>
+                    <td>Đã thanh toán.</td>
+                    <td>20/09/2024 8h34p am</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>437</td>
+                    <td>12A35</td>
+                    <td> Châu Phi 18C5A: Ai Cập - Khu Kim Tự Tháp Giza - Sa mạc Trắng  </td>
+                    <td>Nguyễn Đăng Khoa<br>Sđt: 0958603785</td>
+                    <td>Trần Văn Quảng<br>Số máy: 1346</td>
+                    <td>Đã thanh toán</td>
+                    <td>13/11/2024 13h00p am</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>437</td>
+                    <td>12A35</td>
+                    <td>Châu Phi 18C5A: Ai Cập- Sông Nile  </td>
+                    <td>Lê Thị Hân<br>Sđt: 0998754321</td>
+                    <td>Trương Thị Kim Ngọc<br>Số máy: 1346</td>
+                    <td>Đã thanh toán</td>
+                    <td>27/11/2024 8h00p am</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>437</td>
+                    <td>12A35</td>
+                    <td> Châu Âu  10N9D: London - Tháp Đồng Hò Big Ben - Lâu Đài Warwick - Cung điện Buckingham -  </td>
+                    <td>Nguyễn Thị Hạnh<br>Sđt: 0389765461</td>
+                    <td>Đỗ Quang Dũng<br>Số máy: 1136</td>
+                    <td>Đã thanh toán</td>
+                    <td>17/12/2024 19h00p pm</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>437</td>
+                    <td>12A35</td>
+                    <td> Châu Âu 10N9D: Ý - Tháp nghiên Pisa   </td>
+                    <td>Nguyễn Văn Trung<br>Sđt: 0321879566</td>
+                    <td>Trần Thị Kim Phụng<br>Số máy: 1575</td>
+                    <td>Đã thanh toán</td>
+                    <td>19/12/2024 17h00p am</td>
+                    <td></td> 
+                </tr>
+                <tr>
+                    <td>437</td>
+                    <td>12A35</td>
+                    <td> Châu Âu 10N9D:  Đức - Thành phố cảng Hamburg </td>
+                    <td>Đoàn Ngọc Phương <br>Sđt: 0918934586</td>
+                    <td>Ngô Thanh Hân<br>Số máy: 1456</td>
+                    <td>Đã thanh toán</td>
+                    <td>30/12/2024 22h00p pm</td>
+                    <td></td>
+                </tr>
+                <!-- Thêm các hàng khác nếu cần -->
+            </tbody>
+        </table>
+    </div>
         </div>
         
         <div id="Tour" class="projectTabContent" style="display:none;">
@@ -157,7 +292,7 @@
                 <tr>
                     <td>353</td>
                     <td>Nguyễn Văn Phong</td>
-                    <td>Sđt: 0987654321</td>
+                    <td>Sđt: 0876543221</td>
                     <td>TP.Hồ Chí Minh</td>
                     <td>3d312A</td>
                     <td>Châu Âu 10N9D</td>
@@ -167,7 +302,7 @@
                 <tr>
                     <td>352</td>
                     <td>Trương Thị Hoa</td>
-                    <td>Sđt: 0987654321</td>
+                    <td>Sđt: 0987632415 </td>
                     <td>Thủ đô Hà Nội</td>
                     <td>Fe312A</td>
                     <td>Tour Cao Bằng Trong Ngày: Thác Bản Dốc - Di Tich Pắc Pó - Lũng Luông - Động Ngườm Ngao</td>
@@ -177,7 +312,7 @@
                 <tr>
                     <td>569</td>
                     <td>Nguyễn Thị Xoan</td>
-                    <td>Sđt: 0987654321</td>
+                    <td>Sđt: 0975382432</td>
                     <td>Hải Phòng</td>
                     <td>62A73</td>
                     <td>Tour Phú Thọ Trong Ngày: Đền Quốc Âu Cơ - Đồi Chè Long Cốc - Hang Lạng </td>
@@ -185,19 +320,9 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td>689</td>
-                    <td>Nguyễn Văn Cao</td>
-                    <td>Sđt: 0987654321</td>
-                    <td>Cà Mau</td>
-                    <td>Al12B</td>
-                    <td>Tour Ninh Bình Trong Ngày: Hà Nội - Hoa Lư - Tràng An - Hang Múa</td>
-                    <td>01/3/2024 9h34p pm</td>
-                    <td></td>
-                </tr>
-                <tr>
                     <td>158</td>
-                    <td>Nguyễn Văn Sơn</td>
-                    <td>Sđt: 0987654321</td>
+                    <td>Nguyễn Thị Xoan</td>
+                    <td>Sđt: 0975382432</td>
                     <td>Quảng Ninh</td>
                     <td>31A09</td>
                     <td>Tour Ninh Bình Trong Ngày: Hà Nội - Hoa Lư - Tràng An - Hang Múa</td>
@@ -207,7 +332,7 @@
                 <tr>
                     <td>437</td>
                     <td>Nguyễn Đăng Khoa</td>
-                    <td>Sđt: 0987654321</td>
+                    <td>Sđt:0958603785 </td>
                     <td>Hà Nội</td>
                     <td>12A35</td>
                     <td> Châu Phi 18C5A: Ai Cập - Khu Kim Tự Tháp Giza - Sa mạc Trắng  </td>
@@ -217,7 +342,7 @@
                 <tr>
                     <td>134</td>
                     <td>Lê Thị Hân</td>
-                    <td>Sđt: 0987654321</td>
+                    <td>Sđt: 0998754321</td>
                     <td>Gia Lai</td>
                     <td>12A35</td>
                     <td>Châu Phi 18C5A: Ai Cập- Sông Nile  </td>
@@ -227,7 +352,7 @@
                 <tr>
                     <td>678</td>
                     <td>Nguyễn Thị Hạnh</td>
-                    <td>Sđt: 0987654321</td>
+                    <td>Sđt: 0389765461</td>
                     <td>Bình Dương</td>
                     <td>12A35</td>
                     <td> Châu Âu  10N9D: London - Tháp Đồng Hò Big Ben - Lâu Đài Warwick - Cung điện Buckingham -  </td>
@@ -237,7 +362,7 @@
                 <tr>
                     <td>864</td>
                     <td>Nguyễn Văn Trung</td>
-                    <td>Sđt: 0987654321</td>
+                    <td>Sđt: 0321879566</td>
                     <td>Bà Rịa - Vũng Tàu</td>
                     <td>12A35</td>
                     <td> Châu Âu 10N9D: Ý - Tháp nghiên Pisa   </td>
@@ -247,7 +372,7 @@
                 <tr>
                     <td>356</td>
                     <td>Đoàn Ngọc Phương</td>
-                    <td>Sđt: 0987654321</td>
+                    <td>Sđt: 0918934586</td>
                     <td>Cần Thơ</td>
                     <td>12A35</td>
                     <td> Châu Âu 10N9D:  Đức - Thành phố cảng Hamburg </td>
@@ -391,7 +516,7 @@
                 </tr>
                 <tr>
                     <td>3</td>
-                    <td>Văn Thi</td>
+                    <td>Phan Văn Thi</td>
                     <td>Khu du lịch không có dịch vụ ăn uống</td>
                     <td>883587267847832</td>
                     <td>11/16/2024, 6:31:07 PM</td>
@@ -502,6 +627,7 @@ function showProjectTabs() {
         projectTabsVisible = true; // Cập nhật trạng thái
     }
 }
+<<<<<<< HEAD
 // đói tác
 document.getElementById('partnerForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Ngăn chặn hành động gửi mặc định
@@ -626,6 +752,24 @@ function filterComplaints() {
         }
     }
 }
+=======
+        // Hiển thị hình ảnh ở tab Design
+        function handleImageTabs(evt, tabId) {
+            var tabImages = document.getElementsByClassName("tab-image-design");
+            var tabLinks = document.querySelectorAll(".tablink-design button");
+
+            Array.from(tabImages).forEach(tab => {
+                tab.style.display = "none";
+            });
+
+            tabLinks.forEach(link => {
+                link.classList.remove("active");
+            });
+
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("active");
+        }
+>>>>>>> ca794d78e934db3e5e3c88d4d43e4381abeedb25
     </script>
 </body>
 </html>

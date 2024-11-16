@@ -1,0 +1,257 @@
+
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#FFFCF5;
+}
+
+.menubar{
+    flex: 10;
+    display: flex;
+ 
+
+}
+
+.logo{
+    background-image: url('./img/Logo_Web-Project.png');
+    width: 8rem;
+    height: 7rem;
+    background-size: cover; /* Đảm bảo ảnh phủ đầy phần tử */
+}
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.navbar li{
+    margin: 0.5rem;
+
+}
+
+.navbar li a{
+    text-decoration: none;
+    color: coral;
+    margin: 0.5rem;
+    position: relative;
+
+}
+
+.navbar li a::after{
+    content: '';
+    left: 0;
+    bottom: -6px;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: coral;
+    transform: scale(0);
+    transition: .5s;
+}
+
+.navbar li a:hover::after{
+    transform: scale(1);
+}
+
+.navbar button{
+    margin-left: 0.2rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    border: none;
+    transition: .5s;
+}
+
+.btn-login-register{
+    margin-left: 4rem;
+    
+}
+
+#myBtn-login{
+    background-color: antiquewhite;
+}
+
+#myBtn-login:hover{
+    font-size: 1.5rem;
+    padding: 0.7rem;
+    border-radius: 1.2rem;
+    color: darkblue;
+}
+
+#myBtn-register{
+    background-color: antiquewhite;
+}
+
+#myBtn-register:hover{
+    font-size: 1.5rem;
+    padding: 0.7rem;
+    border-radius: 1.2rem;
+    color: darkblue;
+}
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Làm mờ nền */
+}
+
+.modal-content {
+    background-color: white;
+    width: 500px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px; /* Bo góc */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hiệu ứng đổ bóng */
+    position: relative;
+}
+
+
+
+.holine{
+    flex: 2;
+    position: absolute;
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    right: 5rem;
+}
+
+.phone{
+    font-size: 2rem;
+}
+
+.phone a {
+    text-decoration: none;
+    color: coral;
+}
+
+.holine p{
+    text-align: center;
+    font-size: 1rem;
+}
+
+.container{
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+main{
+    width: 100vw;
+    height: 70vh;
+    background-image: url('./img/img_Project/bg-ks.jpg');
+    background-size: cover; /* Đảm bảo ảnh phủ toàn bộ phần tử */
+    background-position: center; /* Căn giữa ảnh nền */
+    background-repeat: no-repeat; /* Ngăn ảnh nền bị lặp lại */
+}
+
+.box-main{
+    width: 100vw;
+    height: 80vh;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.location-container {
+    position: relative;
+    width: 300px;
+}
+.location-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.suggestions {
+    position: absolute;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    width: 100%;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+.suggestions div {
+    padding: 10px;
+    cursor: pointer;
+}
+.suggestions div:hover {
+    background-color: #e0e0e0;
+}
+
+.title-container{
+    text-align: center;
+    margin: 2rem;
+
+}
+.information{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.location-container,
+.date-container,
+.room-people {
+    margin: 1rem;
+    text-align: center;
+}
+
+.location-input,
+.date-input,
+.number-input {
+    width: 250px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+.submit-btn {
+    padding: 10px 20px;
+    background-color: coral;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+footer{
+    background-color: #FFFCF5;
+    width: 100vw;
+    height: 20vh;
+}
+
+.box-sale{
+    background-color: chocolate;
+    margin: 5rem 10rem;
+}
+
+.box-sale img{
+    width: 100%;
+}
