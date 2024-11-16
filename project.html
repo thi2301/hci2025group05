@@ -72,7 +72,7 @@
                         <td>3</td>
                         <td>Khách hàng</td>
                         <td>Lư Ngọc Trúc</td>
-                        <td>Nguyễn Văn Than</td>
+                        <td>Nguyễn Văn Thanh</td>
                         <td>Nguyễn Văn Thanh</td>
                         <td>1 Tuần</td>
                         <td>Đã hoàn thành</td>
@@ -256,72 +256,153 @@
                 </tr>
         </table>
         </div>
-        
+
         <div id="DoiTac" class="projectTabContent" style="display:none;">
-            <h4>Đối Tác Projects</h4>
-            <table>
+            <h4>Đối Tác</h4>
+            
+            <label for="filterType">Lọc</label>
+<select id="filterType" onchange="filterPartners()" class="filter-dropdown">
+    <option value="">Tất cả</option>
+    <option value="Hợp tác chiến lược">Hợp tác chiến lược</option>
+    <option value="Hợp tác lâu dài">Hợp tác lâu dài</option>
+</select>
+
+<input type="text" id="searchPartner" class="search-input" placeholder="Tìm kiếm theo thời gian (VD: 01/01/2024)" onkeyup="searchPartner()">
+            
+            <form id="partnerForm">
+                <label for="service">Dịch vụ hợp tác:</label>
+                <select id="service" name="service" required>
+                    <option value="Hợp tác chiến lược">Hợp tác chiến lược</option>
+                    <option value="Hợp tác lâu dài">Hợp tác lâu dài</option>
+                </select>
+                <br>
+                <label for="name">Tên Dịch Vụ:</label>
+                <input type="text" id="name" name="name" required>
+                <br>
+                <label for="contact-info">Email hoặc SĐT:</label>
+                <input type="text" id="contact-info" name="contact-info" placeholder="Nhập Email hoặc SĐT" required>
+                <br>
+                <label for="message">Nội Dung:</label>
+                <input type="text" id="contact-info" name="contact-info" placeholder="Nhập dịch vụ hoặc trên Công TY" required>
+                <br>
+                <button type="submit">Gửi Yêu Cầu</button>
+            </form>
+            
+            <table id="partnerTable">
                 <tr>
                     <th>STT</th>
-                    <th>Tên Đối Tác</th>
+                    <th>Dịch vụ cần hợp tác</th>
+                    <th>Tên Dịch Vụ</th>
                     <th>Thông Tin Liên Hệ</th>
-                    <th>Ghi Chú</th>
+                    <th>Nội Dung</th>
+                    <th>Thời Gian</th>
                 </tr>
                 <tr>
                     <td>1</td>
-                    <td>Nhà NGhỉ A</td>
-                    <td>0123456789</td>
-                    <td>Đối tác chiến lược</td>
+                    <td>Hợp tác chiến lược</td>
+                    <td>Dịch vụ A</td>
+                    <td>emailA@example.com</td>
+                    <td>Nội dung hợp tác A</td>
+                    <td>01/01/2024</td>
                 </tr>
                 <tr>
                     <td>2</td>
                     <td>Hợp tác lâu dài</td>
+                    <td>Dịch vụ B</td>
+                    <td>emailB@example.com</td>
+                    <td>Nội dung hợp tác B</td>
+                    <td>02/01/2024</td>
                 </tr>
                 <tr>
                     <td>3</td>
-                    <td>Khu Du Lịch Mũi Né</td>
-                    <td>0988388388</td>
-                    <td>Hợp tác lâu dài</td>
+                    <td>Hợp tác chiến lược</td>
+                    <td>Dịch vụ C</td>
+                    <td>emailC@example.com</td>
+                    <td>Nội dung hợp tác C</td>
+                    <td>03/01/2024</td>
                 </tr>
                 <tr>
-                    <td>2</td>
-                    <td>Khách Sạn Thiên Lý</td>
-                    <td>0987878787</td>
+                    <td>4</td>
                     <td>Hợp tác lâu dài</td>
+                    <td>Dịch vụ D</td>
+                    <td>emailD@example.com</td>
+                    <td>Nội dung hợp tác D</td>
+                    <td>04/01/2024</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Hợp tác chiến lược</td>
+                    <td>Dịch vụ E</td>
+                    <td>emailE@example.com</td>
+                    <td>Nội dung hợp tác E</td>
+                    <td>05/01/2024</td>
                 </tr>
             </table>
         </div>
         
         <div id="KhieuNai" class="projectTabContent" style="display:none;">
             <h4>Khiếu Nại Projects</h4>
-            <table>
+            
+            <label for="filterComplaintType">Lọc</label>
+<select id="filterComplaintType" onchange="filterComplaints()" class="filter-dropdown">
+    <option value="">Tất cả</option>
+    <option value="Đang xử lý">Đang xử lý</option>
+    <option value="Đã giải quyết">Đã giải quyết</option>
+</select>
+
+<input type="text" id="searchComplaint" class="search-input" placeholder="Tìm kiếm theo thời gian (VD: 01/01/2024)" onkeyup="searchComplaint()">
+            
+            <form id="complaintForm">
+                <label for="customer-name">Họ và Tên:</label>
+                <input type="text" id="customer-name" name="customer-name" required>
+                <br>
+                <label for="contact-info-complaint">Email hoặc SĐT:</label>
+                <input type="text" id="contact-info-complaint" name="contact-info-complaint" placeholder="Nhập Email hoặc SĐT" required>
+                <br>
+                <label for="complaint">Nội Dung Khiếu Nại:</label>
+                <textarea id="complaint" name="complaint" required></textarea>
+                <br>
+                <button type="submit">Gửi Khiếu Nại</button>
+            </form>
+            <table id="complaintTable">
                 <tr>
                     <th>STT</th>
                     <th>Tên Khách Hàng</th>
                     <th>Nội Dung Khiếu Nại</th>
+                    <th>Thông Tin Liên Hệ</th>
+                    <th>Thời Gian</th>
                     <th>Trạng Thái</th>
                 </tr>
                 <tr>
                     <td>1</td>
                     <td>Nguyễn Thị Trà Mi</td>
                     <td>Chuyến xe không đến địa điểm du lịch đúng giờ</td>
+                    <td>883587267847832</td>
+                    <td>11/16/2024, 6:31:31 PM</td>
                     <td>Đang xử lý</td>
                 </tr>
                 <tr>
                     <td>2</td>
                     <td>Nguyễn Quang Toàn</td>
                     <td>Hướng dẫn viên có thái độ không tốt</td>
+                    <td>883587267847832</td>
+                    <td>11/16/2024, 6:31:25 PM</td>
                     <td>Đã giải quyết</td>
                 </tr>
                 <tr>
                     <td>3</td>
                     <td>Văn Thi</td>
                     <td>Khu du lịch không có dịch vụ ăn uống</td>
+                    <td>883587267847832</td>
+                    <td>11/16/2024, 6:31:07 PM</td>
                     <td>Đang xử lý</td>
                 </tr>
                 <tr>
                     <td>4</td>
                     <td>Lư Ngọc Trúc</td>
                     <td>Vòi hoa sen không thể sử dụng</td>
+                    <td>883587267847832</td>
+                    <td>11/16/2024, 6:31:00 PM</td>
                     <td>Đang xử lý</td>
                 </tr>
             </table>
@@ -419,6 +500,130 @@ function showProjectTabs() {
     } else {
         projectTabs.style.display = 'block'; // Hiển thị các tab nếu chúng không đang hiển thị
         projectTabsVisible = true; // Cập nhật trạng thái
+    }
+}
+// đói tác
+document.getElementById('partnerForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Ngăn chặn hành động gửi mặc định
+
+    // Lấy giá trị từ các ô input
+    const service = document.getElementById('service').value;
+    const nameService = document.getElementById('name').value; // Tên Dịch Vụ
+    const contactInfo = document.getElementById('contact-info').value;
+    const message = document.getElementById('contact-info').value;
+
+    // Lấy thời gian hiện tại
+    const currentTime = new Date().toLocaleString(); // Định dạng thời gian theo múi giờ hiện tại
+
+    // Tạo một hàng mới trong bảng
+    const table = document.getElementById('partnerTable');
+    const newRow = table.insertRow(table.rows.length); // Thêm hàng mới vào cuối bảng
+
+    // Thêm dữ liệu vào các ô của hàng mới
+    const cell1 = newRow.insertCell(0);
+    const cell2 = newRow.insertCell(1);
+    const cell3 = newRow.insertCell(2); // Thêm ô cho Tên Dịch Vụ
+    const cell4 = newRow.insertCell(3);
+    const cell5 = newRow.insertCell(4); // Thêm ô cho Nội Dung
+    const cell6 = newRow.insertCell(5); // Thêm ô cho Thời Gian
+
+    cell1.innerHTML = table.rows.length - 1; // Cập nhật STT
+    cell2.innerHTML = service; // Dịch vụ hợp tác
+    cell3.innerHTML = nameService; // Tên Dịch Vụ
+    cell4.innerHTML = contactInfo; // Thông tin liên hệ
+    cell5.innerHTML = message; // Nội dung
+    cell6.innerHTML = currentTime; // Thời gian
+
+    // Xóa nội dung ô input sau khi gửi
+    document.getElementById('partnerForm').reset();
+});
+
+function filterPartners() {
+    const filter = document.getElementById("filterType").value.toLowerCase();
+    const table = document.getElementById("partnerTable");
+    const rows = table.getElementsByTagName("tr");
+
+    for (let i = 1; i < rows.length; i++) { // Bắt đầu từ 1 để bỏ qua tiêu đề
+        const cells = rows[i].getElementsByTagName("td");
+        const service = cells[1].textContent.toLowerCase(); // Lấy nội dung ô dịch vụ cần hợp tác
+        if (filter === "" || service.includes(filter)) {
+            rows[i].style.display = ""; // Hiển thị hàng
+        } else {
+            rows[i].style.display = "none"; // Ẩn hàng
+        }
+    }
+}
+// ô khiếu nại
+function searchComplaint() {
+ const input = document.getElementById('searchComplaint');
+    const filter = input.value.toLowerCase();
+    const table = document.getElementById('complaintTable');
+    const tr = table.getElementsByTagName('tr');
+
+    // Lặp qua tất cả các hàng trong bảng
+    for (let i = 1; i < tr.length; i++) {
+        const td5 = tr[i].getElementsByTagName('td')[4]; // Ô thời gian
+        if (td5) {
+            const txtValue = td5.textContent || td5.innerText;
+            if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                tr[i].style.display = ""; // Hiển thị hàng
+            } else {
+                tr[i].style.display = "none"; // Ẩn hàng
+            }
+        }
+    }
+}
+document.getElementById('complaintForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Ngăn chặn hành động gửi mặc định
+
+    // Lấy giá trị từ các ô input
+    const customerName = document.getElementById('customer-name').value;
+    const contactInfoComplaint = document.getElementById('contact-info-complaint').value;
+    const complaintMessage = document.getElementById('complaint').value;
+
+    // Lấy thời gian hiện tại
+    const currentTime = new Date().toLocaleString(); // Định dạng thời gian theo múi giờ hiện tại
+
+    // Tạo một hàng mới trong bảng
+    const table = document.getElementById('complaintTable');
+    const newRow = table.insertRow(1); // Thêm hàng mới vào vị trí đầu tiên
+
+    // Thêm dữ liệu vào các ô của hàng mới
+    const cell1 = newRow.insertCell(0);
+    const cell2 = newRow.insertCell(1);
+    const cell3 = newRow.insertCell(2);
+    const cell4 = newRow.insertCell(3);
+    const cell5 = newRow.insertCell(4); // Thêm ô cho thời gian
+    const cell6 = newRow.insertCell(5); // Thêm ô cho trạng thái
+
+    cell1.innerHTML = 1; // STT
+    cell2.innerHTML = customerName; // Tên Khách Hàng
+    cell3.innerHTML = complaintMessage; // Nội Dung Khiếu Nại
+    cell4.innerHTML = contactInfoComplaint; // Thông Tin Liên Hệ
+    cell5.innerHTML = currentTime; // Thời gian
+    cell6.innerHTML = "Chưa xử lý"; // Trạng Thái
+
+    // Cập nhật lại STT cho tất cả các hàng
+    for (let i = 1; i < table.rows.length; i++) {
+        table.rows[i].cells[0].innerHTML = i; // Cập nhật STT
+    }
+
+    // Xóa nội dung ô input sau khi gửi
+    document.getElementById('complaintForm').reset();
+});
+function filterComplaints() {
+    const filter = document.getElementById("filterComplaintType").value.toLowerCase();
+    const table = document.getElementById("complaintTable");
+    const rows = table.getElementsByTagName("tr");
+
+    for (let i = 1; i < rows.length; i++) {
+        const cells = rows[i].getElementsByTagName("td");
+        const status = cells[5].textContent.toLowerCase();
+        if (filter === "" || status.includes(filter)) {
+            rows[i].style.display = "";
+        } else {
+            rows[i].style.display = "none";
+        }
     }
 }
     </script>

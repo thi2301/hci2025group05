@@ -523,3 +523,150 @@ button {
 button:hover {
     background-color: #45a049; /* Màu nền khi di chuột qua nút */
 }
+
+form {
+    display: flex;
+    flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+    max-width: 400px; /* Chiều rộng tối đa của form */
+    margin: auto; /* Căn giữa form */
+    padding: 20px; /* Padding cho form */
+    border: 1px solid #ccc; /* Đường viền cho form */
+    border-radius: 5px; /* Bo tròn góc cho form */
+    background-color: #f9f9f9; /* Màu nền cho form */
+}
+
+textarea {
+    resize: vertical; /* Cho phép thay đổi kích thước theo chiều dọc */
+}
+label {
+    margin-bottom: 5px; /* Khoảng cách giữa label và input */
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    padding: 10px; /* Padding cho ô input */
+    margin-bottom: 15px; /* Khoảng cách giữa các ô input */
+    border: 1px solid #ccc; /* Đường viền cho ô input */
+    border-radius: 4px; /* Bo tròn góc cho ô input */
+    width: 100%; /* Chiếm toàn bộ chiều rộng ô */
+    box-sizing: border-box; /* Đảm bảo padding và border không làm tăng chiều rộng tổng thể */
+}
+
+textarea {
+    padding: 10px; /* Padding cho ô textarea */
+    margin-bottom: 15px; /* Khoảng cách giữa các ô textarea */
+    border: 1px solid #ccc; /* Đường viền cho ô textarea */
+    border-radius: 4px; /* Bo tròn góc cho ô textarea */
+    width: 100%; /* Chiếm toàn bộ chiều rộng ô */
+    box-sizing: border-box; /* Đảm bảo padding và border không làm tăng chiều rộng tổng thể */
+    resize: vertical; /* Cho phép thay đổi kích thước theo chiều dọc */
+}
+.search-input {
+    width: 100%; /* Chiều rộng 100% */
+    max-width: 300px; /* Chiều rộng tối đa */
+    padding: 8px; /* Padding bên trong */
+    margin-bottom: 20px; /* Khoảng cách dưới cùng */
+    border: 1px solid #ccc; /* Đường viền */
+    border-radius: 4px; /* Bo tròn các góc */
+    font-size: 14px; /* Kích thước chữ */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+}
+.filterType { border-color: #66afe9; /* Đổi màu viền khi có focus */
+    outline: none; /* Ẩn outline mặc định */
+    box-shadow: 0 0 5px rgba(102, 175, 233, 0.5); /* Đổ bóng khi focus */
+}
+.search-input:focus {
+    border-color: #66afe9; /* Đổi màu viền khi có focus */
+    outline: none; /* Ẩn outline mặc định */
+    box-shadow: 0 0 5px rgba(102, 175, 233, 0.5); /* Đổ bóng khi focus */
+}
+/* Định dạng cho phần Đối Tác */
+.projectTabContent {
+    padding: 20px;
+    background-color: #f9f9f9; /* Màu nền nhẹ */
+    border-radius: 8px; /* Bo góc cho khung */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+}
+
+/* Định dạng cho tiêu đề */
+.projectTabContent h4 {
+    font-size: 24px;
+    color: #333; /* Màu chữ tối */
+    margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+}
+
+/* Định dạng cho các nhãn */
+.projectTabContent label {
+    display: block; /* Hiển thị dưới dạng khối */
+    margin-bottom: 5px; /* Khoảng cách dưới nhãn */
+    font-weight: bold; /* Chữ đậm */
+}
+
+/* Định dạng cho các ô input và select */
+.projectTabContent input[type="text"],
+.projectTabContent select,
+.projectTabContent textarea {
+    width: 100%; /* Chiều rộng 100% */
+    padding: 10px; /* Padding bên trong */
+    margin-bottom: 15px; /* Khoảng cách dưới mỗi ô */
+    border: 1px solid #ccc; /* Đường viền xám */
+    border-radius: 4px; /* Bo góc cho ô nhập liệu */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Đổ bóng bên trong */
+}
+
+/* Định dạng cho nút gửi */
+.projectTabContent button {
+    background-color: #ff6600; /* Màu nền nút */
+    color: white; /* Màu chữ nút */
+    padding: 10px 15px; /* Padding cho nút */
+    border: none; /* Không có đường viền */
+    border-radius: 4px; /* Bo góc cho nút */
+    cursor: pointer; /* Con trỏ khi di chuột */
+    transition: background-color 0.3s; /* Hiệu ứng chuyển màu */
+}
+
+.projectTabContent button:hover {
+    background-color: #0056b3; /* Màu nền khi di chuột */
+}
+
+/* Định dạng cho bảng */
+#partnerTable {
+    width: 100%; /* Chiều rộng 100% */
+    border-collapse: collapse; /* Gộp các đường viền */
+    margin-top: 20px; /* Khoảng cách trên bảng */
+}
+
+#partnerTable th, #partnerTable td {
+    border: 1px solid #ddd; /* Đường viền xám cho ô */
+    padding: 8px; /* Padding cho ô */
+    text-align: left; /* Căn trái cho chữ */
+}
+
+#partnerTable th {
+    background-color: #f2f2f2; /* Màu nền cho tiêu đề bảng */
+    font-weight: bold; /* Chữ đậm cho tiêu đề */
+}
+
+#partnerTable tr:nth-child(even) {
+    background-color: #f9f9f9; /* Màu nền cho hàng chẵn */
+}
+
+#partnerTable tr:hover {
+    background-color: #f1f1f1; /* Màu nền khi di chuột qua hàng */
+}
+.filter-dropdown, .search-input {
+    width: 100%; /* Chiều rộng 100% */
+    max-width: 300px; /* Chiều rộng tối đa */
+    padding: 8px; /* Padding bên trong */
+    margin-bottom: 20px; /* Khoảng cách dưới cùng */
+    border: 1px solid #ccc; /* Đường viền */
+    border-radius: 4px; /* Bo tròn các góc */
+    font-size: 14px; /* Kích thước chữ */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Hiệu ứng chuyển màu và đổ bóng */
+}
+
+.filter-dropdown:focus, .search-input:focus {
+    border-color: #66afe9; /* Đổi màu viền khi có focus */
+    outline: none; /* Ẩn outline mặc định */
+    box-shadow: 0 0 5px rgba(102, 175, 233, 0.5); /* Đổ bóng khi focus */
+}
