@@ -752,21 +752,21 @@ function filterComplaints() {
     }
 }
         // Hiển thị hình ảnh ở tab Design
-        function handleImageTabs(evt, tabId) {
-            var tabImages = document.getElementsByClassName("tab-image-design");
-            var tabLinks = document.querySelectorAll(".tablink-design button");
+       function handleImageTabs(evt, tabId) {
+    var tabImages = document.getElementsByClassName("tab-image-design");
+    var tabLinks = document.querySelectorAll(".tablink-design button");
 
-            Array.from(tabImages).forEach(tab => {
-                tab.style.display = "none";
-            });
+    Array.from(tabImages).forEach(tab => {
+        tab.style.display = "none";
+    });
 
-            tabLinks.forEach(link => {
-                link.classList.remove("active");
-            });
+    tabLinks.forEach(link => {
+        link.classList.remove("active");
+    });
 
-            document.getElementById(tabId).style.display = "block";
-            evt.currentTarget.classList.add("active");
-        }
+    document.getElementById(tabId).style.display = "block";
+    evt.currentTarget.classList.add("active");
+}
 
     </script>
 </body>
