@@ -670,3 +670,92 @@ textarea {
     outline: none; /* Ẩn outline mặc định */
     box-shadow: 0 0 5px rgba(102, 175, 233, 0.5); /* Đổ bóng khi focus */
 }
+.tab-container-tablink-design {
+    display: flex; /* Chia layout thành 2 cột */
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+/* Tab Design */
+.tablink-design {
+    display: flex;
+    flex-direction: column; /* Các tab sẽ hiển thị dọc */
+    width: 200px;
+    background-color: #fafafa   ;
+    padding: 20px 0;
+    border-right: 1px solid #e0e0e0;
+}
+
+.tablink-design button {
+    padding: 15px 25px;
+    text-align: left;
+    cursor: pointer;
+    background: none;
+    border: none;
+    
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin: 4px 10px;
+    outline: none;
+    transition: all 0.3s ease;
+    color: #666;
+    font-size: 16px;
+    position: relative;
+}
+
+.tablink-design button:hover {
+    background-color: #eee1d1;
+    color: #463a18;
+}
+
+.tablink-design button.active {
+    background: linear-gradient(to right, #f5a03b, #fafafa );
+    color: #000000;
+    font-weight: 500;
+}
+
+.tablink-design button.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background-color: #f7bd77;
+}
+
+/* Nội dung hình ảnh */
+.tab-content-tablink-design {
+    flex-grow: 1; /* Phần hình ảnh sẽ chiếm hết không gian còn lại */
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    flex-wrap: wrap; /* Hình ảnh sẽ tự động căn chỉnh nếu cần */
+}
+
+.tab-image-design {
+    display: none;
+    width: 100%;
+    height: auto;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tab-image-design img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
