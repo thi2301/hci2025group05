@@ -27,32 +27,34 @@
                     <li><a href="">Khiếu nại</a></li>
                     <div class="btn-login-register">
                         <button id="myBtn-login">Login</button>
-                        <!-- The Modal -->
+                        <form action="">
+                             <!-- The Modal -->
                         <div id="myModal-login" class="modal">
                             <!-- Modal content -->
                             <div class="modal-content">
+                                <span class="close-modal">&times;</span> <!-- Icon đóng modal -->
                                     <h2>Login</h2>
-                                    <div class="input-user">
-                                        icon
-                                        <input type="email">
-                                        <label for="">Email</label>
+                                    <div class="input-user">                                  
+                                        <input type="email" required>
+                                        <label for="email">Email</label>
+                                        <i class="fa-solid fa-user"></i>
                                     </div>
-                                    <div class="input-password">
-                                        icon
-                                        <input type="password">
-                                        <label for="">Passwword</label>
+                                    <div class="input-password">                           
+                                        <input type="password" required>
+                                        <label for="password">Passwword</label>
+                                        <i class="fa-solid fa-lock"></i>
                                     </div>
                                     <div class="forgot-pass">
-                                        <p><input type="checkbox">Remember me</p>
-                                        <a href="">Forgot passwword?</a>
+                                        <p style="margin: 0; padding: 1rem;"><input type="checkbox">Remember me  <a href="">Forgot password?</a></p>
+                                       
                                     </div>
                                     <button type="submit">Login</button>
                                     <div class="register-new">
                                         <p>Don't have an account? <a href="">Register</a></p>
                                     </div>
-
                             </div>  
                         </div>
+                        </form>
                         <button id="myBtn-register">Register</button>
                         <!-- The Modal -->
                         <div id="myModal-register" class="modal">
@@ -186,16 +188,18 @@
     var btnRegister = document.getElementById("myBtn-register");
     
     // Get the <span> element that closes the modal
+
+
     // var span = document.getElementsByClassName("close")[0];
     var closeLogin = document.querySelector(".close-login");
     var closeRegister = document.querySelector(".close-register");
     
-    // When the user clicks the button, open the modal 
+    // mo modal khi click vao button login/register
     btnLogin.onclick = function() {
-      modalLogin.style.display = "block";
+      modalLogin.style.display = "flex";
     }
     btnRegister.onclick = function() {
-      modalRegister.style.display = "block";
+      modalRegister.style.display = "flex";
     }
     
     
@@ -208,9 +212,35 @@
         modalRegister.style.display = "none";
       }
     }
+
+    // Đóng modal khi nhấn vào icon "close"
+        document.querySelector(".close-modal").addEventListener("click", function () {
+        document.getElementById("myModal-login").style.display = "none";
+        });
+
     </script>
     
+    <!-- xử lý logic hiển thị của label -->
+    <script>
+        const inputs = document.querySelectorAll(".input-user input, .input-password input");
+        inputs.forEach(input => {
+            input.addEventListener("focus", () => {
+                const label = input.nextElementSibling;
+                if (label) {
+                    label.style.transform = "translateY(-1rem)";
+                    label.style.fontSize = "0.8rem";
+                }
+            });
 
+            input.addEventListener("blur", () => {
+                const label = input.nextElementSibling;
+                if (label && input.value === "") {
+                    label.style.transform = "translateY(0)";
+                    label.style.fontSize = "1rem";
+                }
+            });
+        });
+    </script>
     
 </body>
 </html>
