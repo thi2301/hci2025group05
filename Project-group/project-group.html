@@ -56,13 +56,39 @@
                         </div>
                         </form>
                         <button id="myBtn-register">Register</button>
-                        <!-- The Modal -->
+                        <form action="">
+                            <!-- The Modal -->
                         <div id="myModal-register" class="modal">
-                            <!-- Modal content -->
-                            <div class="modal-content">
-                            <h2>Register</h2>
-                            </div>  
+                           <!-- Modal content -->
+                           <div class="modal-content">
+                               <span class="close-modal">&times;</span> <!-- Icon đóng modal -->
+                                   <h2>Register</h2>
+                                   <div class="input-user">                                  
+                                    <input type="text" required>
+                                    <label for="username">UserName</label>
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                   <div class="input-user">                                  
+                                       <input type="email" required>
+                                       <label for="email">Email</label>
+                                       <i class="fa-solid fa-user"></i>
+                                   </div>
+                                   <div class="input-password">                           
+                                       <input type="password" required>
+                                       <label for="password">Passwword</label>
+                                       <i class="fa-solid fa-lock"></i>
+                                   </div>
+                                   <div class="forgot-pass">
+                                       <p style="margin: 0; padding: 1rem;"><input type="checkbox">I agree to the terms & conditions</p>
+                                      
+                                   </div>
+                                   <button type="submit">Register</button>
+                                   <div class="register-new">
+                                       <p>Already have an account? <a href="">Login</a></p>
+                                   </div>
+                           </div>  
                         </div>
+                        </form>
                     </div>
                 </ul>
             </nav>
@@ -76,43 +102,191 @@
 
 
     <main>
-        <div class="container">
-            <div class="box-main">
-                <div class="title-container">
-                    <h1>Trải nghiệm kỳ nghỉ tuyệt vời</h1>
-                    <p>Combo khách sạn - vé máy bay - đưa đón sân bay giá tốt nhất</p>
-                </div>
-                         
-                <div class="information">
-                    <div class="location-container">
-                        <input type="text" id="locationInput" class="location-input" placeholder="Nhập địa điểm..." />
-                        <div id="suggestions" class="suggestions" style="display: none;"></div>
-                    </div>
-                    <div class="date-container">
-                        <h3>Chọn ngày đi</h3>
-                        <input type="date" name="" id="">
-                        <h3>Chọn ngày về</h3>
-                        <input type="date" name="" id="">
-                    </div>
-                    <div class="room-people">
-                        <h3>Số phòng muốn thuê</h3>
-                        <input type="number" id="rooms" class="number-input" min="1" value="1">
-                        <h3>Số khách hàng</h3>
-                        <input type="number" id="guests" class="number-input" min="1" value="1">
-                    </div>          
-                   
-            </div>
-            <button class="submit-btn" onclick="submitForm()">Tìm Kiếm</button>
+        <div class="box-title">
+            <h2>Tận Hưởng Chuyến Đi Cùng  </h2>
+            <h2>TRAVEL EVERYWHRE</h2>
         </div>
-
-
+        <div class="box-infomation">
+            <div class="information">
+                <div class="col-1">
+                    <input type="text"  placeholder="Thành phố, khách sạn, điểm đến">
+                </div>
+                <div class="col-2">
+                    <h3><i class="fa-solid fa-calendar-days"></i> Ngày Nhận/Trả Phòng</h3>
+                        <div class="date-room">
+                            <div class="check-in">
+                                <h4>Ngày Nhận Phòng</h4>
+                                <input type="date" name="" id="">
+                            </div>
+                            <div class="check-out">
+                                <h4>Ngày Trả Phòng</h4>
+                                <input type="date" name="" id="">
+                            </div>
+                        </div>
+                </div>
+                <div class="col-3">
+                    <h3><i class="fa-solid fa-person"></i> Khách & Phòng</h3>
+                        <div class="room">
+                            <p>Người lớn: <input type="number" name="" id=""></p>
+                            <p>Trẻ em: <input type="number" name="" id=""></p>
+                            <p>Phòng: <input type="number" name="" id=""></p>
+                        </div>
+                </div>
+                <div class="col-4">
+                    icon
+                </div>
+            </div>
+        </div>
+        
     </main>
     <div class="box-sale">
         <h2>Combo tốt nhất hôm nay <span><i class="fa-solid fa-fire"></i> 494 khách đã đặt phòng trong 24h qua</span></h2>
         <p>Nhanh tay đặt ngay để cùng nhau tận hưởng chuyến đi cùng gia đình và người thân</p>
         <a href=""><img src="../img/img_Project/holiday-inn-ho-tram.jpg" alt=""></a>
-
     </div>
+
+    <div class="box-sale-300k">
+        <h2>Deal Du Lịch đến 300K</h2>
+        <a href=""> <img src="../img/img_Project/sale300k.jpg" alt=""></a>
+    </div>
+
+    <div class="box-hot">
+        <h2>Top Điểm đến được yêu thích</h2>
+        <!-- Tab links -->
+        <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'Vietnam')">Việt Nam</button>
+            <button class="tablinks" onclick="openCity(event, 'Thailan')">Thái Lan</button>
+            <button class="tablinks" onclick="openCity(event, 'Nhatban')">Nhật Bản</button>
+            <button class="tablinks" onclick="openCity(event, 'Hanquoc')">Hàn Quốc</button>
+
+        </div>
+  
+        <!-- Tab content -->
+        <div id="Vietnam" class="tabcontent">
+            <div class="box-card">
+                <div class="card">
+                    <div class="img">
+                        <img src="../img/img_Project/hanoi-jpg" alt="hanoi">
+                    </div>
+                    <div class="content">
+                        <h5>TP.HCM - Hà Nội (Một chiều)</h5>
+                        <p style="text-decoration: line-through;">1.500.000vnd</p>
+                        <p>1.400.000vnd</p>
+                        <p>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star-half-stroke"></i>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="img">
+                        <img src="../img/img_Project/hanoi-jpg" alt="hanoi">
+                    </div>
+                    <div class="content">
+                        <h5>TP.HCM - Hà Nội (Một chiều)</h5>
+                        <p style="text-decoration: line-through;">1.500.000vnd</p>
+                        <p>1.400.000vnd</p>
+                        <p>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star-half-stroke"></i>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="img">
+                        <img src="../img/img_Project/hanoi-jpg" alt="hanoi">
+                    </div>
+                    <div class="content">
+                        <h5>TP.HCM - Hà Nội (Một chiều)</h5>
+                        <p style="text-decoration: line-through;">1.500.000vnd</p>
+                        <p>1.400.000vnd</p>
+                        <p>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star-half-stroke"></i>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="img">
+                        <img src="../img/img_Project/hanoi-jpg" alt="hanoi">
+                    </div>
+                    <div class="content">
+                        <h5>TP.HCM - Hà Nội (Một chiều)</h5>
+                        <p style="text-decoration: line-through;">1.500.000vnd</p>
+                        <p>1.400.000vnd</p>
+                        <p>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star-half-stroke"></i>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="img">
+                        <img src="../img/img_Project/hanoi-jpg" alt="hanoi">
+                    </div>
+                    <div class="content">
+                        <h5>TP.HCM - Hà Nội (Một chiều)</h5>
+                        <p style="text-decoration: line-through;">1.500.000vnd</p>
+                        <p>1.400.000vnd</p>
+                        <p>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star-half-stroke"></i>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="img">
+                        <img src="../img/img_Project/hanoi-jpg" alt="hanoi">
+                    </div>
+                    <div class="content">
+                        <h5>TP.HCM - Hà Nội (Một chiều)</h5>
+                        <p style="text-decoration: line-through;">1.500.000vnd</p>
+                        <p>1.400.000vnd</p>
+                        <p>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star-half-stroke"></i>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+  
+        <div id="Thailan" class="tabcontent">
+            
+        </div>
+  
+        <div id="Nhatban" class="tabcontent">
+            
+        </div>
+        <div id="Hanquoc" class="tabcontent">
+            
+        </div>
+    </div>
+
     <footer>
         
     </footer>
@@ -179,45 +353,58 @@
 
 <!-- --------------scrip  Login/register------------------------ -->
 <script>
-    // Get the modal
-    var modalLogin = document.getElementById("myModal-login");
-    var modalRegister = document.getElementById("myModal-register");
-    
-    // Get the button that opens the modal
-    var btnLogin = document.getElementById("myBtn-login");
-    var btnRegister = document.getElementById("myBtn-register");
-    
-    // Get the <span> element that closes the modal
+    // Lấy các phần tử cần thiết
+const loginModal = document.getElementById("myModal-login");
+const registerModal = document.getElementById("myModal-register");
 
+const loginBtn = document.getElementById("myBtn-login");
+const registerBtn = document.getElementById("myBtn-register");
 
-    // var span = document.getElementsByClassName("close")[0];
-    var closeLogin = document.querySelector(".close-login");
-    var closeRegister = document.querySelector(".close-register");
-    
-    // mo modal khi click vao button login/register
-    btnLogin.onclick = function() {
-      modalLogin.style.display = "flex";
+const closeButtons = document.querySelectorAll(".close-modal");
+const registerLink = document.querySelector("#myModal-login .register-new a");
+const loginLink = document.querySelector("#myModal-register .register-new a");
+
+// Mở modal Login
+loginBtn.addEventListener("click", () => {
+    loginModal.style.display = "flex";
+});
+
+// Mở modal Register
+registerBtn.addEventListener("click", () => {
+    registerModal.style.display = "flex";
+});
+
+// Đóng modal khi nhấn vào icon close
+closeButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        loginModal.style.display = "none";
+        registerModal.style.display = "none";
+    });
+});
+
+// Đóng modal khi nhấn ra ngoài modal
+window.addEventListener("click", (event) => {
+    if (event.target === loginModal) {
+        loginModal.style.display = "none";
     }
-    btnRegister.onclick = function() {
-      modalRegister.style.display = "flex";
+    if (event.target === registerModal) {
+        registerModal.style.display = "none";
     }
-    
-    
-    
-    document.onclick = function(event) {
-      if (event.target == modalLogin) {
-        modalLogin.style.display = "none";
-      }
-      if (event.target == modalRegister) {
-        modalRegister.style.display = "none";
-      }
-    }
+});
 
-    // Đóng modal khi nhấn vào icon "close"
-        document.querySelector(".close-modal").addEventListener("click", function () {
-        document.getElementById("myModal-login").style.display = "none";
-        });
+// Chuyển từ Login sang Register
+registerLink.addEventListener("click", (event) => {
+    event.preventDefault(); // Ngăn chặn hành vi mặc định của thẻ <a>
+    loginModal.style.display = "none";
+    registerModal.style.display = "flex";
+});
 
+// Chuyển từ Register sang Login
+loginLink.addEventListener("click", (event) => {
+    event.preventDefault(); // Ngăn chặn hành vi mặc định của thẻ <a>
+    registerModal.style.display = "none";
+    loginModal.style.display = "flex";
+});
     </script>
     
     <!-- xử lý logic hiển thị của label -->
@@ -240,6 +427,28 @@
                 }
             });
         });
+
+    // scrip tab
+        function openCity(evt, cityName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+        }
     </script>
     
 </body>

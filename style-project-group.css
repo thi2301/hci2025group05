@@ -109,7 +109,7 @@
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: #FFFCF5 
+    backdrop-filter: blur(20px);
 }
 
 .modal-content {
@@ -208,7 +208,7 @@ input{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 
@@ -276,84 +276,94 @@ main{
     background-size: cover; /* Đảm bảo ảnh phủ toàn bộ phần tử */
     background-position: center; /* Căn giữa ảnh nền */
     background-repeat: no-repeat; /* Ngăn ảnh nền bị lặp lại */
+
+
 }
 
-.box-main{
-    width: 100vw;
-    height: 80vh;
-    font-weight: 600;
+.box-title h2{
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-
+    font-size: 2.5rem;
+    font-weight: 600;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.box-title{
+    padding: 3rem 0;
 }
 
-.location-container {
-    position: relative;
-    width: 300px;
-}
-.location-input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-.suggestions {
-    position: absolute;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: white;
-    width: 100%;
-    max-height: 150px;
-    overflow-y: auto;
-    z-index: 1000;
-}
-.suggestions div {
-    padding: 10px;
-    cursor: pointer;
-}
-.suggestions div:hover {
-    background-color: #e0e0e0;
+.box-information{
+    display: flex;
+    justify-content: center;
+    
 }
 
-.title-container{
-    text-align: center;
-    margin: 2rem;
-
-}
 .information{
     display: flex;
-    flex-wrap: wrap;
+    width: 70%;
     justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: auto;
+
 }
 
-.location-container,
-.date-container,
-.room-people {
-    margin: 1rem;
-    text-align: center;
+.information .col-1{
+    flex: 3;
+}
+.information .col-2{
+    flex: 3;
+}
+.information .col-3{
+    flex: 3;
+}
+.information .col-4{
+    flex: 1;
 }
 
-.location-input,
-.date-input,
-.number-input {
-    width: 250px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
+.information .col-1 {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.submit-btn {
-    padding: 10px 20px;
-    background-color: coral;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
+.information .col-1 input{
+    width: 80%;
+    height:3rem;
 }
 
+.information .col-2{
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.information .col-2 .date-room{
+    display: none;
+}
+
+.information .col-2:active .date-room{
+    display: inline;
+}
+
+.information .col-3{
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.information .col-3 .room{
+    display: none;
+}
+
+.information .col-4{
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 footer{
     background-color: #FFFCF5;
@@ -361,11 +371,34 @@ footer{
     height: 20vh;
 }
 
-.box-sale{
-    background-color: chocolate;
+.box-sale, .box-sale-300k, .box-hot{
+    /* background-color: chocolate; */
     margin: 5rem 10rem;
 }
 
-.box-sale img{
+.box-sale img, .box-sale-300k img{
     width: 100%;
+}
+
+.box-card{
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    scroll-behavior: smooth; /* Cuộn mượt mà */
+}
+
+.box-card .card{
+    border: 2px solid #000000;
+    margin: .5rem;
+    flex: 0 0 auto; /* Không cho thẻ card co lại */
+    flex: 0 0 auto; /* Không cho thẻ card co lại */
+    width: 17rem; /* Đặt chiều rộng cố định */
+}
+
+
+.box-card .card .img img{
+    width: 100%;
+    height: 17rem; /* Đảm bảo chiều cao nhất quán */
+    object-fit: cover; /* Ảnh sẽ không bị méo */
+    border-radius: 0.5rem;
 }
