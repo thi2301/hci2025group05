@@ -797,6 +797,77 @@ function filterComplaints() {
     evt.currentTarget.classList.add("active");
 }
 
+        // tour
+        const tbody = document.querySelector("#infoTourTable tbody");
+        const modal = document.querySelector("#editOneRowTourTableModal");
+        const editBtns = document.querySelectorAll(".edit-data-one-row-table-tour-btn");
+        const closeModalBtn = document.querySelector("#closeModalTourBtn");
+        const saveBtn = document.querySelector("#saveModalTourBtn");
+
+        // Dữ liệu mẫu
+        const data = [
+            { maTour: "353", diaDiem: "Châu Âu", gia: "2,000,000 VND", thongTin: "10N9D", doiTac: "VietTravel" },
+           
+        ];
+
+        // Hiển thị dữ liệu trong bảng
+        function renderTable() {
+            tbody.innerHTML = "";
+            data.forEach((tour, index) => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${tour.maTour}</td>
+                    <td>${tour.diaDiem}</td>
+                    <td>${tour.gia}</td>
+                    <td>${tour.thongTin}</td>
+                    <td>${tour.doiTac}</td>
+                     <td><span class="edit-data-one-row-table-tour-btn" data-index="${index}">Chỉnh sửa</span></td>
+                `;
+                tbody.appendChild(row);
+            });
+
+            // Gắn sự kiện chỉnh sửa
+            document.querySelectorAll(".edit-data-one-row-table-tour-btn").forEach((btn) => {
+                btn.addEventListener("click", openEditModal);
+            });
+        }
+
+        // Mở modal chỉnh sửa
+        function openEditModal(event) {
+            const index = event.target.getAttribute("data-index");
+            const tour = data[index];
+
+            document.querySelector("#maTour").value = tour.maTour;
+            document.querySelector("#diaDiem").value = tour.diaDiem;
+            document.querySelector("#gia").value = tour.gia;
+            document.querySelector("#doiTac").value = tour.doiTac;
+
+            modal.style.display = "flex";
+        }
+
+        // Đóng modal
+        closeModalBtn.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+
+        // Lưu thay đổi
+        saveBtn.addEventListener("click", () => {
+            const maTour = document.querySelector("#maTour").value;
+            const diaDiem = document.querySelector("#diaDiem").value;
+            const gia = document.querySelector("#gia").value;
+            const doiTac = document.querySelector("#doiTac").value;
+
+            const index = data.findIndex((tour) => tour.maTour === maTour);
+            if (index > -1) {
+                data[index] = { maTour, diaDiem, gia, thongTin: data[index].thongTin, doiTac };
+                renderTable();
+                modal.style.display = "none";
+            }
+        });
+
+        // Render bảng lần đầu
+        renderTable();
+
     </script>
 </body>
 </html>
