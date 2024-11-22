@@ -275,35 +275,55 @@
 
             
            <div class="tour-data-container">
-    
-        <!-- Bảng Thông Tin -->
-        <div style="flex: 1;">
-            <table id="infoTable" class="table-tour-data">
-                <thead>
-                    <tr>
-                        <th class="table-tour">Mã Tour</th>
-                        <th class="table-tour">Địa điểm</th>
-                        <th class="table-tour">Giá</th>
-                        <th class="table-tour">Thông tin thêm</th>
-                        <th class="table-tour">Đối tác</th>
-                        <th class="table-tour">chỉnh</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Dữ liệu sẽ được hiển thị tại đây -->
-                </tbody>
-            </table>
+            <!-- Bảng Thông Tin -->
+            <div style="flex: 1;">
+                <table id="infoTourTable" class="table-tour-data">
+                    <thead>
+                        <tr>
+                            <th class="table-tour">Mã Tour</th>
+                            <th class="table-tour">Địa điểm</th>
+                            <th class="table-tour">Giá</th>
+                            <th class="table-tour">Thông tin thêm</th>
+                            <th class="table-tour">Đối tác</th>
+                            <th class="table-tour">Chỉnh</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dữ liệu sẽ được hiển thị tại đây -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Cột nút bấm -->
+            <div class="tour-button-container">
+                <button class="add-tour-button" id="addBtnTour">Thêm Tour</button>
+                <button class="remove-tour-button" id="removeBtnTour">Xóa Tour</button>
+            </div>
         </div>
 
-        <!-- Cột nút bấm -->
-        <div class="tour-button-contaner">
-            <button class="add-tour-button" id="addBtnTour">thêm tour</button>
-            <button class="remove-tour-button" id="removeBtnTour">Xóa Tour</button>
+        <!-- Modal chỉnh sửa -->
+        <div class="edit-one-row-tour-modal" id="editOneRowTourTableModal">
+            <div class="edit-one-row-tour-modal-content">
+                <h4>Chỉnh sửa Tour</h4>
+                <form id="editForm">
+                    <label for="maTour">Mã Tour:</label>
+                    <input type="text" id="maTour" name="maTour" readonly><br><br>
+
+                    <label for="diaDiem">Địa điểm:</label>
+                    <input type="text" id="diaDiem" name="diaDiem"><br><br>
+
+                    <label for="gia">Giá:</label>
+                    <input type="text" id="gia" name="gia"><br><br>
+
+                    <label for="doiTac">Đối tác:</label>
+                    <input type="text" id="doiTac" name="doiTac"><br><br>
+
+                    <button type="button" id="saveModalTourBtn">Lưu</button>
+                    <button type="button" id="closeModalTourBtn">Đóng</button>
+                </form>
+            </div>
         </div>
     </div>
-
-        </div>
-        </table>
         <div id="KhachHang" class="projectTabContent" style="display:none;">
             <h4>Khách Hàng Projects</h4>
             <table>
