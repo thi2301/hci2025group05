@@ -10,7 +10,7 @@
 .menubar{
     flex: 10;
     display: flex;
- 
+    position: relative;
 
 }
 
@@ -162,6 +162,7 @@ input{
     outline: none;
     border-bottom: 2px solid #000;
     border-radius: 0;
+    background: transparent; /*nền trong suốt*/
 }
 
 
@@ -280,6 +281,14 @@ main{
 
 }
 
+.box-sale h2 span{
+    font-size: 1.3rem;
+    margin-left: 2rem;
+}
+.box-sale h2 i{
+    color: crimson;
+}
+
 .box-title h2{
     display: flex;
     justify-content: center;
@@ -305,6 +314,10 @@ main{
     padding: 0;
     margin: auto;
 
+}
+
+.information i{
+    color: coral;
 }
 
 .information .col-1{
@@ -340,11 +353,28 @@ main{
 }
 .information .col-2 .date-room{
     display: none;
+    padding: 2rem;
 }
 
-.information .col-2:active .date-room{
-    display: inline;
+.information .col-2 .date-room .ct-date-room{
+    display: flex;
+    justify-content: center;
 }
+
+.ct-date-room .check-in{
+    margin-right: 1rem;
+    padding-right: 1rem;
+    border-right: 1px solid #000;
+}
+
+.information .col-2:hover .date-room{
+    position: absolute;
+    display: inline;
+    transform: translateY(5rem);
+}
+
+
+
 
 .information .col-3{
     width: 100%;
@@ -355,6 +385,18 @@ main{
 }
 .information .col-3 .room{
     display: none;
+    padding: 2rem;
+}
+
+.room .ct-room{
+    display: block;
+}
+
+.col-3:hover .room{
+    display: flex;
+    position: absolute;
+    transform: translateY(8rem);
+
 }
 
 .information .col-4{
