@@ -5,6 +5,9 @@
     justify-content: center;
     align-items: center;
     background-color:#FFFCF5;
+    position: fixed;
+    width: 100%;
+    z-index: 1000; /* Đảm bảo header nằm trên các phần tử khác */
 }
 
 .menubar{
@@ -270,15 +273,13 @@ input{
     align-items: center; /* Căn giữa theo chiều dọc */
 }
 
-main{
+main {
     width: 100vw;
-    height: 70vh;
+    height: 90vh;
     background-image: url('./img/img_Project/bg-ks.jpg');
     background-size: cover; /* Đảm bảo ảnh phủ toàn bộ phần tử */
     background-position: center; /* Căn giữa ảnh nền */
     background-repeat: no-repeat; /* Ngăn ảnh nền bị lặp lại */
-
-
 }
 
 .box-sale h2 span{
@@ -295,6 +296,7 @@ main{
     font-size: 2.5rem;
     font-weight: 600;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 5rem;
 }
 .box-title{
     padding: 3rem 0;
@@ -406,12 +408,15 @@ main{
     justify-content: center;
     align-items: center;
 }
-
-footer{
-    background-color: #FFFCF5;
-    width: 100vw;
-    height: 20vh;
+.information .col-4 i {
+    font-size: 2rem;
+    padding: .6rem;
+    border-radius: 1rem 1rem;
+    color: rgb(255, 255, 255);
+    background-color:coral;
+    cursor: pointer;
 }
+
 
 .box-sale, .box-sale-300k, .box-hot{
     /* background-color: chocolate; */
@@ -420,6 +425,17 @@ footer{
 
 .box-sale img, .box-sale-300k img{
     width: 100%;
+}
+
+.box-hot .tab button{
+    border: none;
+    border-radius: 20px 20px;
+    background-color: aqua;
+    margin-bottom: 1rem;
+}
+.box-hot .tab button:hover{
+    color: aqua;
+    background-color: #000;
 }
 
 .box-card{
@@ -433,8 +449,8 @@ footer{
     border: 2px solid #000000;
     margin: .5rem;
     flex: 0 0 auto; /* Không cho thẻ card co lại */
-    flex: 0 0 auto; /* Không cho thẻ card co lại */
     width: 17rem; /* Đặt chiều rộng cố định */
+    height: 28rem;
 }
 
 
@@ -443,4 +459,37 @@ footer{
     height: 17rem; /* Đảm bảo chiều cao nhất quán */
     object-fit: cover; /* Ảnh sẽ không bị méo */
     border-radius: 0.5rem;
+}
+
+.price-old{
+    text-decoration: line-through;
+}
+.price-sale{
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: tomato;
+}
+
+.card .content i {
+    color: #f5b70e;
+}
+
+/* ------------------------ */
+.navbar li a .vemaybay:hover .bay-trong-nuoc{
+
+}
+
+
+/* ------------------------- */
+footer{
+    background-color: #f9f0d9;
+    width: 100vw;
+    height: 30vh;
+    text-align: center;
+    
+}
+
+.footer-c{
+    font-size: 1.2rem;
+    font-weight: 600;
 }
