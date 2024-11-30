@@ -334,6 +334,28 @@
         </div>
     </div>
         <div id="KhachHang" class="projectTabContent" style="display:none;">
+                      
+            <label for="filterComplaintType">Lọc</label>
+<select id="filterComplaintType" onchange="filterComplaints()" class="filter-dropdown">
+    <option value="">Tất cả</option>
+    <option value="Đang xử lý">Đang xử lý</option>
+    <option value="Đã giải quyết">Đã giải quyết</option>
+</select>
+
+<input type="text" id="searchComplaint" class="search-input" placeholder="Tìm kiếm theo thời gian (VD: 01/01/2024)" onkeyup="searchComplaint()">
+            
+            <form id="complaintForm">
+                <label for="customer-name">Họ và Tên:</label>
+                <input type="text" id="customer-name" name="customer-name" required>
+                <br>
+                <label for="contact-info-complaint">Email hoặc SĐT:</label>
+                <input type="text" id="contact-info-complaint" name="contact-info-complaint" placeholder="Nhập Email hoặc SĐT" required>
+                <br>
+                <label for="complaint">Nội Dung Khiếu Nại:</label>
+                <textarea id="complaint" name="complaint" required></textarea>
+                <br>
+                <button type="submit">Gửi Khiếu Nại</button>
+            </form>
             <h4>Khách Hàng Projects</h4>
             <table>
          	<tr>
@@ -415,26 +437,6 @@
                     <td>12A35</td>
                     <td> Châu Âu  10N9D: London - Tháp Đồng Hò Big Ben - Lâu Đài Warwick - Cung điện Buckingham -  </td>
                     <td>17/12/2024 19h00p pm</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>864</td>
-                    <td>Nguyễn Văn Trung</td>
-                    <td>Sđt: 0321879566</td>
-                    <td>Bà Rịa - Vũng Tàu</td>
-                    <td>12A35</td>
-                    <td> Châu Âu 10N9D: Ý - Tháp nghiên Pisa   </td>
-                    <td>19/12/2024 17h00p am</td>
-                    <td></td> 
-                </tr>
-                <tr>
-                    <td>356</td>
-                    <td>Đoàn Ngọc Phương</td>
-                    <td>Sđt: 0918934586</td>
-                    <td>Cần Thơ</td>
-                    <td>12A35</td>
-                    <td> Châu Âu 10N9D:  Đức - Thành phố cảng Hamburg </td>
-                    <td>30/12/2024 22h00p pm</td>
                     <td></td>
                 </tr>
         </table>
