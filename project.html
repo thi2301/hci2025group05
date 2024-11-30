@@ -263,16 +263,45 @@
                     <td>19/12/2024 17h00p am</td>
                     <td></td> 
                 </tr>
-                <tr>
-                    <td>437</td>
-                    <td>12A35</td>
-                    <td> Châu Âu 10N9D:  Đức - Thành phố cảng Hamburg </td>
-                 Tour</label>
-                <textarea id="complaint" name="complaint" required></textarea>
-                <br>
-                <button type="submit">Khách hàng</button>
-            </form>
+                <td></td>
+                </tr>
+        </table>
+        </div>
+
+            <div id="Tour" class="projectTabContent" style="display:none;">
+            <h4>Tour Project</h4>
+            <table></table>
+
+             <div id="KhachHangKhachHang" class="projectTabContent" style="display:none;">
             <h4>Khách Hàng Projects</h4>
+                            
+            <label for="filterType">Lọc</label>
+<select id="filterType" onchange="filterPartners()" class="filter-dropdown">
+    <option value="">Tất cả</option>
+    <option value="Hợp tác chiến lược">Hợp tác chiến lược</option>
+    <option value="Hợp tác lâu dài">Hợp tác lâu dài</option>
+</select>
+
+<input type="text" id="searchPartner" class="search-input" placeholder="Tìm kiếm theo thời gian (VD: 01/01/2024)" onkeyup="searchPartner()">
+            
+            <form id="partnerForm">
+                <label for="service">Dịch vụ hợp tác:</label>
+                <select id="service" name="service" required>
+                    <option value="Hợp tác chiến lược">Hợp tác chiến lược</option>
+                    <option value="Hợp tác lâu dài">Hợp tác lâu dài</option>
+                </select>
+                <br>
+                <label for="name">Tên Dịch Vụ:</label>
+                <input type="text" id="name" name="name" required>
+                <br>
+                <label for="contact-info">Email hoặc SĐT:</label>
+                <input type="text" id="contact-info" name="contact-info" placeholder="Nhập Email hoặc SĐT" required>
+                <br>
+                <label for="message">Nội Dung:</label>
+                <input type="text" id="contact-info" name="contact-info" placeholder="Nhập dịch vụ hoặc trên Công TY" required>
+                <br>
+                <button type="submit">Gửi Yêu Cầu</button>
+            </form>
             <table>
          	<tr>
                     <th>STT</th>
