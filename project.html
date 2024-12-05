@@ -276,91 +276,95 @@
             <div id="KhachHang" class="projectTabContent" style="display:none;">
             <h4>Khách Hàng Projects</h4>
             <label for="filterType">Lọc</label>
-<select id="filterType" onchange="filterPartners()" class="filter-dropdown">
-    <option value="">Tất cả</option>
-    <option value="Họ và tên">Họ và tên</option>
-    <option value="Mã tour">Mã tour</option>
-</select>
+    <select id="filterType" onchange="filterPartners()" class="filter-dropdown">
+        <option value="">Tất cả</option>
+        <option value="Họ và tên">Họ và tên</option>
+        <option value="Mã tour">Mã tour</option>
+    </select>
 
-<input type="text" id="searchPartner" class="search-input" placeholder="Tìm kiếm theo thời gian (VD: 01/01/2024)" onkeyup="searchPartner()">
-            
-            <form id="partnerForm">
-                <label for="name">Họ và tên:</label>
-                <input type="text" id="name" name="name" required>
-                <br>
-                <label for="contact-info">Thông tin liên lạc:</label>
-                <input type="text" id="contact-info" name="contact-info" placeholder="Thông tin liên lạc" required>
-                <br>
-                 <label for="noi-song">Nơi sống</label>
-                <input type="text" id="contact-info" name="contact-info" placeholder="Nơi sống" required>
-                <br>
-                 <label for="ma-tour">Mã tour</label>
-                <input type="text" id="contact-info" name="contact-info" placeholder="Mã tour" required>
-                <br>
-                 <label for="tour">Tour</label>
-                <input type="text" id="contact-info" name="contact-info" placeholder="Tour" required>
-                <br>
-                <button type="submit">Đặt tour</button>
-            </form>
-                <table id="tourTable">
-         	<tr>
-                    <th>STT</th>
-                    <th>Họ và tên</th>
-                    <th>Thông tin liên lạc</th>
-                    <th>Nơi sống</th>
-                    <th>Mã tour</th>
-                    <th>Tour</th>
-                    <th>Thời gian</th>
-                   
-                </tr>
-           
-                <tr>
-                    <td>353</td>
-                    <td>Nguyễn Văn Phong</td>
-                    <td>Sđt: 0876543221</td>
-                    <td>TP.Hồ Chí Minh</td>
-                    <td>3d312A</td>
-                    <td>Châu Âu 10N9D</td>
-                    <td>01/11/2024 9h34p pm</td>
-                </tr>
-                <tr>
-                    <td>352</td>
-                    <td>Trương Thị Hoa</td>
-                    <td>Sđt: 0987632415 </td>
-                    <td>Thủ đô Hà Nội</td>
-                    <td>Fe312A</td>
-                    <td>Tour Cao Bằng Trong Ngày: Thác Bản Dốc - Di Tich Pắc Pó - Lũng Luông - Động Ngườm Ngao</td>
-                    <td>10/09/2014 7h00p am</td>
-                </tr>
-                <tr>
-                    <td>569</td>
-                    <td>Nguyễn Thị Xoan</td>
-                    <td>Sđt: 0975382432</td>
-                    <td>Hải Phòng</td>
-                    <td>62A73</td>
-                    <td>Tour Phú Thọ Trong Ngày: Đền Quốc Âu Cơ - Đồi Chè Long Cốc - Hang Lạng </td>
-                    <td>20/09/2024 8h34p am</td>
-                </tr>
-                <tr>
-                    <td>158</td>
-                    <td>Nguyễn Thị Xoan</td>
-                    <td>Sđt: 0975382432</td>
-                    <td>Quảng Ninh</td>
-                    <td>31A09</td>
-                    <td>Tour Ninh Bình Trong Ngày: Hà Nội - Hoa Lư - Tràng An - Hang Múa</td>
-                    <td>10/01/2024 10h34p pm</td>
-                </tr>
-                <tr>
-                    <td>437</td>
-                    <td>Nguyễn Đăng Khoa</td>
-                    <td>Sđt:0958603785 </td>
-                    <td>Hà Nội</td>
-                    <td>12A35</td>
-                    <td> Châu Phi 18C5A: Ai Cập - Khu Kim Tự Tháp Giza - Sa mạc Trắng  </td>
-                    <td>13/10/2024 13h00p am</td>
-                </tr>
-        </table>
-        </div>
+    <input type="text" id="searchPartner" class="search-input" placeholder="Tìm kiếm theo thời gian (VD: 01/01/2024)" onkeyup="searchPartner()">
+
+    <form id="partnerForm">
+        <label for="name">Họ và tên:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+
+        <label for="contact-info">Thông tin liên lạc:</label>
+        <input type="text" id="contact-info" name="contact-info" placeholder="Thông tin liên lạc" required>
+        <br>
+
+        <label for="noi-song">Nơi sống:</label>
+        <input type="text" id="noi-song" name="noi-song" placeholder="Nơi sống" required>
+        <br>
+
+        <label for="ma-tour">Mã tour:</label>
+        <input type="text" id="ma-tour" name="ma-tour" placeholder="Mã tour" required>
+        <br>
+
+        <label for="tour">Tour:</label>
+        <input type="text" id="tour" name="tour" placeholder="Tour" required>
+        <br>
+
+        <button type="submit">Đặt tour</button>
+    </form>
+
+    <table id="tourTable">
+        <tr>
+            <th>STT</th>
+            <th>Họ và tên</th>
+            <th>Thông tin liên lạc</th>
+            <th>Nơi sống</th>
+            <th>Mã tour</th>
+            <th>Tour</th>
+            <th>Thời gian</th>
+        </tr>
+        <tr>
+            <td>353</td>
+            <td>Nguyễn Văn Phong</td>
+            <td>Sđt: 0876543221</td>
+            <td>TP.Hồ Chí Minh</td>
+            <td>3d312A</td>
+            <td>Châu Âu 10N9D</td>
+            <td>01/11/2024 9h34p pm</td>
+        </tr>
+        <tr>
+            <td>352</td>
+            <td>Trương Thị Hoa</td>
+            <td>Sđt: 0987632415</td>
+            <td>Thủ đô Hà Nội</td>
+            <td>Fe312A</td>
+            <td>Tour Cao Bằng Trong Ngày: Thác Bản Dốc - Di Tich Pắc Pó - Lũng Luông - Động Ngườm Ngao</td>
+            <td>10/09/2014 7h00p am</td>
+        </tr>
+        <tr>
+            <td>569</td>
+            <td>Nguyễn Thị Xoan</td>
+            <td>Sđt: 0975382432</td>
+            <td>Hải Phòng</td>
+            <td>62A73</td>
+            <td>Tour Phú Thọ Trong Ngày: Đền Quốc Âu Cơ - Đồi Chè Long Cốc - Hang Lạng</td>
+            <td>20/09/2024 8h34p am</td>
+        </tr>
+        <tr>
+            <td>158</td>
+            <td>Nguyễn Thị Xoan</td>
+            <td>Sđt: 0975382432</td>
+            <td>Quảng Ninh</td>
+            <td>31A09</td>
+            <td>Tour Ninh Bình Trong Ngày: Hà Nội - Hoa Lư - Tràng An - Hang Múa</td>
+            <td>10/01/2024 10h34p pm</td>
+        </tr>
+        <tr>
+            <td>437</td>
+            <td>Nguyễn Đăng Khoa</td>
+            <td>Sđt: 0958603785</td>
+            <td>Hà Nội</td>
+            <td>12A35</td>
+            <td>Châu Phi 18C5A: Ai Cập - Khu Kim Tự Tháp Giza - Sa mạc Trắng</td>
+            <td>13/10/2024 13h00p am</td>
+        </tr>
+    </table>
+</div>
 
         <div id="DoiTac" class="projectTabContent" style="display:none;">
             <h4>Đối Tác</h4>
