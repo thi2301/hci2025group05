@@ -273,99 +273,96 @@
             <table></table>
             </div>
         
-            <div id="KhachHang" class="projectTabContent" style="display:none;">
-            <h4>Khách Hàng Projects</h4>
-            <label for="filterType">Lọc</label>
-            <select id="filterType" onchange="filterPartners()" class="filter-dropdown">
-            <option value="">Tất cả</option>
-            <option value="Họ và tên">Họ và tên</option>
-            <option value="Mã tour">Mã tour</option>
-            </select>
-                
-                <input type="text" id="searchPartner" class="search-input" placeholder="Tìm kiếm theo thời gian (VD: 01/01/2024)" onkeyup="searchPartner()">
-                
-                <form id="partnerForm">
-                <label for="name">Họ và tên:</label>
-                <input type="text" id="name" name="name" required>
-                <br>
-                
-                <label for="contact-info">Thông tin liên lạc:</label>
-                <input type="text" id="contact-info" name="contact-info" placeholder="Thông tin liên lạc" required>
-                <br>
-                
-                <label for="noi-song">Nơi sống:</label>
-                <input type="text" id="noi-song" name="noi-song" placeholder="Nơi sống" required>
-                <br>
-                
-                <label for="ma-tour">Mã tour:</label>
-                <input type="text" id="ma-tour" name="ma-tour" placeholder="Mã tour" required>
-                <br>
-                
-                <label for="tour">Tour:</label>
-                <input type="text" id="tour" name="tour" placeholder="Tour" required>
-                <br>
-                
-                <button type="submit">Đặt tour</button>
-                </form>
-                
-                <table id="tourTable">
-                <tr>
-                    <th>STT</th>
-                    <th>Họ và tên</th>
-                    <th>Thông tin liên lạc</th>
-                    <th>Nơi sống</th>
-                    <th>Mã tour</th>
-                    <th>Tour</th>
-                    <th>Thời gian</th>
-                </tr>
-                <tr>
-                    <td>353</td>
-                    <td>Nguyễn Văn Phong</td>
-                    <td>Sđt: 0876543221</td>
-                    <td>TP.Hồ Chí Minh</td>
-                    <td>3d312A</td>
-                    <td>Châu Âu 10N9D</td>
-                    <td>01/11/2024 9h34p pm</td>
-                </tr>
-                <tr>
-                    <td>352</td>
-                    <td>Trương Thị Hoa</td>
-                    <td>Sđt: 0987632415</td>
-                    <td>Thủ đô Hà Nội</td>
-                    <td>Fe312A</td>
-                    <td>Tour Cao Bằng Trong Ngày: Thác Bản Dốc - Di Tich Pắc Pó - Lũng Luông - Động Ngườm Ngao</td>
-                    <td>10/09/2014 7h00p am</td>
-                </tr>
-                <tr>
-                    <td>569</td>
-                    <td>Nguyễn Thị Xoan</td>
-                    <td>Sđt: 0975382432</td>
-                    <td>Hải Phòng</td>
-                    <td>62A73</td>
-                    <td>Tour Phú Thọ Trong Ngày: Đền Quốc Âu Cơ - Đồi Chè Long Cốc - Hang Lạng</td>
-                    <td>20/09/2024 8h34p am</td>
-                </tr>
-                <tr>
-                    <td>158</td>
-                    <td>Nguyễn Thị Xoan</td>
-                    <td>Sđt: 0975382432</td>
-                    <td>Quảng Ninh</td>
-                    <td>31A09</td>
-                    <td>Tour Ninh Bình Trong Ngày: Hà Nội - Hoa Lư - Tràng An - Hang Múa</td>
-                    <td>10/01/2024 10h34p pm</td>
-                </tr>
-                <tr>
-                    <td>437</td>
-                    <td>Nguyễn Đăng Khoa</td>
-                    <td>Sđt: 0958603785</td>
-                    <td>Hà Nội</td>
-                    <td>12A35</td>
-                    <td>Châu Phi 18C5A: Ai Cập - Khu Kim Tự Tháp Giza - Sa mạc Trắng</td>
-                    <td>13/10/2024 13h00p am</td>
-                </tr>
-                </table>
-                </div>
+            < <h4>Khách Hàng Projects</h4>
+    <label for="filterType">Lọc</label>
+    <select id="filterType" onchange="applyFilters()" class="filter-dropdown">
+        <option value="">Tất cả</option>
+        <option value="Họ và tên">Họ và tên</option>
+        <option value="Mã tour">Mã tour</option>
+    </select>
 
+    <input type="text" id="searchPartner" class="search-input" placeholder="Tìm kiếm theo thời gian (VD: 01/01/2024)" onkeyup="applyFilters()">
+
+    <form id="partForm">
+        <label for="name">Họ và tên:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="contact-info">Thông tin liên lạc:</label>
+        <input type="text" id="contact-info" name="contact-info" placeholder="Thông tin liên lạc" required><br>
+
+        <label for="noi-song">Nơi sống:</label>
+        <input type="text" id="noi-song" name="noi-song" placeholder="Nơi sống" required><br>
+
+        <label for="ma-tour">Mã tour:</label>
+        <input type="text" id="ma-tour" name="ma-tour" placeholder="Mã tour" required><br>
+
+        <label for="tour">Tour:</label>
+        <input type="text" id="tour" name="tour" placeholder="Tour" required><br>
+
+        <button type="submit">Đặt tour</button>
+    </form>
+
+    <table id="tourTable">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Họ và tên</th>
+                <th>Thông tin liên lạc</th>
+                <th>Nơi sống</th>
+                <th>Mã tour</th>
+                <th>Tour</th>
+                <th>Thời gian</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>353</td>
+                <td>Nguyễn Văn Phong</td>
+                <td>Sđt: 0876543221</td>
+                <td>TP.Hồ Chí Minh</td>
+                <td>3d312A</td>
+                <td>Châu Âu 10N9D</td>
+                <td>01/11/2024 9h34p pm</td>
+            </tr>
+            <tr>
+                <td>352</td>
+                <td>Trương Thị Hoa</td>
+                <td>Sđt: 0987632415</td>
+                <td>Thủ đô Hà Nội</td>
+                <td>Fe312A</td>
+                <td>Tour Cao Bằng Trong Ngày: Thác Bản Dốc - Di Tich Pắc Pó - Lũng Luông - Động Ngườm Ngao</td>
+                <td>10/09/2014 7h00p am</td>
+            </tr>
+            <tr>
+                <td>569</td>
+                <td>Nguyễn Thị Xoan</td>
+                <td>Sđt: 0975382432</td>
+                <td>Hải Phòng</td>
+                <td>62A73</td>
+                <td>Tour Phú Thọ Trong Ngày: Đền Quốc Âu Cơ - Đồi Chè Long Cốc - Hang Lạng</td>
+                <td>20/09/2024 8h34p am</td>
+            </tr>
+            <tr>
+                <td>158</td>
+                <td>Nguyễn Thị Xoan</td>
+                <td>Sđt: 0975382432</td>
+                <td>Quảng Ninh</td>
+                <td>31A09</td>
+                <td>Tour Ninh Bình Trong Ngày: Hà Nội - Hoa Lư - Tràng An - Hang Múa</td>
+                <td>10/01/2024 10h34p pm</td>
+            </tr>
+            <tr>
+                <td>437</td>
+                <td>Nguyễn Đăng Khoa</td>
+                <td>Sđt: 0958603785</td>
+                <td>Hà Nội</td>
+                <td>12A35</td>
+                <td>Châu Phi 18C5A: Ai Cập - Khu Kim Tự Tháp Giza - Sa mạc Trắng</td>
+                <td>13/10/2024 13h00p am</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
         <div id="DoiTac" class="projectTabContent" style="display:none;">
             <h4>Đối Tác</h4>
             
@@ -591,99 +588,75 @@ function openProjectTab(evt, tabName) {
     // Xóa class "active" khỏi tất cả các tablinks
     tablinks = document.getElementsByClassName("tablinks");
     for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
+        tablinks[i].className = tablinks[i].className.replace(" active"partForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Ngăn chặn hành động gửi mặc định
 
-    // Hiển thị tab nội dung hiện tại và thêm class "active" cho nút đã nhấn
-    document.getElementById(tabName).style.display = "block";  
-    evt.currentTarget.className += " active";
-}
-let projectTabsVisible = false; // Biến để theo dõi trạng thái hiển thị của các tab
+            // Lấy giá trị từ các ô input
+            const name = document.getElementById('name').value;
+            const contactInfo = document.getElementById('contact-info').value;
+            const noiSong = document.getElementById('noi-song').value;
+            const maTour = document.getElementById('ma-tour').value;
+            const tour = document.getElementById('tour').value;
 
-function showProjectTabs() {
-    const projectTabs = document.getElementById('projectTabs');
-    
-    if (projectTabsVisible) {
-        projectTabs.style.display = 'none'; // Ẩn các tab nếu chúng đang hiển thị
-        projectTabsVisible = false; // Cập nhật trạng thái
-    } else {
-        projectTabs.style.display = 'block'; // Hiển thị các tab nếu chúng không đang hiển thị
-        projectTabsVisible = true; // Cập nhật trạng thái
-    }
-}
-// khách hàng
-  document.getElementById('partnerForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Ngăn chặn hành động gửi mặc định
+            // Lấy thời gian hiện tại
+            const currentTime = new Date().toLocaleString();
 
-        // Lấy giá trị từ các ô input
-        const name = document.getElementById('name').value;
-        const contactInfo = document.getElementById('contact-info').value;
-        const noiSong = document.getElementById('noi-song').value;
-        const maTour = document.getElementById('ma-tour').value;
-        const tour = document.getElementById('tour').value;
+            // Tạo một hàng mới trong bảng
+            const table = document.getElementById('tourTable').getElementsByTagName('tbody')[0];
+            const newRow = table.insertRow();
 
-        // Lấy thời gian hiện tại
-        const currentTime = new Date().toLocaleString();
+            // Thêm dữ liệu vào các ô của hàng mới
+            newRow.innerHTML = `
+                <td></td>
+                <td>${name}</td>
+                <td>${contactInfo}</td>
+                <td>${noiSong}</td>
+                <td>${maTour}</td>
+                <td>${tour}</td>
+                <td>${currentTime}</td>
+            `;
 
-        // Tạo một hàng mới trong bảng
-        const table = document.getElementById('tourTable');
-        const newRow = table.insertRow(table.rows.length); // Thêm hàng mới vào cuối bảng
+            // Cập nhật lại STT cho tất cả các hàng
+            updateSTT();
 
-        // Thêm dữ liệu vào các ô của hàng mới
-        const cell1 = newRow.insertCell(0);
-        const cell2 = newRow.insertCell(1);
-        const cell3 = newRow.insertCell(2);
-        const cell4 = newRow.insertCell(3);
-        const cell5 = newRow.insertCell(4);
-        const cell6 = newRow.insertCell(5);
-        const cell7 = newRow.insertCell(6);
+            // Xóa nội dung ô input sau khi gửi
+            document.getElementById('partForm').reset();
+        });
 
-        cell1.innerHTML = table.rows.length - 1;
-        cell2.innerHTML = name;
-        cell3.innerHTML = contactInfo;
-        cell4.innerHTML = noiSong;
-        cell5.innerHTML = maTour;
-        cell6.innerHTML = tour;
-        cell7.innerHTML = currentTime;
+        // Hàm cập nhật STT cho tất cả các hàng
+        function updateSTT() {
+            const table = document.getElementById('tourTable').getElementsByTagName('tbody')[0];
+            const rows = table.getElementsByTagName('tr');
+            let stt = 1;
 
-        // Xóa nội dung ô input sau khi gửi
-        document.getElementById('partnerForm').reset();
-    });
-
-    function filterPartners() {
-        const filter = document.getElementById("filterType").value.toLowerCase();
-        const table = document.getElementById("tourTable");
-        const rows = table.getElementsByTagName("tr");
-
-        for (let i = 1; i < rows.length; i++) { // Bắt đầu từ 1 để bỏ qua tiêu đề
-            const cells = rows[i].getElementsByTagName("td");
-            const name = cells[1].textContent.toLowerCase();
-            const maTour = cells[4].textContent.toLowerCase();
-
-            if ((filter === "họ và tên" && name.includes(filter)) || (filter === "mã tour" && maTour.includes(filter)) || filter === "") {
-                rows[i].style.display = ""; // Hiển thị hàng
-            } else {
-                rows[i].style.display = "none"; // Ẩn hàng
-            }
+            Array.from(rows).forEach(row => {
+                row.cells[0].textContent = stt++;
+            });
         }
-    }
 
-    function searchPartner() {
-        const searchText = document.getElementById("searchPartner").value.toLowerCase();
-        const table = document.getElementById("tourTable");
-        const rows = table.getElementsByTagName("tr");
+        // Hàm lọc và tìm kiếm
+        function applyFilters() {
+            const filterType = document.getElementById("filterType").value.toLowerCase();
+            const searchText = document.getElementById("searchPartner").value.toLowerCase();
+            const table = document.getElementById("tourTable");
+            const rows = table.getElementsByTagName("tr");
 
-        for (let i = 1; i < rows.length; i++) { // Bắt đầu từ 1 để bỏ qua tiêu đề
-            const cells = rows[i].getElementsByTagName("td");
-            const time = cells[6].textContent.toLowerCase(); // Lấy nội dung ô Thời gian
+            Array.from(rows).forEach(row => {
+                if (row.rowIndex === 0) return; // Bỏ qua tiêu đề bảng
 
-            if (time.includes(searchText)) {
-                rows[i].style.display = ""; // Hiển thị hàng
-            } else {
-                rows[i].style.display = "none"; // Ẩn hàng
-            }
+                const cells = row.getElementsByTagName("td");
+                const name = cells[1].textContent.toLowerCase();
+                const maTour = cells[4].textContent.toLowerCase();
+                const time = cells[6].textContent.toLowerCase();
+
+                const matchesFilter = filterType === "" || (filterType === "Họ và tên" && name.includes(searchText)) || (filterType === "Mã tour" && maTour.includes(searchText)) || (filterType === "" && time.includes(searchText));
+
+                row.style.display = matchesFilter ? "" : "none"; // Hiển thị hoặc ẩn hàng dựa trên điều kiện
+            });
+
+            // Cập nhật lại STT sau khi lọc
+            updateSTT();
         }
-    }
         
 // đói tác
 document.getElementById('partnerForm').addEventListener('submit', function(event) {
