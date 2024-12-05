@@ -589,61 +589,27 @@ function openProjectTab(evt, tabName) {
     // Xóa class "active" khỏi tất cả các tablinks
     tablinks = document.getElementsByClassName("tablinks");
     for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active"partForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Ngăn chặn hành động gửi mặc định
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Hiển thị tab nội dung hiện tại và thêm class "active" cho nút đã nhấn
+    document.getElementById(tabName).style.display = "block";  
+    evt.currentTarget.className += " active";
+}
+let projectTabsVisible = false; // Biến để theo dõi trạng thái hiển thị của các tab
+
+function showProjectTabs() {
+    const projectTabs = document.getElementById('projectTabs');
+    
+    if (projectTabsVisible) {
+        projectTabs.style.display = 'none'; // Ẩn các tab nếu chúng đang hiển thị
+        projectTabsVisible = false; // Cập nhật trạng thái
+    } else {
+        projectTabs.style.display = 'block'; // Hiển thị các tab nếu chúng không đang hiển thị
+        projectTabsVisible = true; // Cập nhật trạng thái
     }
 }
-// đói tác
-document.getElementById('partnerForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Ngăn chặn hành động gửi mặc định
-
-    // Lấy giá trị từ các ô input
-    const service = document.getElementById('service').value;
-    const nameService = document.getElementById('name').value; // Tên Dịch Vụ
-    const contactInfo = document.getElementById('contact-info').value;
-    const message = document.getElementById('contact-info').value;
-
-    // Lấy thời gian hiện tại
-    const currentTime = new Date().toLocaleString(); // Định dạng thời gian theo múi giờ hiện tại
-
-    // Tạo một hàng mới trong bảng
-    const table = document.getElementById('partnerTable');
-    const newRow = table.insertRow(table.rows.length); // Thêm hàng mới vào cuối bảng
-
-    // Thêm dữ liệu vào các ô của hàng mới
-    const cell1 = newRow.insertCell(0);
-    const cell2 = newRow.insertCell(1);
-    const cell3 = newRow.insertCell(2); // Thêm ô cho Tên Dịch Vụ
-    const cell4 = newRow.insertCell(3);
-    const cell5 = newRow.insertCell(4); // Thêm ô cho Nội Dung
-    const cell6 = newRow.insertCell(5); // Thêm ô cho Thời Gian
-
-    cell1.innerHTML = table.rows.length - 1; // Cập nhật STT
-    cell2.innerHTML = service; // Dịch vụ hợp tác
-    cell3.innerHTML = nameService; // Tên Dịch Vụ
-    cell4.innerHTML = contactInfo; // Thông tin liên hệ
-    cell5.innerHTML = message; // Nội dung
-    cell6.innerHTML = currentTime; // Thời gian
-
-    // Xóa nội dung ô input sau khi gửi
-    document.getElementById('partnerForm').reset();
-});
-
-function filterPartners() {
-    const filter = document.getElementById("filterType").value.toLowerCase();
-    const table = document.getElementById("partnerTable");
-    const rows = table.getElementsByTagName("tr");
-
-    for (let i = 1; i < rows.length; i++) { // Bắt đầu từ 1 để bỏ qua tiêu đề
-        const cells = rows[i].getElementsByTagName("td");
-        const service = cells[1].textContent.toLowerCase(); // Lấy nội dung ô dịch vụ cần hợp tác
-        if (filter === "" || service.includes(filter)) {
-            rows[i].style.display = ""; // Hiển thị hàng
-        } else {
-            rows[i].style.display = "none"; // Ẩn hàng
-        }
-    }
-}
+        
 // ô khiếu nại
 function searchComplaint() {
  const input = document.getElementById('searchComplaint');
