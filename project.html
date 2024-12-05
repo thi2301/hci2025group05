@@ -591,74 +591,8 @@ function openProjectTab(evt, tabName) {
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active"partForm').addEventListener('submit', function(event) {
             event.preventDefault(); // Ngăn chặn hành động gửi mặc định
-
-            // Lấy giá trị từ các ô input
-            const name = document.getElementById('name').value;
-            const contactInfo = document.getElementById('contact-info').value;
-            const noiSong = document.getElementById('noi-song').value;
-            const maTour = document.getElementById('ma-tour').value;
-            const tour = document.getElementById('tour').value;
-
-            // Lấy thời gian hiện tại
-            const currentTime = new Date().toLocaleString();
-
-            // Tạo một hàng mới trong bảng
-            const table = document.getElementById('tourTable').getElementsByTagName('tbody')[0];
-            const newRow = table.insertRow();
-
-            // Thêm dữ liệu vào các ô của hàng mới
-            newRow.innerHTML = `
-                <td></td>
-                <td>${name}</td>
-                <td>${contactInfo}</td>
-                <td>${noiSong}</td>
-                <td>${maTour}</td>
-                <td>${tour}</td>
-                <td>${currentTime}</td>
-            `;
-
-            // Cập nhật lại STT cho tất cả các hàng
-            updateSTT();
-
-            // Xóa nội dung ô input sau khi gửi
-            document.getElementById('partForm').reset();
-        });
-
-        // Hàm cập nhật STT cho tất cả các hàng
-        function updateSTT() {
-            const table = document.getElementById('tourTable').getElementsByTagName('tbody')[0];
-            const rows = table.getElementsByTagName('tr');
-            let stt = 1;
-
-            Array.from(rows).forEach(row => {
-                row.cells[0].textContent = stt++;
-            });
-        }
-
-        // Hàm lọc và tìm kiếm
-        function applyFilters() {
-            const filterType = document.getElementById("filterType").value.toLowerCase();
-            const searchText = document.getElementById("searchPartner").value.toLowerCase();
-            const table = document.getElementById("tourTable");
-            const rows = table.getElementsByTagName("tr");
-
-            Array.from(rows).forEach(row => {
-                if (row.rowIndex === 0) return; // Bỏ qua tiêu đề bảng
-
-                const cells = row.getElementsByTagName("td");
-                const name = cells[1].textContent.toLowerCase();
-                const maTour = cells[4].textContent.toLowerCase();
-                const time = cells[6].textContent.toLowerCase();
-
-                const matchesFilter = filterType === "" || (filterType === "Họ và tên" && name.includes(searchText)) || (filterType === "Mã tour" && maTour.includes(searchText)) || (filterType === "" && time.includes(searchText));
-
-                row.style.display = matchesFilter ? "" : "none"; // Hiển thị hoặc ẩn hàng dựa trên điều kiện
-            });
-
-            // Cập nhật lại STT sau khi lọc
-            updateSTT();
-        }
-        
+    }
+}
 // đói tác
 document.getElementById('partnerForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Ngăn chặn hành động gửi mặc định
