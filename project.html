@@ -273,7 +273,7 @@
             <table></table>
             </div>
         
-            <div id="KhachHang" class="projectTabContent" style="display:none;">
+            <div id="KhachHang" class="projectTabContent" style="display:block;">
             <h4>Khách Hàng Projects</h4>
             <label for="filterType">Lọc</label>
     <select id="filterType" onchange="filterPartners()" class="filter-dropdown">
@@ -684,6 +684,7 @@ function showProjectTabs() {
             }
         }
     }
+        
 // đói tác
 document.getElementById('partnerForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Ngăn chặn hành động gửi mặc định
