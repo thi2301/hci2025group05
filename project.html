@@ -275,39 +275,39 @@
     
              <div id="KhachHang" class="projectTabContent" style="display:none;">
             <h4>Khách Hàng Projects</h4>
-        <label for="fit">Lọc</label>
-            <select id="filt" onchange="filter()" class="filterdropdown">
+    <label for="filterType">Lọc</label>
+            <select id="filterType" onchange="filterPartners()" class="filter-dropdown">
             <option value="">Tất cả</option>
             <option value="Họ và tên">Họ và tên</option>
             <option value="Mã tour">Mã tour</option>
             </select>
-            
-            <input type="text" id="searchPart" class="searchinput" placeholder="Tìm kiếm theo thời gian (VD: 01/01/2024)" onkeyup="searchPart()">
-            
-            <form id="partForm">
+
+            <input type="text" id="searchPartner" class="search-input" placeholder="Tìm kiếm theo thời gian (VD: 01/01/2024)" onkeyup="searchPartner()">
+
+            <form id="partnerForm">
             <label for="name">Họ và tên:</label>
             <input type="text" id="name" name="name" required>
             <br>
-            
+
             <label for="contact-info">Thông tin liên lạc:</label>
             <input type="text" id="contact-info" name="contact-info" placeholder="Thông tin liên lạc" required>
             <br>
-            
+
             <label for="noi-song">Nơi sống:</label>
             <input type="text" id="noi-song" name="noi-song" placeholder="Nơi sống" required>
             <br>
-            
+
             <label for="ma-tour">Mã tour:</label>
             <input type="text" id="ma-tour" name="ma-tour" placeholder="Mã tour" required>
             <br>
-            
+
             <label for="tour">Tour:</label>
             <input type="text" id="tour" name="tour" placeholder="Tour" required>
             <br>
-            
-            <button type="sub">Đặt tour</button>
+
+            <button type="submit">Đặt tour</button>
             </form>
-            
+
             <table id="tourTable">
             <tr>
                 <th>STT</th>
@@ -613,101 +613,79 @@ function showProjectTabs() {
 }
         
 // Khách hàng
-  document.getElementById('partForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Ngăn chặn hành động gửi mặc định
+    document.getElementById('partnerForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Ngăn chặn hành động gửi mặc định
 
-    // Lấy giá trị từ các ô input
-    const name = document.getElementById('name').value;
-    const contactInfo = document.getElementById('contact-info').value;
-    const noiSong = document.getElementById('noi-song').value;
-    const maTour = document.getElementById('ma-tour').value;
-    const tour = document.getElementById('tour').value;
+        // Lấy giá trị từ các ô input
+        const name = document.getElementById('name').value;
+        const contactInfo = document.getElementById('contact-info').value;
+        const noiSong = document.getElementById('noi-song').value;
+        const maTour = document.getElementById('ma-tour').value;
+        const tour = document.getElementById('tour').value;
 
-    // Lấy thời gian hiện tại
-    const currentTime = new Date().toLocaleString();
+        // Lấy thời gian hiện tại
+        const currentTime = new Date().toLocaleString();
 
-    // Tạo một hàng mới trong bảng
-    const table = document.getElementById('tourTable');
-    const tbody = table.getElementsByTagName('tbody')[0] || table; // Hỗ trợ khi không có thẻ tbody
-    const newRow = tbody.insertRow(); // Thêm hàng mới vào cuối bảng
+        // Tạo một hàng mới trong bảng
+        const table = document.getElementById('tourTable');
+        const newRow = table.insertRow(table.rows.length); // Thêm hàng mới vào cuối bảng
 
-    // Thêm dữ liệu vào các ô của hàng mới
-    newRow.innerHTML = `
-        <td></td>
-        <td>${name}</td>
-        <td>${contactInfo}</td>
-        <td>${noiSong}</td>
-        <td>${maTour}</td>
-        <td>${tour}</td>
-        <td>${currentTime}</td>
-    `;
+        // Thêm dữ liệu vào các ô của hàng mới
+        const cell1 = newRow.insertCell(0);
+        const cell2 = newRow.insertCell(1);
+        const cell3 = newRow.insertCell(2);
+        const cell4 = newRow.insertCell(3);
+        const cell5 = newRow.insertCell(4);
+        const cell6 = newRow.insertCell(5);
+        const cell7 = newRow.insertCell(6);
 
-    // Cập nhật lại STT sau khi thêm hàng
-    updateSTT();
+        cell1.innerHTML = table.rows.length - 1;
+        cell2.innerHTML = name;
+        cell3.innerHTML = contactInfo;
+        cell4.innerHTML = noiSong;
+        cell5.innerHTML = maTour;
+        cell6.innerHTML = tour;
+        cell7.innerHTML = currentTime;
 
-    // Xóa nội dung ô input sau khi gửi
-    document.getElementById('partForm').reset();
-});
+        // Xóa nội dung ô input sau khi gửi
+        document.getElementById('partnerForm').reset();
+    });
 
-function updateSTT() {
-    const table = document.getElementById('tourTable');
-    const rows = table.getElementsByTagName('tr');
-    let stt = 1;
+    function filterPartners() {
+        const filter = document.getElementById("filterType").value.toLowerCase();
+        const table = document.getElementById("tourTable");
+        const rows = table.getElementsByTagName("tr");
 
-    for (let i = 1; i < rows.length; i++) { // Bỏ qua tiêu đề (hàng đầu tiên)
-        if (rows[i].style.display !== "none") { // Chỉ cập nhật STT cho các hàng hiển thị
-            rows[i].cells[0].textContent = stt++;
-        }
-    }
-}
+        for (let i = 1; i < rows.length; i++) { // Bắt đầu từ 1 để bỏ qua tiêu đề
+            const cells = rows[i].getElementsByTagName("td");
+            const name = cells[1].textContent.toLowerCase();
+            const maTour = cells[4].textContent.toLowerCase();
 
-function filterPartners() {
-    const filter = document.getElementById("filt").value.toLowerCase();
-    const table = document.getElementById("tourTable");
-    const rows = table.getElementsByTagName("tr");
-
-    for (let i = 1; i < rows.length; i++) { // Bỏ qua tiêu đề
-        const cells = rows[i].getElementsByTagName("td");
-        const name = cells[1].textContent.toLowerCase();
-        const maTour = cells[4].textContent.toLowerCase();
-
-        // Hiển thị hoặc ẩn dựa trên điều kiện lọc
-        if ((filter === "họ và tên" && name.includes(filter)) || 
-            (filter === "mã tour" && maTour.includes(filter)) || 
-            filter === "") {
-            rows[i].style.display = ""; // Hiển thị hàng
-        } else {
-            rows[i].style.display = "none"; // Ẩn hàng
+            if ((filter === "họ và tên" && name.includes(filter)) || (filter === "mã tour" && maTour.includes(filter)) || filter === "") {
+                rows[i].style.display = ""; // Hiển thị hàng
+            } else {
+                rows[i].style.display = "none"; // Ẩn hàng
+            }
         }
     }
 
-    // Cập nhật lại STT sau khi lọc
-    updateSTT();
-}
+    function searchPartner() {
+        const searchText = document.getElementById("searchPartner").value.toLowerCase();
+        const table = document.getElementById("tourTable");
+        const rows = table.getElementsByTagName("tr");
 
-function searchPart() {
-    const searchText = document.getElementById("searchPart").value.toLowerCase();
-    const table = document.getElementById("tourTable");
-    const rows = table.getElementsByTagName("tr");
+        for (let i = 1; i < rows.length; i++) { // Bắt đầu từ 1 để bỏ qua tiêu đề
+            const cells = rows[i].getElementsByTagName("td");
+            const time = cells[6].textContent.toLowerCase(); // Lấy nội dung ô Thời gian
 
-    for (let i = 1; i < rows.length; i++) { // Bỏ qua tiêu đề
-        const cells = rows[i].getElementsByTagName("td");
-        const time = cells[6].textContent.toLowerCase(); // Lấy nội dung ô Thời gian
-
-        // Hiển thị hoặc ẩn dựa trên tìm kiếm
-        if (time.includes(searchText)) {
-            rows[i].style.display = ""; // Hiển thị hàng
-        } else {
-            rows[i].style.display = "none"; // Ẩn hàng
+            if (time.includes(searchText)) {
+                rows[i].style.display = ""; // Hiển thị hàng
+            } else {
+                rows[i].style.display = "none"; // Ẩn hàng
+            }
         }
     }
-
-    // Cập nhật lại STT sau khi tìm kiếm
-    updateSTT();
-}
-
-
-        
+  
 // ô khiếu nại
 function searchComplaint() {
  const input = document.getElementById('searchComplaint');
