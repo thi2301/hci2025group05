@@ -275,6 +275,32 @@
         
             <div id="KhachHang" class="projectTabContent" style="display:none;">
             <h4>Khách Hàng Projects</h4>
+                         <label for="filterType">Lọc</label>
+<select id="filterType" onchange="filterPartners()" class="filter-dropdown">
+    <option value="">Tất cả</option>
+    <option value="Hợp tác chiến lược">Hợp tác chiến lược</option>
+    <option value="Hợp tác lâu dài">Hợp tác lâu dài</option>
+</select>
+
+<input type="text" id="searchPartner" class="search-input" placeholder="Tìm kiếm theo thời gian (VD: 01/01/2024)" onkeyup="searchPartner()">
+            
+            <form id="partnerForm">
+                <label for="service">Dịch vụ hợp tác:</label>
+                <select id="service" name="service" required>
+                    <option value="Hợp tác chiến lược">Hợp tác chiến lược</option>
+                    <option value="Hợp tác lâu dài">Hợp tác lâu dài</option>
+                </select>
+                <br>
+                <label for="name">Họ và tên:</label>
+                <input type="text" id="name" name="name" required>
+                <br>
+                <label for="contact-info">Thông tin liên lạc:</label>
+                <input type="text" id="contact-info" name="contact-info" placeholder="Thông tin liên lạc" required>
+                <br>
+                <label for="message">Ghi chú:</label>
+                <input type="text" id="contact-info" name="contact-info" placeholder="Ghi chú" required>
+                <br>
+                <button type="submit">Khách hàng</button>
             <table id="tourTable">
          	<tr>
                     <th>STT</th>
