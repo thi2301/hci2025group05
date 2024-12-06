@@ -10,6 +10,10 @@
     z-index: 1000; /* Đảm bảo header nằm trên các phần tử khác */
 }
 
+.body{
+    position: relative;
+}
+
 .menubar{
     flex: 10;
     display: flex;
@@ -494,33 +498,137 @@ footer{
     font-weight: 600;
 }
 
-.vemaybay{
-    position: relative;
-    top: 119px;
+/* --------------------trang Vé Máy Bay----------------------- */
+.banner-vemaybay{
+    background-image: url('./img/img_Project/img-page-vemaybay/maybay.jpg');
+    background-position: center; /*Căn giữa ảnh*/
+    background-repeat: no-repeat; /*Không lặp lại ảnh */
+    background-size: cover;
     width: 100vw;
     height: 60vh;
-    /* background-color: aqua; */
-    display: flex;
-}
-
-.box-sale-vemaybay{
     position: relative;
-    flex: 7;
-    margin: 7rem 0 0 25rem;
-}
-
-.box-slide-sale-vemaybay{
-    flex: 5;
-}
-
-.box-search-chuyenbay{
-    width: 60vw;
-    height: 40vh;
-    background-color: aqua;
-    margin: 0 auto 2rem;
+    transform: translateY(7rem);
 
 }
 
-.box-search-chuyenbay .box-search{
-    
+.banner-vemaybay h3{
+    position: absolute;
+    margin: 2rem 10rem;
+    color: #fff;
+    font-weight: 500;
+}
+
+.container-vemaybay{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem 10rem;
+    text-align: center;
+    padding: .5rem 2rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+.container-vemaybay p{
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.box_from-to,
+.box_time,
+.box_search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #e1d8d8;
+    padding: 0 1rem;
+    margin: 0;
+    width: 100%;
+}
+
+
+.box_from-to i{
+    padding: .7rem;
+    background-color: coral;
+    color: #fff;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.departure-date,
+.return-day{
+    padding: 0 1rem;
+}
+
+.box_search{
+    background-color: coral;
+    color: #ffffff;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    margin-left: 2rem;
+}
+
+.titles{
+    position: relative;
+    margin: 8rem 15rem 1rem;
+    color: #000;
+}
+#voucher span{
+    color: #FF3366;
+}
+.box_voucher{
+    position: relative;
+    margin-top: 9rem;
+    width: 70vw;
+    margin: 1rem 15rem 5rem;
+    display: flex;
+    white-space: nowrap; /* Ngăn không cho các phần tử bị ngắt dòng */
+    overflow-x: auto;
+}
+
+.card_voucher{
+    position: relative;
+    display: flex;
+    border: 1px solid #FF3366;
+    border-radius: 1rem;
+    padding: .5rem;
+    margin-right: 1rem;
+    background-color: #FFF5F7
+}
+
+.content_voucher{
+    margin-right: 1rem;
+    padding-right: 1rem;
+    border-right: 1px dashed #FF3366;
+    margin-right: 1rem;
+}
+
+.content_voucher p:nth-child(4){
+    color: #FF3366;
+}
+.content_voucher p{
+    margin: 0;
+}
+
+.code{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.code p{
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0;
+}
+.code h4{
+    color: #FF3366;
+}
+.code button{
+    color:#fff ;
+    background-color: #FF3366;
+    border: none;
+    border-radius: 0.5rem;
 }
