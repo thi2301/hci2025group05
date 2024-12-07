@@ -277,6 +277,8 @@ input{
     align-items: center; /* Căn giữa theo chiều dọc */
 }
 
+
+/* ---------------trang Khách Sạn--------------------------------- */
 .home-khach-san {
     width: 100vw;
     height: 90vh;
@@ -284,6 +286,7 @@ input{
     background-size: cover; /* Đảm bảo ảnh phủ toàn bộ phần tử */
     background-position: center; /* Căn giữa ảnh nền */
     background-repeat: no-repeat; /* Ngăn ảnh nền bị lặp lại */
+
 }
 
 .box-sale h2 span{
@@ -319,7 +322,8 @@ input{
     align-items: center;
     padding: 0;
     margin: auto;
-
+    background-color: #fff;
+    border-radius: 1rem;
 }
 
 .information i{
@@ -377,6 +381,8 @@ input{
     position: absolute;
     display: inline;
     transform: translateY(5rem);
+    background-color: #fff;
+    border-radius: 1rem;
 }
 
 
@@ -402,7 +408,8 @@ input{
     display: flex;
     position: absolute;
     transform: translateY(8rem);
-
+    background-color: #fff;
+    border-radius: 1rem;
 }
 
 .information .col-4{
@@ -423,7 +430,6 @@ input{
 
 
 .box-sale, .box-sale-300k, .box-hot{
-    /* background-color: chocolate; */
     margin: 5rem 10rem;
 }
 
@@ -632,3 +638,121 @@ footer{
     border: none;
     border-radius: 0.5rem;
 }
+
+.container_chuyenbaytot{
+    width: 100vw;
+    background-color: #FFF5F7 ;
+    position: relative;
+}
+
+.box-chuyenbaytot{
+    width: 70vw;
+    margin: 0 15rem 0;
+}
+
+.box-chuyenbaytot .tab {
+    overflow: hidden;
+    background-color: #FFF5F7;
+    margin: 0 0 1rem;
+}
+
+.box-chuyenbaytot .tab button {
+    background-color: inherit;
+    float: left;
+    border: 1px solid #000000 ;
+    margin-right:1rem;
+    outline: none;
+    cursor: pointer;
+    padding: .5rem .8rem;
+    border-radius: .7rem;
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+.box-chuyenbaytot .tab button:hover {
+    background-color: #ddd;
+}
+
+.box-chuyenbaytot .tab button.active {
+    background-color: #ccc;
+}
+
+.box-chuyenbaytot .tab button img{
+    width: 1rem;
+    height: 1rem;
+    margin-bottom: .3rem;
+}
+ 
+.box-chuyenbaytot .tabcontent {
+    display: none;
+    border-top: none;
+}
+
+.container-cards-chuyenbay{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.card-chuyenbay{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    height: 16rem;
+    background-color: #f4f4f0;
+    padding: 1rem;
+    border-radius: .5rem;
+    margin-right: 1rem;
+    cursor: pointer;
+
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1), 0 3px 5px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-chuyenbay:hover {
+    /* Tăng bóng và phóng to nhẹ khi hover */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.card-chuyenbay h4 img{
+    width: 2rem;
+    height: 2rem;
+    padding: .4rem;
+    margin-bottom: .3rem;
+}
+
+.card-chuyenbay .price p{
+    margin: 0;
+    right: 0;
+    text-align: end;
+}
+
+.card-chuyenbay .price p:nth-child(1){
+    text-decoration: line-through;
+    font-weight: lighter;
+    font-size: 1.1rem;
+}
+.card-chuyenbay .price p:nth-child(2){
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+.card-chuyenbay .price p:nth-child(3){
+    font-weight: lighter;
+    font-size: 1.1rem;
+}
+
+.card-chuyenbay .price{
+    position: absolute;
+    right: .5rem;
+    bottom: .5rem;
+}
+
+/* ---------------------------- */
+/* .container-sale h3{
+    position: absolute;
+    margin: 2rem 10rem;
+    color: #fff;
+    font-weight: 500;
+} */
