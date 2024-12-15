@@ -92,10 +92,38 @@
                 </ul>
             </nav>
 
-            <div class="holine">
-                <div class="phone"><a href=""><i class="fa-solid fa-phone"></i> 1900 XXXX</a></div>
-                <p><i class="fa-regular fa-clock"></i> 24/7</p>
-            </div>
+            <div class="backdrop" id="backdrop"></div>
+            <!-- -----------sidebar----------------- --> 
+            <div class="sidebar-open">
+                <i class="fa-solid fa-bars" onclick="openNav()"></i>
+            </div> 
+            <div class="sidebar">
+                <div class="container-sidebar">
+                    <div class="logo-sidebar">
+                        <img src="../img/Logo_Web-Project.png" alt="">
+                        <Span>Travel Everywhre </Span>
+                        <i class="fa-solid fa-circle-xmark" onclick="closeNav()"></i>
+                    </div>
+                    <div class="sidebar-menu">
+                        <ul>
+                            <li><a href="./project-group.html"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+                            <li><a href=""><i class="fa-solid fa-heart"></i> Yêu Thích</a></li>
+                            <li><a href=""><i class="fa-solid fa-suitcase-rolling"></i> Tour</a></li>
+                            <li><a href="./vemaybay.html"><i class="fa-solid fa-plane"></i> Vé Máy Bay</a></li>
+                            <li><a href=""><i class="fa-solid fa-user"></i> Khách Hàng</a></li>
+                            <li><a href=""><i class="fa-solid fa-users"></i> Đối Tác</a></li>
+                            <li><a href=""><i class="fa-solid fa-bug"></i> Khiếu Nại</a></li>
+                            <li><a href=""><i class="fa-solid fa-book"></i> Cẩm Nang Du Lịch</a></li>
+                            <li><a href=""><i class="fa-solid fa-briefcase"></i> Tuyển Dụng</a></li>
+                            <li><a href=""><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+                            <li><a href=""><i class="fa-solid fa-money-check-dollar"></i> Trở Thành Đối Tác Liên Kết</a></li>
+                            <li><a href=""><i class="fa-solid fa-download"></i> Tải Ứng Dụng</a></li>
+                            <li><a href=""><i class="fa-solid fa-share-nodes"></i> Giới Thiệu Nhận Quà</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>        
+
         </div>
     </header>
 
@@ -521,6 +549,7 @@ loginLink.addEventListener("click", (event) => {
         evt.currentTarget.className += " active";
         }
     </script>
+    <script src="../script/script-project-group/script.js"></script>
     
 </body>
 </html>

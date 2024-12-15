@@ -1,4 +1,7 @@
 
+* {
+    box-sizing: border-box;
+}
 
 .header{
     display: flex;
@@ -7,7 +10,7 @@
     background-color:#FFFCF5;
     position: fixed;
     width: 100%;
-    z-index: 1000; /* Đảm bảo header nằm trên các phần tử khác */
+    z-index: 998; /* Đảm bảo header nằm trên các phần tử khác */
 }
 
 .body{
@@ -90,10 +93,9 @@
 }
 
 #myBtn-login:hover{
-    font-size: 1.5rem;
-    padding: 0.7rem;
+    font-size: 1.1rem;
     border-radius: 1.2rem;
-    color: darkblue;
+    color: coral;
 }
 
 #myBtn-register{
@@ -101,10 +103,9 @@
 }
 
 #myBtn-register:hover{
-    font-size: 1.5rem;
-    padding: 0.7rem;
+    font-size: 1.11rem;
     border-radius: 1.2rem;
-    color: darkblue;
+    color: coral;
 }
 
 .modal {
@@ -249,28 +250,134 @@ input{
     text-decoration: underline;
 }
 
-.holine{
-    flex: 2;
+/* ------------------sidebar-------------------- */
+
+.sidebar-open {
     position: absolute;
-    display: inline;
-    justify-content: center;
+    right: 1rem;
+    cursor: pointer;
+}
+
+.sidebar-open i{
+    font-size: 3rem;
+}
+
+/* Sidebar mặc định ẩn và nằm ngoài màn hình bên phảiphải */
+.sidebar {
+    position: fixed; /* Giữ sidebar cố định */
+    top: 0; /* Nằm trên cùng */
+    right: -350px; /* Bắt đầu ở ngoài màn hình */
+    height: 100%;
+    width: 250px;
+    background-color: #fff8e1; /* Màu sidebar */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Đổ bóng nhẹ */
+    z-index: 1000; /* Đảm bảo nằm trên mọi thành phần khác */
+    transition: right 0.3s ease; /* Hiệu ứng trượt */
+  }
+  
+  /* Khi sidebar mở */
+  .sidebar.open {
+    right: 0; /* Hiện sidebar vào màn hình */
+  }
+  
+  /* Backdrop làm mờ trang chính */
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Nền tối mờ */
+    opacity: 0;
+    visibility: hidden;
+    z-index: 999; /* Dưới sidebar */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  
+  /* Khi backdrop mở */
+  .backdrop.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Ngăn cuộn trang khi mở sidebar */
+  body.no-scroll {
+    overflow: hidden;
+  }
+
+.container-sidebar {
+    position: absolute;
+    right: 0;
+    width: 22rem;
+    background-color: #f9f0d9;
+}
+
+.container-sidebar .logo-sidebar{
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    right: 5rem;
+    background-color: #FFFCF5;
+    /* backdrop-filter: blur(20px); */
 }
 
-.phone{
+.container-sidebar .logo-sidebar img{
+    width: 5.55rem;
+    height: 6rem;
+}
+
+.container-sidebar .logo-sidebar span{
     font-size: 2rem;
-}
-
-.phone a {
-    text-decoration: none;
-    color: coral;
-}
-
-.holine p{
+    font-weight: 600;
     text-align: center;
-    font-size: 1rem;
 }
+
+.container-sidebar .logo-sidebar i{
+    border-radius: 50%;
+    font-size: 3rem;
+    background-color: coral;
+    cursor: pointer;
+}
+
+.sidebar-menu {
+    position: relative;
+    overflow-y: auto;
+    height: calc(100vh - 80px); /* Trừ chiều cao logo-sidebar hoặc các phần khác */
+}
+
+.sidebar-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu ul li{
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+.sidebar-menu ul li:hover{
+    background-color: coral;
+}
+
+.sidebar-menu ul li a{
+    text-decoration: none;
+    display: block; /* Biến <a> thành khối để nó chiếm toàn bộ chiều rộng của <li> */
+}
+
+.sidebar-menu ul li a{
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.sidebar-menu ul li a i{
+    color: #00b6f3;
+}
+
+
+/* --------------------------- */
+
 
 .container{
     display: flex;
@@ -619,20 +726,6 @@ input{
 }
 
 
-/* ------------------------- */
-footer{
-    background-color: #f9f0d9;
-    width: 100vw;
-    height: 30vh;
-    text-align: center;
-
-}
-
-.footer-c{
-    font-size: 1.2rem;
-    font-weight: 600;
-}
-
 /* --------------------trang Vé Máy Bay----------------------- */
 .banner-vemaybay{
     background-image: url('./img/img_Project/img-page-vemaybay/maybay.jpg');
@@ -887,3 +980,46 @@ footer{
     color: #fff;
     font-weight: 500;
 } */
+
+/* ------------------------- */
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f0d9;
+    width: 100vw;
+    height: 30vh;
+    text-align: center;
+
+}
+
+.footer-info{
+    margin-left: 3rem;
+}
+
+.footer-c{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.holine{
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    right: 5rem;
+    margin-right: 3rem;
+}
+
+.phone{
+    font-size: 2rem;
+}
+
+.phone a {
+    text-decoration: none;
+    color: coral;
+}
+
+.holine p{
+    text-align: center;
+    font-size: 1rem;
+}
