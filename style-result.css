@@ -1,0 +1,60 @@
+#title-result{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.cards{
+    display: flex;
+    position: relative;
+    justify-content: space-between; /* Dàn đều khoảng cách giữa các card */
+}
+
+.card{
+    width: 16%;
+    margin: 1.5%;
+    border: 1px solid #999898;
+    padding: .5rem;
+    border-radius: 1rem;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);;
+    height: 100%;
+}
+
+.card:hover{
+    transform: translateY(-.5rem);
+    transition: .5s;
+}
+
+.card .name{
+    border-bottom: 1px solid #999898;
+    text-align: center;
+}
+
+
+
+.card .name img{
+    width: 10rem;
+    height: 13rem;
+    border-radius: 50%;
+}
+
+.card .work{
+    border-bottom: 1px solid #999898;
+    text-align: center;
+    
+}
+
+.work .work-group ul,
+.work .work-project ul{
+    display: block;
+    width: 100%;
+}
+
+.work .work-group ul li,
+.work .work-project ul li{
+    margin-bottom: .5rem;
+}
+
+
+.card .evaluate{
+    text-align: center;
+}
