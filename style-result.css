@@ -16,7 +16,8 @@
     padding: .5rem;
     border-radius: 1rem;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .card:hover{
@@ -30,7 +31,6 @@
 }
 
 
-
 .card .name img{
     width: 10rem;
     height: 13rem;
@@ -40,7 +40,7 @@
 .card .work{
     border-bottom: 1px solid #999898;
     text-align: center;
-    
+    flex: 1;
 }
 
 .work .work-group ul,
