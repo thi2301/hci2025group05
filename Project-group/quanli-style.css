@@ -988,4 +988,159 @@ a {
     font-size: 1rem;
     line-height: 1.6;
 }
-        
+.tab-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333; /* Màu chữ */
+  text-align: left; /* Căn trái tiêu đề */
+  margin-left: 5cm; /* Dịch sang trái 5 cm */
+}
+
+.complaint-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px; /* Giới hạn chiều rộng */
+  margin-bottom: 20px;
+  margin-left: 5cm; /* Dịch sang trái 5 cm */
+}
+
+.complaint-form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.complaint-form input,
+.complaint-form textarea {
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc; /* Đường viền */
+  border-radius: 5px; /* Bo góc */
+  font-size: 16px;
+  transition: border-color 0.3s; /* Hiệu ứng chuyển tiếp */
+}
+
+.complaint-form input:focus,
+.complaint-form textarea:focus {
+  border-color: #007bff; /* Đổi màu viền khi focus */
+  outline: none; /* Bỏ outline mặc định */
+}
+
+.complaint-form button {
+  padding: 12px;
+  background-color: #007bff; /* Màu nền nút */
+  color: white; /* Màu chữ nút */
+  border: none;
+  border-radius: 5px; /* Bo góc */
+  cursor: pointer; /* Con trỏ khi hover */
+  font-size: 16px;
+  transition: background-color 0.3s; /* Hiệu ứng chuyển tiếp */
+}
+
+.complaint-form button:hover {
+  background-color: #0056b3; /* Đổi màu khi hover */
+}
+
+.filter-container {
+  display: flex;
+  justify-content: flex-start; /* Căn trái các phần tử lọc */
+  margin-bottom: 20px;
+  margin-left: 5cm; /* Dịch sang trái 5 cm */
+}
+
+.filter-dropdown,
+.search-input {
+  padding: 10px;
+  margin-right: 10px; /* Khoảng cách giữa các phần tử */
+  border: 1px solid #ccc; /* Đường viền */
+  border-radius: 5px; /* Bo góc */
+  font-size: 16px;
+}
+
+#searchButton {
+  padding: 10px 15px; /* Padding cho nút */
+  background-color: #242a32; /* Màu nền nút */
+  color: white; /* Màu chữ nút */
+  border: none;
+  border-radius: 5px; /* Bo góc */
+  cursor: pointer; /* Con trỏ khi hover */
+  font-size: 16px;
+  transition: background-color 0.3s; /* Hiệu ứng chuyển tiếp */
+}
+
+#searchButton:hover {
+  background-color: #4aa785; /* Đổi màu khi hover */
+}
+
+.list-title {
+  font-size: 24px;
+  margin: 20px 0 10px 0;
+  color: #333; /* Màu chữ */
+  text-align: left; /* Căn trái tiêu đề danh sách */
+  margin-left: 5cm; /* Dịch sang trái 5 cm */
+}
+
+.complaint-table {
+  width: 100%;
+  border-collapse: collapse; /* Gộp các đường viền */
+  margin-left: 5cm; /* Dịch sang trái 5 cm */
+}
+
+.complaint-table th,
+.complaint-table td {
+  padding: 12px;
+  text-align: left; /* Căn trái */
+  
+  border-bottom: 1px solid #ddd; /* Đường viền dưới cho các ô */
+}
+
+.complaint-table th {
+  background-color: #f2f2f2; /* Màu nền cho tiêu đề bảng */
+  font-weight: bold; /* Chữ đậm cho tiêu đề */
+}       
+.complaint-table {
+  width: 100%;
+  border-collapse: collapse; /* Gộp các đường viền */
+  margin-left: 5cm; /* Dịch sang trái 5 cm */
+  margin-top: 20px; /* Khoảng cách trên bảng */
+}
+
+.complaint-table th,
+.complaint-table td {
+  padding: 12px;
+  text-align: left; /* Căn trái */
+  border: 1px solid #ddd; /* Đường viền */
+}
+
+.complaint-table th {
+  background-color: #828485; /* Màu nền cho tiêu đề bảng */
+  color: rgb(0, 0, 0); /* Màu chữ tiêu đề */
+  font-weight: bold; /* Chữ đậm cho tiêu đề */
+}
+
+.complaint-table tr:nth-child(even) {
+  background-color: #f2f2f2; /* Màu nền cho hàng chẵn */
+}
+
+.complaint-table tr:hover {
+  background-color: #877f7f; /* Màu nền khi hover hàng */
+}
+
+.complaint-table td {
+  transition: background-color 0.3s; /* Hiệu ứng chuyển tiếp cho ô */
+}
+
+.complaint-table button {
+  padding: 5px 10px; /* Padding cho nút */
+  background-color: #ffffff; /* Màu nền nút */
+  color: white; /* Màu chữ nút */
+  border: none;
+  border-radius: 5px; /* Bo góc */
+  cursor: pointer; /* Con trỏ khi hover */
+  font-size: 14px;
+  transition: background-color 0.3s; /* Hiệu ứng chuyển tiếp */
+}
+
+.complaint-table button:hover {
+  background-color: #218838; /* Đổi màu khi hover nút */
+}
