@@ -33,7 +33,7 @@ ul {
     padding-bottom: 0;
 }
 li {
-    margin: 0 1.2rem; /* Khoảng cách giữa các mục */
+    margin: 0 0.5rem; /* Khoảng cách giữa các mục */
 
 }
 .navbar ul li a{
