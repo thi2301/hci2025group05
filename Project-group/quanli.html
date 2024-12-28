@@ -1,0 +1,611 @@
+<!doctype html>
+<!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Responsive Sidebar Menu | CodingLab</title>
+    <link rel="stylesheet" href="quanli-style.css" >    
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+  
+  <div class="intro-modal">
+  <div class="intro-modal__overlay"></div>
+  <div class="intro-modal__content">
+    <button class="intro-modal__close-btn" aria-label="Close">&times;</button>
+    <h2 class="intro-modal__title">Chào mừng bạn!</h2>
+    <p class="intro-modal__message">
+      Đây là website quản lý về tour, đặt phòng khách sạn, đặt xe, đặt vé máy bay. 
+      Thống kê, chỉnh sửa tour hiển thị, giải quyết các khiếu nại của khách hàng về dịch vụ.
+    </p>
+  </div>
+</div>
+
+    <div class="sidebar">
+      <div class="logo-details">
+        
+        <div class="logo_name">TRAVELINGEVERYWHERE</div>
+        <i class="bx bx-menu" id="btn"></i>
+      </div>
+      <ul class="nav-list">
+        <li class="tab-link" data-target="user-tab">
+          <a href="#">
+            <i class="bx bx-user"></i>
+            <span class="links_name">User</span>
+          </a>
+          <span class="tooltip">User</span>
+        </li>
+        <li>
+          <i class="bx bx-search"></i>
+          <input type="text" placeholder="Search..." />
+          <span class="tooltip">Search</span>
+        </li>
+        <li class="tab-link" data-target="home-tab">
+          <a href="#">
+            <i class="bx bx-grid-alt"></i>
+            <span class="links_name">Trang chủ</span>
+          </a>
+          <span class="tooltip">Trang chủ</span>
+        </li>
+        <!-- QUAN LI -->
+        <li class="manage-menu">
+          <a href="#">
+            <i class="fa-solid fa-bars-progress"></i>
+            <span class="links_name">Quản lí</span>
+          </a>
+          <span class="tooltip">Quản lí</span>
+          <ul class="submenu">
+            <li class="tab-link" data-target="create-tour-tab">
+              <a href="#">Tạo tour mới</a>
+            </li>
+            <li class="tab-link" data-target="edit-tour-tab">
+              <a href="#">Chỉnh sửa</a>
+            </li>
+            <li class="tab-link" data-target="delete-tour-tab">
+              <a href="#">Xóa Tour</a>
+            </li>
+          </ul>
+        </li>
+        <!-- THONG KE -->
+        <li class="tab-link" data-target="stats-tab">
+          <a href="#">
+            <i class="bx bx-pie-chart-alt-2"></i>
+            <span class="links_name">Thống kê</span>
+          </a>
+          <span class="tooltip">Thống kê</span>
+        </li>
+        <li class="tab-link" data-target="complaints-tab">
+          <a href="#">
+            <i class="fa-solid fa-message"></i>
+            <span class="links_name">Khiếu Nại</span>
+          </a>
+          <span class="tooltip">Khiếu Nại</span>
+        </li>
+        <li class="tab-link" data-target="customers-tab">
+          <a href="#">
+            <i class="fa-solid fa-person"></i>
+            <span class="links_name">Khách hàng</span>
+          </a>
+          <span class="tooltip">Khách hàng</span>
+        </li>
+        
+        <li class="tab-link" data-target="settings-tab">
+          <a href="#">
+            <i class="bx bx-cog"></i>
+            <span class="links_name">Setting</span>
+          </a>
+          <span class="tooltip">Setting</span>
+        </li>
+        <li class="profile tab-link" data-target="profile-tab">
+          <div class="profile-details">
+            <img src="profile.jpg" alt="profileImg" />
+            <div class="name_job">
+              <div class="name">Họ và Tên</div>
+              <div class="job">chức vụ</div>
+            </div>
+          </div>
+          <i class="bx bx-log-out" id="log_out"></i>
+        </li>
+      </ul>
+    </div>
+    <div class="tab-content">
+      <!-- USER -->
+      <div id="user-tab" class="tab-panel">
+        a
+        <div class="user-profile">
+          <div class="user-profile__image">
+            <img src="placeholder.jpg" alt="Profile Picture" />
+          </div>
+          <div class="user-profile__info">
+            <h2 class="user-profile__info-title">Thông tin nhân viên</h2>
+            <p class="user-profile__info-item">
+              <strong>Họ và tên:</strong> [Họ và tên]
+            </p>
+            <p class="user-profile__info-item">
+              <strong>Mã nhân viên:</strong> [Mã nhân viên]
+            </p>
+            <p class="user-profile__info-item">
+              <strong>Giới tính:</strong> [Giới tính]
+            </p>
+            <p class="user-profile__info-item">
+              <strong>Điện thoại:</strong> [Điện thoại]
+            </p>
+            <p class="user-profile__info-item">
+              <strong>Số CMND/CCCD:</strong> [Số CMND/CCCD]
+            </p>
+            <p class="user-profile__info-item">
+              <strong>Email:</strong> [Email]
+            </p>
+            <p class="user-profile__info-item">
+              <strong>Nơi sinh:</strong> [Nơi sinh]
+            </p>
+          </div>
+        </div>
+
+        <div class="user-history">
+          <h2 class="user-history__title">Lịch sử việc đã làm</h2>
+          <table class="user-history__table">
+            <thead>
+              <tr>
+                <th>Ngày tháng</th>
+                <th>Loại việc</th>
+                <th>Chi tiết</th>
+                <th>Mức độ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>[Ngày tháng]</td>
+                <td>[Loại việc]</td>
+                <td>[Chi tiết]</td>
+                <td>[Mức độ]</td>
+              </tr>
+              <!-- Add more rows as needed -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="user-schedule">
+          <p class="user-schedule__date">Thứ hai, ngày 1 tháng 1 năm 2024</p>
+          <table class="user-schedule__table">
+            <thead>
+              <tr>
+                <th>Ca</th>
+                <th>Thứ 2</th>
+                <th>Thứ 3</th>
+                <th>Thứ 4</th>
+                <th>Thứ 5</th>
+                <th>Thứ 6</th>
+                <th>Thứ 7</th>
+                <th>Chủ nhật</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Sáng</td>
+                <td>[Nội dung]</td>
+                <td>[Nội dung]</td>
+                <td>[Nội dung]</td>
+                <td>[Nội dung]</td>
+                <td>[Nội dung]</td>
+                <td>[Nội dung]</td>
+                <td>[Nội dung]</td>
+              </tr>
+              <tr>
+                <td>Chiều</td>
+                <td>[Nội dung]</td>
+                <td>[Nội dung]</td>
+                <td>[Nội dung]</td>
+                <td>[Nội dung]</td>
+                <td>[Nội dung]</td>
+                <td>[Nội dung]</td>
+                <td>[Nội dung]</td>
+              </tr>
+              <tr>
+                <td>Tối</td>
+                <td>[Nội dung]</td>
+                <td>[Nội dung]</td>
+                <td>[Nội dung]</td>
+                <td>[Nội dung]</td>
+                <td>[Nội dung]</td>
+                <td>[Nội dung]</td>
+                <td>[Nội dung]</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="home-tab" class="tab-panel active">Trang chủ Content</div>
+      <!-- QUAN LI -->
+       <!-- TẠO TOUR -->
+      <div id="create-tour-tab" class="tab-panel">
+        <main class="add-tour-main-content">
+          <section class="add-tour-form-section">
+            <h2 class="add-tour-form-section__title">Thông Tin Tour</h2>
+            <form class="add-tour-form-section__form">
+              <label for="tour-name" class="add-tour-form-section__label"
+                >Tên Tour</label
+              >
+              <input
+                type="text"
+                id="tour-name"
+                name="tour-name"
+                class="add-tour-form-section__input"
+                placeholder="Nhập tên tour"
+                required
+              />
+
+              <label for="destination" class="add-tour-form-section__label"
+                >Địa Điểm</label
+              >
+              <input
+                type="text"
+                id="destination"
+                name="destination"
+                class="add-tour-form-section__input"
+                placeholder="Nhập địa điểm"
+                required
+              />
+
+              <label for="time" class="add-tour-form-section__label"
+                >Thời Gian</label
+              >
+              <input
+                type="date"
+                id="time"
+                name="time"
+                class="add-tour-form-section__input"
+                required
+              />
+
+              <label for="price" class="add-tour-form-section__label"
+                >Giá</label
+              >
+              <input
+                type="number"
+                id="price"
+                name="price"
+                class="add-tour-form-section__input"
+                placeholder="Nhập giá"
+                required
+              />
+            </form>
+          </section>
+
+          <div class="container">
+            <div class="toolbar">
+              <div class="head">
+                <input
+                  type="text"
+                  placeholder="Filename"
+                  value="untitled"
+                  id="filename"
+                />
+                <select onchange="fileHandle(this.value); this.selectedIndex=0">
+                  <option value="" selected="" hidden="" disabled="">
+                    File
+                  </option>
+                  <option value="new">New file</option>
+                  <option value="txt">Save as txt</option>
+                  <option value="pdf">Save as pdf</option>
+                </select>
+                <select
+                  onchange="formatDoc('formatBlock', this.value); this.selectedIndex=0;"
+                >
+                  <option value="" selected="" hidden="" disabled="">
+                    Format
+                  </option>
+                  <option value="h1">Heading 1</option>
+                  <option value="h2">Heading 2</option>
+                  <option value="h3">Heading 3</option>
+                  <option value="h4">Heading 4</option>
+                  <option value="h5">Heading 5</option>
+                  <option value="h6">Heading 6</option>
+                  <option value="p">Paragraph</option>
+                </select>
+                <select
+                  onchange="formatDoc('fontSize', this.value); this.selectedIndex=0;"
+                >
+                  <option value="" selected="" hidden="" disabled="">
+                    Font size
+                  </option>
+                  <option value="1">Extra small</option>
+                  <option value="2">Small</option>
+                  <option value="3">Regular</option>
+                  <option value="4">Medium</option>
+                  <option value="5">Large</option>
+                  <option value="6">Extra Large</option>
+                  <option value="7">Big</option>
+                </select>
+                <div class="color">
+                  <span>Color</span>
+                  <input
+                    type="color"
+                    oninput="formatDoc('foreColor', this.value); this.value='#000000';"
+                  />
+                </div>
+                <div class="color">
+                  <span>Background</span>
+                  <input
+                    type="color"
+                    oninput="formatDoc('hiliteColor', this.value); this.value='#000000';"
+                  />
+                </div>
+              </div>
+              <div class="btn-toolbar">
+                <button onclick="formatDoc('upload')">
+                  <i class="bx bx-upload"></i>
+                </button>
+                <button onclick="formatDoc('undo')">
+                  <i class="bx bx-undo"></i>
+                </button>
+                <button onclick="formatDoc('redo')">
+                  <i class="bx bx-redo"></i>
+                </button>
+                <button onclick="formatDoc('bold')">
+                  <i class="bx bx-bold"></i>
+                </button>
+                <button onclick="formatDoc('underline')">
+                  <i class="bx bx-underline"></i>
+                </button>
+                <button onclick="formatDoc('italic')">
+                  <i class="bx bx-italic"></i>
+                </button>
+                <button onclick="formatDoc('strikeThrough')">
+                  <i class="bx bx-strikethrough"></i>
+                </button>
+                <button onclick="formatDoc('justifyLeft')">
+                  <i class="bx bx-align-left"></i>
+                </button>
+                <button onclick="formatDoc('justifyCenter')">
+                  <i class="bx bx-align-middle"></i>
+                </button>
+                <button onclick="formatDoc('justifyRight')">
+                  <i class="bx bx-align-right"></i>
+                </button>
+                <button onclick="formatDoc('justifyFull')">
+                  <i class="bx bx-align-justify"></i>
+                </button>
+                <button onclick="formatDoc('insertOrderedList')">
+                  <i class="bx bx-list-ol"></i>
+                </button>
+                <button onclick="formatDoc('insertUnorderedList')">
+                  <i class="bx bx-list-ul"></i>
+                </button>
+                <button onclick="addLink()"><i class="bx bx-link"></i></button>
+                <button onclick="formatDoc('unlink')">
+                  <i class="bx bx-unlink"></i>
+                </button>
+                <button id="show-code" data-active="false">&lt;/&gt;</button>
+              </div>
+            </div>
+
+            <div id="content" contenteditable="true" spellcheck="false">
+              abc
+            </div>
+          </div>
+          <button class="button-a-create-tour" id="createTourButton">
+            Tạo Tour
+          </button>
+
+          <div class="modal" id="passwordModal">
+            <div class="modal-content">
+              <h2>Xác Nhận Mật Khẩu</h2>
+              <input
+                type="password"
+                id="passwordInput"
+                placeholder="Nhập mật khẩu"
+                required
+              />
+              <div>
+                <button class="button-confirm" id="confirmButton">
+                  Xác Nhận Tạo Tour
+                </button>
+                <button class="button-cancel" id="cancelButton">Hủy</button>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+
+      <div id="edit-tour-tab" class="tab-panel">Chỉnh sửa Content</div>
+      <!-- XÓA TOUR -->
+      <div id="delete-tour-tab" class="tab-panel">
+        c
+        <div class="delete-tour-container">
+          <h2 class="delete-tour-header__title">Xóa Tour</h2>
+
+          <!-- Search Bar Section -->
+          <div class="delete-tour-search">
+            <label for="search-bar" class="delete-tour-search__label"
+              >Tìm Tour</label
+            >
+            <div class="delete-tour-search__bar-wrapper">
+              <i class="bx bx-search delete-tour-search__icon"></i>
+              <input
+                type="text"
+                id="search-bar"
+                class="delete-tour-search__input"
+                placeholder="Nhập mã hoặc tên tour"
+              />
+            </div>
+            <ul
+              id="dropdown"
+              class="delete-tour-search__dropdown delete-tour-search__dropdown--hidden"
+            ></ul>
+          </div>
+
+          <!-- Direct Search Input Fields -->
+          <div class="delete-tour-fields">
+            <label for="tour-code" class="delete-tour-fields__label"
+              >Mã Tour</label
+            >
+            <input
+              type="text"
+              id="tour-code"
+              class="delete-tour-fields__input"
+              placeholder="Enter Tour Code"
+            />
+            <label for="tour-name" class="delete-tour-fields__label"
+              >Tên Tour</label
+            >
+            <input
+              type="text"
+              id="tour-name"
+              class="delete-tour-fields__input"
+              placeholder="Enter Tour Name"
+            />
+          </div>
+
+          <!-- Tour Information Table -->
+          <div class="delete-tour-info">
+            <label class="delete-tour-info__label">Thông Tin Tour</label>
+            <table class="delete-tour-info__table">
+              <thead class="delete-tour-info__table-header">
+                <tr>
+                  <th class="delete-tour-info__header-cell">Mã Tour</th>
+                  <th class="delete-tour-info__header-cell">Tên Tour</th>
+                  <th class="delete-tour-info__header-cell">Địa Điểm</th>
+                  <th class="delete-tour-info__header-cell">Giá</th>
+                  <th class="delete-tour-info__header-cell">Chi Tiết</th>
+                </tr>
+              </thead>
+              <tbody id="tour-data" class="delete-tour-info__table-body">
+                <!-- Dynamic Content Here -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Delete Button -->
+          <button id="delete-tour-button" class="delete-tour-action__button">
+            Xóa Tour
+          </button>
+           <div id="delete-modal" class="delete-tour-modal delete-tour-modal--hidden">
+            <div class="delete-tour-modal__content">
+                <h2 class="delete-tour-modal__title">Xác Nhận</h2>
+                <p class="delete-tour-modal__text">Nhập mật khẩu để xác nhận xóa</p>
+                <input type="password" 
+                       id="password" 
+                       class="delete-tour-modal__input" 
+                       placeholder="Nhập mật khẩu">
+                <div class="delete-tour-modal__actions">
+                    <button id="confirm-delete" class="delete-tour-modal__button delete-tour-modal__button--confirm">
+                        Xác Nhận
+                    </button>
+                    <button id="cancel-delete" class="delete-tour-modal__button delete-tour-modal__button--cancel">
+                        Hủy
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tour Article Modal -->
+        <div id="article-modal" class="delete-tour-article-modal delete-tour-article-modal--hidden">
+            <div class="delete-tour-article-modal__content">
+                <h2 class="delete-tour-article-modal__title">Tour Article</h2>
+                <p id="tour-article" class="delete-tour-article-modal__text">Loading...</p>
+                <button id="close-article" class="delete-tour-article-modal__button">Close</button>
+            </div>
+        </div>
+    </div>
+     <div class="review-container">
+        <div class="review-container__content">
+            <p class="review-container__title">Vùng hiển thị bài viết về tour trước khi xóa  </p>
+            
+        </div>
+    </div>
+
+          <!-- Delete Confirmation Modal -->
+          <div
+            id="delete-modal"
+            class="delete-tour-modal delete-tour-modal--hidden"
+          >
+            <div class="delete-tour-modal__content">
+              <h2 class="delete-tour-modal__title">Xác Nhận</h2>
+              <p class="delete-tour-modal__text">
+                Nhập mật khẩu để xác nhận xóa
+              </p>
+              <input
+                type="password"
+                id="password"
+                class="delete-tour-modal__input"
+                placeholder="Nhập mật khẩu"
+              />
+              <div class="delete-tour-modal__actions">
+                <button
+                  id="confirm-delete"
+                  class="delete-tour-modal__button delete-tour-modal__button--confirm"
+                >
+                  Xác Nhận
+                </button>
+                <button
+                  id="cancel-delete"
+                  class="delete-tour-modal__button delete-tour-modal__button--cancel"
+                >
+                  Hủy
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tour Article Modal -->
+          <div
+            id="article-modal"
+            class="delete-tour-article-modal delete-tour-article-modal--hidden"
+          >
+            <div class="delete-tour-article-modal__content">
+              <h2 class="delete-tour-article-modal__title">Tour Article</h2>
+              <p id="tour-article" class="delete-tour-article-modal__text">
+                Loading...
+              </p>
+              <button
+                id="close-article"
+                class="delete-tour-article-modal__button"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="stats-tab" class="tab-panel">Thống kê Content</div>
+      <div id="complaints-tab" class="tab-panel">Khiếu Nại Content</div>
+      <div id="customers-tab" class="tab-panel">Khách hàng Content</div>
+     
+      <div id="settings-tab" class="tab-panel">Settings Content</div>
+      <div id="profile-tab" class="tab-panel">Profile Content</div>
+    </div>
+
+    <script>
+      let sidebar = document.querySelector(".sidebar")
+      let closeBtn = document.querySelector("#btn")
+      let searchBtn = document.querySelector(".bx-search")
+      closeBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("open")
+        menuBtnChange() //calling the function(optional)
+      })
+      searchBtn.addEventListener("click", () => {
+        // Sidebar open when you click on the search iocn
+        sidebar.classList.toggle("open")
+        menuBtnChange() //calling the function(optional)
+      })
+      // following are the code to change sidebar button(optional)
+      function menuBtnChange() {
+        if (sidebar.classList.contains("open")) {
+          closeBtn.classList.replace("bx-menu", "bx-menu-alt-right") //replacing the iocns class
+        } else {
+          closeBtn.classList.replace("bx-menu-alt-right", "bx-menu") //replacing the iocns class
+        }
+      }
+    </script>
+     <script src="../script/script-project-group/quanli.js"></script>
+  </body>
+</html>
