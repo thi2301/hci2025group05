@@ -1,21 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const modal = document.querySelector(".intro-modal")
-    const closeBtn = document.querySelector(".intro-modal__close-btn")
-    const overlay = document.querySelector(".intro-modal__overlay")
-  
-    // Hiển thị modal
-    modal.classList.add("intro-modal--active")
-  
-    // Đóng modal khi nhấn nút x
-    closeBtn.addEventListener("click", () => {
-      modal.classList.remove("intro-modal--active")
-    })
-  
-    // Đóng modal khi nhấn bên ngoài nội dung
-    overlay.addEventListener("click", () => {
-      modal.classList.remove("intro-modal--active")
-    })
-  })
+
   
   /* JavaScript để xử lý submenu */
   
