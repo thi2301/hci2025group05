@@ -15,17 +15,7 @@
   </head>
   <body>
   
-  <div class="intro-modal">
-  <div class="intro-modal__overlay"></div>
-  <div class="intro-modal__content">
-    <button class="intro-modal__close-btn" aria-label="Close">&times;</button>
-    <h2 class="intro-modal__title">Chào mừng bạn!</h2>
-    <p class="intro-modal__message">
-      Đây là website quản lý về tour, đặt phòng khách sạn, đặt xe, đặt vé máy bay. 
-      Thống kê, chỉnh sửa tour hiển thị, giải quyết các khiếu nại của khách hàng về dịch vụ.
-    </p>
-  </div>
-</div>
+ 
 
     <div class="sidebar">
       <div class="logo-details">
@@ -87,21 +77,21 @@
           </a>
           <span class="tooltip">Khiếu Nại</span>
         </li>
-        <li class="tab-link" data-target="stats-tab">
+        <li class="tab-link" data-target="a-tab">
           <a href="#">
             <i class="fa-solid fa-plane"></i>
             <span class="links_name">Vé máy bay</span>
           </a>
           <span class="tooltip">Vé máy bay</span>
         </li>
-        <li class="tab-link" data-target="stats-tab">
+        <li class="tab-link" data-target="b-tab">
           <a href="#">
             <i class="fa-solid fa-car"></i>
             <span class="links_name">Xe di chuyển</span>
           </a>
           <span class="tooltip">Xe di chuyển</span>
         </li>
-        <li class="tab-link" data-target="stats-tab">
+        <li class="tab-link" data-target="c-tab">
           <a href="#">
             <i class="fa-solid fa-hotel"></i>
             <span class="links_name">Phòng khách sạn</span>
@@ -434,7 +424,6 @@
       <div id="edit-tour-tab" class="tab-panel">Chỉnh sửa Content</div>
       <!-- XÓA TOUR -->
       <div id="delete-tour-tab" class="tab-panel">
-        c
         <div class="delete-tour-container">
           <h2 class="delete-tour-header__title">Xóa Tour</h2>
 
@@ -592,7 +581,7 @@
         </div>
       </div>
 
-      <div id="stats-tab" class="tab-panel">Thống kê Content</div>
+      <div id="stats-tab" class="tab-panel">
     <table id="tourTable">
             <thead>
                 <tr>
@@ -692,8 +681,7 @@
             </tbody>
         </table>
     </div>
-      <div id="complaints-tab" class="tab-panel">Khiếu Nại Content</div>
-      <div id="customers-tab" class="tab-panel">Khách hàng Content
+      <div id="customers-tab" class="tab-panel">
         <label for="filterType">Lọc</label>
             <select id="filterType" onchange="filterPartners()" class="filter-dropdown">
             <option value="">Tất cả</option>
