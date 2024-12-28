@@ -12,15 +12,13 @@ body{
 }
 .content-home{
     text-align: center;
-    padding: 2.5rem;
+    padding: .5rem;
     margin: 0;
-    font-size: 2.5rem;
-    padding: 5rem;
+    font-size: 2rem;
 }
 .content-home h1, p{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-
 
 
 ul {
@@ -90,6 +88,7 @@ li {
     align-items: center;
     z-index: 999;
     padding: 0;
+    height: 15vh;
 }
 #header {
     position: relative;
@@ -98,7 +97,7 @@ li {
     background-color: #06021b;
 }
 .background-h {
-    min-height: 100vh;
+    height: 80vh;
     background: url('./img/background-h.jpg') no-repeat;
     background-size: cover;
     background-position: center;
@@ -107,11 +106,8 @@ li {
 
 
 .logo img{
-    /* font-size: 2rem;
-    color: #fff;
-    font-weight: 700; */
-    width: 10rem;
-    height: 10rem;
+    width: 8rem;
+    height: 8rem;
     margin: 0 1rem;
     
 }
