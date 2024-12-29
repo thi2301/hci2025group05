@@ -1041,141 +1041,40 @@ a {
   background-color: #0056b3; /* Đổi màu khi hover */
 }
 
-.filter-container {
-  display: flex;
-  justify-content: flex-start; /* Căn trái các phần tử lọc */
-  margin-bottom: 20px;
-  margin-left: 5cm; /* Dịch sang trái 5 cm */
-}
-
-.filter-dropdown,
-.search-input {
-  padding: 10px;
-  margin-right: 10px; /* Khoảng cách giữa các phần tử */
-  border: 1px solid #ccc; /* Đường viền */
-  border-radius: 5px; /* Bo góc */
-  font-size: 16px;
-}
-
-#searchButton {
-  padding: 10px 15px; /* Padding cho nút */
-  background-color: #242a32; /* Màu nền nút */
-  color: white; /* Màu chữ nút */
-  border: none;
-  border-radius: 5px; /* Bo góc */
-  cursor: pointer; /* Con trỏ khi hover */
-  font-size: 16px;
-  transition: background-color 0.3s; /* Hiệu ứng chuyển tiếp */
-}
-
-#searchButton:hover {
-  background-color: #4aa785; /* Đổi màu khi hover */
-}
-
-.list-title {
-  font-size: 24px;
-  margin: 20px 0 10px 0;
-  color: #333; /* Màu chữ */
-  text-align: left; /* Căn trái tiêu đề danh sách */
-  margin-left: 5cm; /* Dịch sang trái 5 cm */
-}
-
-.complaint-table {
-  width: 100%;
-  border-collapse: collapse; /* Gộp các đường viền */
-  margin-left: 5cm; /* Dịch sang trái 5 cm */
-}
-
-.complaint-table th,
-.complaint-table td {
-  padding: 12px;
-  text-align: left; /* Căn trái */
-  
-  border-bottom: 1px solid #ddd; /* Đường viền dưới cho các ô */
-}
-
-.complaint-table th {
-  background-color: #f2f2f2; /* Màu nền cho tiêu đề bảng */
-  font-weight: bold; /* Chữ đậm cho tiêu đề */
-}       
-.complaint-table {
-  width: 100%;
-  border-collapse: collapse; /* Gộp các đường viền */
-  margin-left: 5cm; /* Dịch sang trái 5 cm */
-  margin-top: 20px; /* Khoảng cách trên bảng */
-}
-
-.complaint-table th,
-.complaint-table td {
-  padding: 12px;
-  text-align: left; /* Căn trái */
-  border: 1px solid #ddd; /* Đường viền */
-}
-
-.complaint-table th {
-  background-color: #828485; /* Màu nền cho tiêu đề bảng */
-  color: rgb(0, 0, 0); /* Màu chữ tiêu đề */
-  font-weight: bold; /* Chữ đậm cho tiêu đề */
-}
-
-.complaint-table tr:nth-child(even) {
-  background-color: #f2f2f2; /* Màu nền cho hàng chẵn */
-}
-
-.complaint-table tr:hover {
-  background-color: #877f7f; /* Màu nền khi hover hàng */
-}
-
-.complaint-table td {
-  transition: background-color 0.3s; /* Hiệu ứng chuyển tiếp cho ô */
-}
-
-.complaint-table button {
-  padding: 5px 10px; /* Padding cho nút */
-  background-color: #ffffff; /* Màu nền nút */
-  color: white; /* Màu chữ nút */
-  border: none;
-  border-radius: 5px; /* Bo góc */
-  cursor: pointer; /* Con trỏ khi hover */
-  font-size: 14px;
-  transition: background-color 0.3s; /* Hiệu ứng chuyển tiếp */
-}
-
-.complaint-table button:hover {
-  background-color: #218838; /* Đổi màu khi hover nút */
-}
-/* Container chính để căn giữa */
-.container {
-    max-width: 600px; /* Giới hạn chiều ngang */
-    margin: 0 auto; /* Căn giữa theo chiều ngang */
-    padding: 20px;
+/* Định dạng chung cho tab panel */
+.tab-panel {
     background: #ffffff;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    max-width: 800px; /* Thêm chiều rộng tối đa */
+    margin: 0 auto; /* Căn giữa tab panel */
 }
 
-/* Căn chỉnh lọc, tìm kiếm và nút hành động */
+/* Định dạng label ngắn và căn giữa */
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    width: 150px; /* Chiều rộng cố định */
+    text-align: center; /* Văn bản căn giữa */
+    margin: 0 auto 5px auto; /* Canh giữa toàn bộ label */
+}
+
+/* Container cho phần lọc và tìm kiếm */
 .filter-search-container {
     display: flex;
+    justify-content: space-between; /* Khoảng cách đều giữa các phần tử */
     align-items: center; /* Căn giữa theo chiều dọc */
-    justify-content: space-between; /* Phân phối đều giữa các phần tử */
     margin-bottom: 20px;
+    max-width: 800px; /* Thêm chiều rộng tối đa */
+    margin: 0 auto; /* Căn giữa */
 }
 
 /* Dropdown cho bộ lọc */
 .filter-dropdown {
-    flex: 1; /* Chiếm không gian linh hoạt */
-    margin-right: 10px; /* Khoảng cách giữa dropdown và nút */
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-/* Ô tìm kiếm */
-.search-input {
-    flex: 2; /* Chiếm không gian linh hoạt lớn hơn dropdown */
-    margin-right: 10px; /* Khoảng cách giữa input và nút */
+    width: 48%; /* Chia chiều rộng đều */
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
@@ -1183,9 +1082,39 @@ a {
     box-sizing: border-box;
 }
 
-/* Nút hành động */
-.filter-button {
-    flex: 0; /* Không mở rộng linh hoạt */
+/* Ô tìm kiếm */
+.search-input {
+    width: 48%; /* Chia chiều rộng đều */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Định dạng form đối tác */
+#partnerForm {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* Thêm chiều rộng tối đa */
+    margin: 0 auto; /* Căn giữa */
+}
+
+#partnerForm input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#partnerForm button {
     padding: 10px 20px;
     background-color: #007bff;
     color: white;
@@ -1193,9 +1122,44 @@ a {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    text-align: center;
 }
 
-.filter-button:hover {
+#partnerForm button:hover {
     background-color: #0056b3;
+}
+
+/* Định dạng bảng tour */
+#tourTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* Thêm chiều rộng tối đa */
+    margin: 0 auto; /* Căn giữa */
+}
+
+#tourTable th,
+#tourTable td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+#tourTable th {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#tourTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#tourTable tr:hover {
+    background-color: #e9ecef;
+}
+
+#tourTable td {
+    font-size: 14px;
 }
