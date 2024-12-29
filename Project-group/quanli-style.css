@@ -1041,111 +1041,129 @@ a {
   background-color: #0056b3; /* Đổi màu khi hover */
 }
 
- 
+ #customers-tab .tab-panel {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 80%; /* Adjust the width */
+    max-width: 1000px; /* Maximum width */
+}
 
-        .tab-panel {
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            width: 80%; /* Adjust the width */
-            max-width: 1000px; /* Maximum width */
-        }
+#customers-tab label {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: block;
+    width: 150px;
+    text-align: left;
+    float: left;
+}
 
-        .label {
-            font-weight: bold;
-            font-size: 18px;
-            margin-bottom: 10px;
-            display: block;
-            width: 150px;
-            text-align: left;
-            float: left;
-        }
+#customers-tab .filter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
 
-        .filter-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
+#customers-tab .filter-dropdown, #customers-tab .search-input {
+    margin-bottom: 0;
+    padding: 12px;
+    font-size: 18px;
+    width: calc(40% - 24px);
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #e8f5e9;
+}
 
-        .filter-dropdown, .search-input {
-            margin-bottom: 0;
-            padding: 12px;
-            font-size: 18px;
-            width: calc(40% - 24px);
-            border: 2px solid #4CAF50;
-            border-radius: 5px;
-            box-sizing: border-box;
-            background-color: #e8f5e9;
-        }
+#customers-tab #partnerForm {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 700px; /* Adjust max-width to make form compact */
+}
 
-        .partnerForm {
-            margin-bottom: 30px;
-            padding: 20px;
-            border: 2px solid #4CAF50;
-            border-radius: 10px;
-            background-color: #ffffff;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 700px; /* Adjust max-width to make form compact */
-        }
+#customers-tab #partnerForm input {
+    width: calc(100% - 24px);
+    padding: 12px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
 
-        .partnerForm input {
-            width: calc(100% - 24px);
-            padding: 12px;
-            margin-top: 5px;
-            margin-bottom: 15px;
-            border: 2px solid #4CAF50;
-            border-radius: 5px;
-            box-sizing: border-box;
-            font-size: 16px;
-        }
+#customers-tab #partnerForm button {
+    padding: 12px 24px;
+    background-color: #FF5733;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
 
-        .partnerForm button {
-            padding: 12px 24px;
-            background-color: #FF5733;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 18px;
-            transition: background-color 0.3s ease;
-        }
+#customers-tab #partnerForm button:hover {
+    background-color: #C70039;
+}
 
-        .partnerForm button:hover {
-            background-color: #C70039;
-        }
+#customers-tab #tourTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-        .tourTable {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+#customers-tab #tourTable th, #customers-tab #tourTable td {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+}
 
-        .tourTable th, .tourTable td {
-            border: 1px solid #ddd;
-            padding: 15px;
-            text-align: center;
-        }
+#customers-tab #tourTable th {
+    background-color: #FF5733;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
 
-        .tourTable th {
-            background-color: #FF5733;
-            color: white;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
+#customers-tab #tourTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
 
-        .tourTable tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
+#customers-tab #tourTable tr:hover {
+    background-color: #f1f1f1;
+}
 
-        .tourTable tr:hover {
-            background-color: #f1f1f1;
-        }
+#customers-tab #tourTable td {
+    font-size: 16px;
+}
 
-        .tourTable td {
-            font-size: 16px;
-        }
+#customers-tab .action-buttons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#customers-tab .action-buttons button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#customers-tab .action-buttons button:hover {
+    background-color: #45a049;
+}
