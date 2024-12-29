@@ -1041,17 +1041,7 @@ a {
   background-color: #0056b3; /* Đổi màu khi hover */
 }
 
- body {
-            font-family: 'Comic Sans MS', sans-serif;
-            background-color: #f9f9f9;
-            margin: 20px;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            flex-direction: column;
-        }
+ 
 
         .tab-panel {
             background: #fff;
