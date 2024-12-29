@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Du Lịch</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        .tour-container {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            padding: 1rem;
+        }
+
+        .tour {
+            min-width: 300px;
+            margin-right: 20px;
+            padding: 2rem;
+            border-radius: 8px;
+            color: white;
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            flex-shrink: 0;
+            transition: transform 1s ease-in-out;
+        }
+
+        .tour h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .tour p {
+            font-size: 1.2rem;
+        }
+
+        .tour button {
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+
+        .tour button:hover {
+            background-color: #4cae4c;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Khám Phá Tour Du Lịch</h1>
+    </header>
+
+    <div class="tour-container" id="tour-container">
+        <section class="tour" style="background-image: url('https://example.com/phu-quoc.jpg');">
+            <h2>Tour Du Lịch Biển Phú Quốc</h2>
+            <p>Khám phá vẻ đẹp thiên nhiên tuyệt vời của biển Phú Quốc, tham gia các hoạt động thú vị như bơi lội, lặn biển và thưởng thức hải sản.</p>
+            <div id="tour-details">
+                <p><strong>Điểm đến:</strong> Phú Quốc</p>
+                <p><strong>Ngày khởi hành:</strong> 20/01/2024</p>
+                <p><strong>Giá:</strong> 3.000.000 VND</p>
+            </div>
+            <button onclick="moreInfo('Phú Quốc')">Tìm Hiểu Thêm</button>
+        </section>
+
+        <section class="tour" style="background-image: url('https://example.com/hanoi.jpg');">
+            <h2>Tour Khám Phá Hà Nội</h2>
+            <p>Khám phá thủ đô Hà Nội với những danh lam thắng cảnh và di tích lịch sử lâu đời.</p>
+            <div id="tour-details">
+                <p><strong>Điểm đến:</strong> Hà Nội</p>
+                <p><strong>Ngày khởi hành:</strong> 25/12/2024</p>
+                <p><strong>Giá:</strong> 1.800.000 VND</p>
+            </div>
+            <button onclick="moreInfo('Hà Nội')">Tìm Hiểu Thêm</button>
+        </section>
+
+        <section class="tour" style="background-image: url('https://example.com/ha-long.jpg');">
+            <h2>Tour Du Lịch Vịnh Hạ Long</h2>
+            <p>Thưởng ngoạn vẻ đẹp kỳ vĩ của Vịnh Hạ Long, với những hòn đảo đá vôi nổi tiếng và các hoạt động khám phá độc đáo.</p>
+            <div id="tour-details">
+                <p><strong>Điểm đến:</strong> Vịnh Hạ Long</p>
+                <p><strong>Ngày khởi hành:</strong> 10/02/2024</p>
+                <p><strong>Giá:</strong> 2.500.000 VND</p>
+            </div>
+            <button onclick="moreInfo('Hạ Long')">Tìm Hiểu Thêm</button>
+        </section>
+    </div>
+
+    <script>
+        function moreInfo(tourName) {
+            alert("Thông tin chi tiết về tour: " + tourName + "\nĐây là tour du lịch đặc sắc, bao gồm các hoạt động thú vị và khám phá những địa điểm nổi bật.");
+        }
+
+        // Chạy tour tự động sang phải
+        let tourContainer = document.getElementById('tour-container');
+        let index = 0;
+
+        function moveTours() {
+            index++;
+            if (index >= 3) index = 0; // Quay lại từ đầu
+            let offset = -index * (tourContainer.children[0].offsetWidth + 20); // Tính toán offset
+            tourContainer.style.transform = `translateX(${offset}px)`;
+        }
+
+        setInterval(moveTours, 3000); // Di chuyển mỗi 3 giây
+    </script>
+</body>
+</html>
