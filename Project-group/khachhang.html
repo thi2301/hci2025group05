@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khách hàng</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', sans-serif;
+            background-color: #f9f9f9;
+            margin: 20px;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        .tab-panel {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            width: 80%; /* Adjust the width */
+            max-width: 1000px; /* Maximum width */
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: block;
+            width: 150px;
+            text-align: left;
+            float: left;
+        }
+
+        .filter-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .filter-dropdown, .search-input {
+            margin-bottom: 0;
+            padding: 12px;
+            font-size: 18px;
+            width: calc(40% - 24px);
+            border: 2px solid #4CAF50;
+            border-radius: 5px;
+            box-sizing: border-box;
+            background-color: #e8f5e9;
+        }
+
+        #partnerForm {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 700px; /* Adjust max-width to make form compact */
+        }
+
+        #partnerForm input {
+            width: calc(100% - 24px);
+            padding: 12px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 2px solid #4CAF50;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        #partnerForm button {
+            padding: 12px 24px;
+            background-color: #FF5733;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        #partnerForm button:hover {
+            background-color: #C70039;
+        }
+
+        #tourTable {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #tourTable th, #tourTable td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+        }
+
+        #tourTable th {
+            background-color: #FF5733;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        #tourTable tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        #tourTable tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        #tourTable td {
+            font-size: 16px;
+        }
+
+        .action-buttons {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .action-buttons button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .action-buttons button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div id="customers-tab" class="tab-panel">
+    <div class="filter-container">
+        <label for="filterType">Lọc</label>
+        <select id="filterType" onchange="filterPartners()" class="filter-dropdown">
+            <option value="">Tất cả</option>
+            <option value="Họ và tên">Họ và tên</option>
+            <option value="Mã tour">Mã tour</option>
+        </select>
+
+        <input type="text" id="searchPartner" class="search-input" placeholder="Tìm kiếm theo thời gian (VD: 01/01/2024)" onkeyup="searchPartner()">
+    </div>
+
+    <form id="partnerForm" onsubmit="addPartner(event)">
+        <label for="name">Họ tên:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+
+        <label for="contact-info">Liên lạc:</label>
+        <input type="text" id="contact-info" name="contact-info" placeholder="Thông tin liên lạc" required>
+        <br>
+
+        <label for="noi-song">Nơi ở:</label>
+        <input type="text" id="noi-song" name="noi-song" placeholder="Nơi sống" required>
+        <br>
+
+        <label for="ma-tour">Mã:</label>
+        <input type="text" id="ma-tour" name="ma-tour" placeholder="Mã tour" required>
+        <br>
+
+        <label for="tour">Tour:</label>
+        <input type="text" id="tour" name="tour" placeholder="Tour" required>
+        <br>
+
+        <button type="submit">Thêm khách hàng</button>
+    </form>
+
+    <table id="tourTable">
+        <tr>
+            <th>STT</th>
+            <th>Họ tên</th>
+            <th>Liên lạc</th>
+            <th>Nơi ở</th>
+            <th>Mã</th>
+            <th>Tour</th>
+            <th>Thời gian</th>
+            <th>Hành động</th>
+        </tr>
+        <tr>
+            <td>353</td>
+            <td>Nguyễn Văn Phong</td>
+            <td>Sđt: 0876543221</td>
+            <td>TP.Hồ Chí Minh</td>
+            <td>3d312A</td>
+            <td>Châu Âu 10N9D</td>
+            <td>01/11/2024 9h34p pm</td>
+            <td><button onclick="deleteRow(this)">Xóa</button></td>
+        </tr>
+        <!-- Other rows go here -->
+    </table>
+
+   
+</div>
+
+<script>
+    function filterPartners() {
+        const filterType = document.getElementById('filterType').value;
+        const rows = document.querySelectorAll('#tourTable tr');
+
+        rows.forEach(row => {
+            const name = row.cells[1]?.textContent || '';
+            const tourCode = row.cells[4]?.textContent || '';
+
+            if (filterType === 'Họ và tên' && !name.includes(filterType)) {
+                row.style.display = 'none';
+            } else if (filterType === 'Mã tour' && !tourCode.includes(filterType)) {
+                row.style.display = 'none';
+            } else {
+                row.style.display = '';
+            }
+        });
+    }
+
+    function searchPartner() {
+        const searchValue = document.getElementById('searchPartner').value.toLowerCase();
+        const rows = document.querySelectorAll('#tourTable tr');
+
+        rows.forEach(row => {
+            const time = row.cells[6]?.textContent || '';
+            if (time.toLowerCase().includes(searchValue)) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+
+    function addPartner(event) {
+        event.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const contact = document.getElementById('contact-info').value;
+        const location = document.getElementById('noi-song').value;
+        const tourCode = document.getElementById('ma-tour').value;
+        const tour = document.getElementById('tour').value;
+        const time = new Date().toLocaleString();
+
+        const table = document.getElementById('tourTable');
+        const row = table.insertRow();
+        row.innerHTML = `
+            <td>${table.rows.length - 1}</td>
+            <td>${name}</td>
+            <td>Sđt: ${contact}</td>
+            <td>${location}</td>
+            <td>${tourCode}</td>
+            <td>${tour}</td>
+            <td>${time}</td>
+            <td><button onclick="deleteRow(this)">Xóa</button></td>
+        `;
+
+        document.getElementById('partnerForm').reset();
+    }
+
+    function deleteRow(button) {
+        const row = button.parentNode.parentNode;
+        row.parentNode.removeChild(row);
+    }
+</script>
+
+</body>
+</html> 
