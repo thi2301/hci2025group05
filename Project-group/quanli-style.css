@@ -1053,7 +1053,7 @@ a {
             max-width: 1000px; /* Maximum width */
         }
 
-        label {
+        .label {
             font-weight: bold;
             font-size: 18px;
             margin-bottom: 10px;
@@ -1081,7 +1081,7 @@ a {
             background-color: #e8f5e9;
         }
 
-        #partnerForm {
+        .partnerForm {
             margin-bottom: 30px;
             padding: 20px;
             border: 2px solid #4CAF50;
@@ -1092,7 +1092,7 @@ a {
             max-width: 700px; /* Adjust max-width to make form compact */
         }
 
-        #partnerForm input {
+        .partnerForm input {
             width: calc(100% - 24px);
             padding: 12px;
             margin-top: 5px;
@@ -1103,7 +1103,7 @@ a {
             font-size: 16px;
         }
 
-        #partnerForm button {
+        .partnerForm button {
             padding: 12px 24px;
             background-color: #FF5733;
             color: white;
@@ -1114,38 +1114,38 @@ a {
             transition: background-color 0.3s ease;
         }
 
-        #partnerForm button:hover {
+        .partnerForm button:hover {
             background-color: #C70039;
         }
 
-        #tourTable {
+        .tourTable {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        #tourTable th, #tourTable td {
+        .tourTable th, .tourTable td {
             border: 1px solid #ddd;
             padding: 15px;
             text-align: center;
         }
 
-        #tourTable th {
+        .tourTable th {
             background-color: #FF5733;
             color: white;
             font-weight: bold;
             text-transform: uppercase;
         }
 
-        #tourTable tr:nth-child(even) {
+        .tourTable tr:nth-child(even) {
             background-color: #f9f9f9;
         }
 
-        #tourTable tr:hover {
+        .tourTable tr:hover {
             background-color: #f1f1f1;
         }
 
-        #tourTable td {
+        .tourTable td {
             font-size: 16px;
         }
