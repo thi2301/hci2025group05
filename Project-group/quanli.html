@@ -1,482 +1,402 @@
 <!doctype html>
 <!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Quan Li</title>
-    <link rel="stylesheet" href="quanli-style.css" >    
-    <link
-      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
-  <body>
-  
- 
+<head>
+  <meta charset="UTF-8" />
+  <title>Quan Li</title>
+  <link rel="stylesheet" href="quanli-style.css">
+  <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <div class="sidebar">
-      <div class="logo-details">
-        
-        <div class="logo_name">TRAVEL EVERYWHERE</div>
-        <i class="bx bx-menu" id="btn"></i>
-      </div>
-      <ul class="nav-list">
-        <li class="tab-link" data-target="user-tab">
-          <a href="#">
-            <i class="bx bx-user"></i>
-            <span class="links_name">User</span>
-          </a>
-          <span class="tooltip">User</span>
-        </li>
-        <li>
-          <i class="bx bx-search"></i>
-          <input type="text" placeholder="Search..." />
-          <span class="tooltip">Search</span>
-        </li>
-        <li class="tab-link" data-target="home-tab">
-          <a href="#">
-            <i class="bx bx-grid-alt"></i>
-            <span class="links_name">Trang chủ</span>
-          </a>
-          <span class="tooltip">Trang chủ</span>
-        </li>
-        <!-- QUAN LI -->
-        <li class="manage-menu">
-          <a href="#">
-            <i class="fa-solid fa-bars-progress"></i>
-            <span class="links_name">Quản lí</span>
-          </a>
-          <span class="tooltip">Quản lí</span>
-          <ul class="submenu">
-            <li class="tab-link" data-target="create-tour-tab">
-              <a href="#">Tạo tour mới</a>
-            </li>
-            <li class="tab-link" data-target="edit-tour-tab">
-              <a href="#">Chỉnh sửa</a>
-            </li>
-            <li class="tab-link" data-target="delete-tour-tab">
-              <a href="#">Xóa Tour</a>
-            </li>
-          </ul>
-        </li>
-        <!-- THONG KE -->
-        <li class="tab-link" data-target="stats-tab">
-          <a href="#">
-            <i class="bx bx-pie-chart-alt-2"></i>
-            <span class="links_name">Thống kê</span>
-          </a>
-          <span class="tooltip">Thống kê</span>
-        </li>
-        
-          <li class="tab-link" data-target="customers-tab">
-          <a href="#">
-           <i class="fa-solid fa-person"></i>
-            <span class="links_name">Khách hàng</span>
-          </a>
-          <span class="tooltip">Khách hàng</span>
-        </li>
-        
-        <li class="tab-link" data-target="complaints-tab">
-          <a href="#">
-            <i class="fa-solid fa-message"></i>
-            <span class="links_name">Khiếu Nại</span>
-          </a>
-          <span class="tooltip">Khiếu Nại</span>
-        </li>
-        <li class="tab-link" data-target="a-tab">
-          <a href="#">
-            <i class="fa-solid fa-plane"></i>
-            <span class="links_name">Vé máy bay</span>
-          </a>
-          <span class="tooltip">Vé máy bay</span>
-        </li>
-        <li class="tab-link" data-target="b-tab">
-          <a href="#">
-            <i class="fa-solid fa-car"></i>
-            <span class="links_name">Xe di chuyển</span>
-          </a>
-          <span class="tooltip">Xe di chuyển</span>
-        </li>
-        <li class="tab-link" data-target="c-tab">
-          <a href="#">
-            <i class="fa-solid fa-hotel"></i>
-            <span class="links_name">Phòng khách sạn</span>
-          </a>
-          <span class="tooltip">Phòng khách sạn</span>
-        </li>
-        
-        <li class="tab-link" data-target="settings-tab">
-          <a href="#">
-            <i class="bx bx-cog"></i>
-            <span class="links_name">Setting</span>
-          </a>
-          <span class="tooltip">Setting</span>
-        </li>
-        <li class="profile tab-link" data-target="profile-tab">
-          <div class="profile-details">
-            <img src="profile.jpg" alt="profileImg" />
-            <div class="name_job">
-              <div class="name">Họ và Tên</div>
-              <div class="job">chức vụ</div>
-            </div>
-          </div>
-          <i class="bx bx-log-out" id="log_out"></i>
-        </li>
-      </ul>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+
+
+
+  <div class="sidebar">
+    <div class="logo-details">
+
+      <div class="logo_name">TRAVEL EVERYWHERE</div>
+      <i class="bx bx-menu" id="btn"></i>
     </div>
-    <div class="tab-content">
-      <!-- USER -->
-      <div id="user-tab" class="tab-panel">
-        a
-        <div class="user-profile">
-          <div class="user-profile__image">
-            <img src="placeholder.jpg" alt="Profile Picture" />
-          </div>
-          <div class="user-profile__info">
-            <h2 class="user-profile__info-title">Thông tin nhân viên</h2>
-            <p class="user-profile__info-item">
-              <strong>Họ và tên:</strong> [Họ và tên]
-            </p>
-            <p class="user-profile__info-item">
-              <strong>Mã nhân viên:</strong> [Mã nhân viên]
-            </p>
-            <p class="user-profile__info-item">
-              <strong>Giới tính:</strong> [Giới tính]
-            </p>
-            <p class="user-profile__info-item">
-              <strong>Điện thoại:</strong> [Điện thoại]
-            </p>
-            <p class="user-profile__info-item">
-              <strong>Số CMND/CCCD:</strong> [Số CMND/CCCD]
-            </p>
-            <p class="user-profile__info-item">
-              <strong>Email:</strong> [Email]
-            </p>
-            <p class="user-profile__info-item">
-              <strong>Nơi sinh:</strong> [Nơi sinh]
-            </p>
-          </div>
-        </div>
-
-        <div class="user-history">
-          <h2 class="user-history__title">Lịch sử việc đã làm</h2>
-          <table class="user-history__table">
-            <thead>
-              <tr>
-                <th>Ngày tháng</th>
-                <th>Loại việc</th>
-                <th>Chi tiết</th>
-                <th>Mức độ</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>[Ngày tháng]</td>
-                <td>[Loại việc]</td>
-                <td>[Chi tiết]</td>
-                <td>[Mức độ]</td>
-              </tr>
-              <!-- Add more rows as needed -->
-            </tbody>
-          </table>
-        </div>
-
-        <div class="user-schedule">
-          <p class="user-schedule__date">Thứ hai, ngày 1 tháng 1 năm 2024</p>
-          <table class="user-schedule__table">
-            <thead>
-              <tr>
-                <th>Ca</th>
-                <th>Thứ 2</th>
-                <th>Thứ 3</th>
-                <th>Thứ 4</th>
-                <th>Thứ 5</th>
-                <th>Thứ 6</th>
-                <th>Thứ 7</th>
-                <th>Chủ nhật</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Sáng</td>
-                <td>[Nội dung]</td>
-                <td>[Nội dung]</td>
-                <td>[Nội dung]</td>
-                <td>[Nội dung]</td>
-                <td>[Nội dung]</td>
-                <td>[Nội dung]</td>
-                <td>[Nội dung]</td>
-              </tr>
-              <tr>
-                <td>Chiều</td>
-                <td>[Nội dung]</td>
-                <td>[Nội dung]</td>
-                <td>[Nội dung]</td>
-                <td>[Nội dung]</td>
-                <td>[Nội dung]</td>
-                <td>[Nội dung]</td>
-                <td>[Nội dung]</td>
-              </tr>
-              <tr>
-                <td>Tối</td>
-                <td>[Nội dung]</td>
-                <td>[Nội dung]</td>
-                <td>[Nội dung]</td>
-                <td>[Nội dung]</td>
-                <td>[Nội dung]</td>
-                <td>[Nội dung]</td>
-                <td>[Nội dung]</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div id="home-tab" class="tab-panel active">
-        <p>Đây là website quản lý về tour, đặt phòng khách sạn, đặt xe, đặt vé máy bay. Thống kê, chỉnh sửa tour hiển thị, giải quyết các khiếu nại của khách hàng về dịch vụ. </p>
-     </div>
+    <ul class="nav-list">
+      <li class="tab-link" data-target="user-tab">
+        <a href="#">
+          <i class="bx bx-user"></i>
+          <span class="links_name">User</span>
+        </a>
+        <span class="tooltip">User</span>
+      </li>
+      <li>
+        <i class="bx bx-search"></i>
+        <input type="text" placeholder="Search..." />
+        <span class="tooltip">Search</span>
+      </li>
+      <li class="tab-link" data-target="home-tab">
+        <a href="#">
+          <i class="bx bx-grid-alt"></i>
+          <span class="links_name">Trang chủ</span>
+        </a>
+        <span class="tooltip">Trang chủ</span>
+      </li>
       <!-- QUAN LI -->
-       <!-- TẠO TOUR -->
-      <div id="create-tour-tab" class="tab-panel">
-        <main class="add-tour-main-content">
-          <section class="add-tour-form-section">
-            <h2 class="add-tour-form-section__title">Thông Tin Tour</h2>
-           <form class="add-tour-form-section__form">
-              <div class="add-tour-form-section__radio-group">
-                <label>
-                  <input
-                    type="radio"
-                    id="domestic-tour"
-                    name="tour-type"
-                    value="domestic"
-                    required
-                  />
-                  Trong nước
-                </label>
-                <label>
-                  <input
-                    type="radio"
-                    id="international-tour"
-                    name="tour-type"
-                    value="international"
-                  />
-                  Ngoài nước
-                </label>
-              </div>
-              <label for="tour-name" class="add-tour-form-section__label"
-                >Tên Tour</label
-              >
-              <input
-                type="text"
-                id="tour-name"
-                name="tour-name"
-                class="add-tour-form-section__input"
-                placeholder="Nhập tên tour"
-                required
-              />
+      <li class="manage-menu">
+        <a href="#">
+          <i class="fa-solid fa-bars-progress"></i>
+          <span class="links_name">Quản lí</span>
+        </a>
+        <span class="tooltip">Quản lí</span>
+        <ul class="submenu">
+          <li class="tab-link" data-target="create-tour-tab">
+            <a href="#">Tạo tour mới</a>
+          </li>
+          <li class="tab-link" data-target="edit-tour-tab">
+            <a href="#">Chỉnh sửa</a>
+          </li>
+          <li class="tab-link" data-target="delete-tour-tab">
+            <a href="#">Xóa Tour</a>
+          </li>
+        </ul>
+      </li>
+      <!-- THONG KE -->
+      <li class="tab-link" data-target="stats-tab">
+        <a href="#">
+          <i class="bx bx-pie-chart-alt-2"></i>
+          <span class="links_name">Thống kê</span>
+        </a>
+        <span class="tooltip">Thống kê</span>
+      </li>
 
-              <label for="destination" class="add-tour-form-section__label"
-                >Địa Điểm</label
-              >
-              <input
-                type="text"
-                id="destination"
-                name="destination"
-                class="add-tour-form-section__input"
-                placeholder="Nhập địa điểm"
-                required
-              />
+      <li class="tab-link" data-target="customers-tab">
+        <a href="#">
+          <i class="fa-solid fa-person"></i>
+          <span class="links_name">Khách hàng</span>
+        </a>
+        <span class="tooltip">Khách hàng</span>
+      </li>
 
-              <label for="time" class="add-tour-form-section__label"
-                >Thời Gian Bắt Đầu</label
-              >
-              <input
-                type="date"
-                id="time"
-                name="time"
-                class="add-tour-form-section__input"
-                required
-              />
-              <label for="time" class="add-tour-form-section__label"
-              >Thời Gian Kết Thúc</label
-            >
-            <input
-              type="date"
-              id="time"
-              name="time"
-              class="add-tour-form-section__input"
-              required
-            />
+      <li class="tab-link" data-target="complaints-tab">
+        <a href="#">
+          <i class="fa-solid fa-message"></i>
+          <span class="links_name">Khiếu Nại</span>
+        </a>
+        <span class="tooltip">Khiếu Nại</span>
+      </li>
+      <li class="tab-link" data-target="a-tab">
+        <a href="#">
+          <i class="fa-solid fa-plane"></i>
+          <span class="links_name">Vé máy bay</span>
+        </a>
+        <span class="tooltip">Vé máy bay</span>
+      </li>
+      <li class="tab-link" data-target="b-tab">
+        <a href="#">
+          <i class="fa-solid fa-car"></i>
+          <span class="links_name">Xe di chuyển</span>
+        </a>
+        <span class="tooltip">Xe di chuyển</span>
+      </li>
+      <li class="tab-link" data-target="c-tab">
+        <a href="#">
+          <i class="fa-solid fa-hotel"></i>
+          <span class="links_name">Phòng khách sạn</span>
+        </a>
+        <span class="tooltip">Phòng khách sạn</span>
+      </li>
 
-              
-               <label for="price" class="add-tour-form-section__label"
-                >Giá</label
-              >
-              <input
-                type="number"
-                id="price"
-                name="price"
-                class="add-tour-form-section__input"
-                placeholder="Nhập giá"
-                required
-              />
-              <label for="tour-name" class="add-tour-form-section__label"
-                >Chương Trình Ưu Đãi</label
-              >
-              <input
-                type="text"
-                id="tour-name"
-                name="tour-name"
-                class="add-tour-form-section__input"
-                placeholder="Nhập tên tour"
-                required
-              />
-            </form>
-          </section>
-
-          <div class="container">
-            <div class="toolbar">
-              <div class="head">
-                <input
-                  type="text"
-                  placeholder="Filename"
-                  value="untitled"
-                  id="filename"
-                />
-                <select onchange="fileHandle(this.value); this.selectedIndex=0">
-                  <option value="" selected="" hidden="" disabled="">
-                    File
-                  </option>
-                  <option value="new">New file</option>
-                  <option value="txt">Save as txt</option>
-                  <option value="pdf">Save as pdf</option>
-                </select>
-                <select
-                  onchange="formatDoc('formatBlock', this.value); this.selectedIndex=0;"
-                >
-                  <option value="" selected="" hidden="" disabled="">
-                    Format
-                  </option>
-                  <option value="h1">Heading 1</option>
-                  <option value="h2">Heading 2</option>
-                  <option value="h3">Heading 3</option>
-                  <option value="h4">Heading 4</option>
-                  <option value="h5">Heading 5</option>
-                  <option value="h6">Heading 6</option>
-                  <option value="p">Paragraph</option>
-                </select>
-                <select
-                  onchange="formatDoc('fontSize', this.value); this.selectedIndex=0;"
-                >
-                  <option value="" selected="" hidden="" disabled="">
-                    Font size
-                  </option>
-                  <option value="1">Extra small</option>
-                  <option value="2">Small</option>
-                  <option value="3">Regular</option>
-                  <option value="4">Medium</option>
-                  <option value="5">Large</option>
-                  <option value="6">Extra Large</option>
-                  <option value="7">Big</option>
-                </select>
-                <div class="color">
-                  <span>Color</span>
-                  <input
-                    type="color"
-                    oninput="formatDoc('foreColor', this.value); this.value='#000000';"
-                  />
-                </div>
-                <div class="color">
-                  <span>Background</span>
-                  <input
-                    type="color"
-                    oninput="formatDoc('hiliteColor', this.value); this.value='#000000';"
-                  />
-                </div>
-              </div>
-              <div class="btn-toolbar">
-                <button onclick="formatDoc('upload')">
-                  <i class="bx bx-upload"></i>
-                </button>
-                <button onclick="formatDoc('undo')">
-                  <i class="bx bx-undo"></i>
-                </button>
-                <button onclick="formatDoc('redo')">
-                  <i class="bx bx-redo"></i>
-                </button>
-                <button onclick="formatDoc('bold')">
-                  <i class="bx bx-bold"></i>
-                </button>
-                <button onclick="formatDoc('underline')">
-                  <i class="bx bx-underline"></i>
-                </button>
-                <button onclick="formatDoc('italic')">
-                  <i class="bx bx-italic"></i>
-                </button>
-                <button onclick="formatDoc('strikeThrough')">
-                  <i class="bx bx-strikethrough"></i>
-                </button>
-                <button onclick="formatDoc('justifyLeft')">
-                  <i class="bx bx-align-left"></i>
-                </button>
-                <button onclick="formatDoc('justifyCenter')">
-                  <i class="bx bx-align-middle"></i>
-                </button>
-                <button onclick="formatDoc('justifyRight')">
-                  <i class="bx bx-align-right"></i>
-                </button>
-                <button onclick="formatDoc('justifyFull')">
-                  <i class="bx bx-align-justify"></i>
-                </button>
-                <button onclick="formatDoc('insertOrderedList')">
-                  <i class="bx bx-list-ol"></i>
-                </button>
-                <button onclick="formatDoc('insertUnorderedList')">
-                  <i class="bx bx-list-ul"></i>
-                </button>
-                <button onclick="addLink()"><i class="bx bx-link"></i></button>
-                <button onclick="formatDoc('unlink')">
-                  <i class="bx bx-unlink"></i>
-                </button>
-                <button id="show-code" data-active="false">&lt;/&gt;</button>
-              </div>
-            </div>
-
-            <div id="content" contenteditable="true" spellcheck="false">
-              abc
-            </div>
+      <li class="tab-link" data-target="settings-tab">
+        <a href="#">
+          <i class="bx bx-cog"></i>
+          <span class="links_name">Setting</span>
+        </a>
+        <span class="tooltip">Setting</span>
+      </li>
+      <li class="profile tab-link" data-target="profile-tab">
+        <div class="profile-details">
+          <img src="profile.jpg" alt="profileImg" />
+          <div class="name_job">
+            <div class="name">Họ và Tên</div>
+            <div class="job">chức vụ</div>
           </div>
-          <button class="button-a-create-tour" id="createTourButton">
-            Tạo Tour
-          </button>
-
-          <div class="modal" id="passwordModal">
-            <div class="modal-content">
-              <h2>Xác Nhận Mật Khẩu</h2>
-              <input
-                type="password"
-                id="passwordInput"
-                placeholder="Nhập mật khẩu"
-                required
-              />
-              <div>
-                <button class="button-confirm" id="confirmButton">
-                  Xác Nhận Tạo Tour
-                </button>
-                <button class="button-cancel" id="cancelButton">Hủy</button>
-              </div>
-            </div>
-          </div>
-        </main>
+        </div>
+        <i class="bx bx-log-out" id="log_out"></i>
+      </li>
+    </ul>
+  </div>
+  <div class="tab-content">
+    <!-- USER -->
+    <div id="user-tab" class="tab-panel">
+      <div class="user-profile">
+        <div class="user-profile__image">
+          <img src="tour_img/blank-profile-picture-973460_1280.webp" alt="Profile Picture" />
+        </div>
+        <div class="user-profile__info">
+          <h2 class="user-profile__info-title">Thông tin nhân viên</h2>
+          <p class="user-profile__info-item">
+            <strong>Họ và tên:</strong> [Họ và tên]
+          </p>
+          <p class="user-profile__info-item">
+            <strong>Mã nhân viên:</strong> [Mã nhân viên]
+          </p>
+          <p class="user-profile__info-item">
+            <strong>Giới tính:</strong> [Giới tính]
+          </p>
+          <p class="user-profile__info-item">
+            <strong>Điện thoại:</strong> [Điện thoại]
+          </p>
+          <p class="user-profile__info-item">
+            <strong>Số CMND/CCCD:</strong> [Số CMND/CCCD]
+          </p>
+          <p class="user-profile__info-item">
+            <strong>Email:</strong> [Email]
+          </p>
+          <p class="user-profile__info-item">
+            <strong>Nơi sinh:</strong> [Nơi sinh]
+          </p>
+        </div>
       </div>
 
-      <div id="edit-tour-tab" class="tab-panel">Chỉnh sửa Content</div>
-      <!-- XÓA TOUR -->
-      <div id="delete-tour-tab" class="tab-panel">
-        <div class="dashboard-container">
+      <div class="user-history">
+        <h2 class="user-history__title">Lịch sử việc đã làm</h2>
+        <table class="user-history__table">
+          <thead>
+            <tr>
+              <th>Ngày tháng</th>
+              <th>Loại việc</th>
+              <th>Chi tiết</th>
+              <th>Mức độ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>[Ngày tháng]</td>
+              <td>[Loại việc]</td>
+              <td>[Chi tiết]</td>
+              <td>[Mức độ]</td>
+            </tr>
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="user-schedule">
+        <p class="user-schedule__date">Thứ hai, ngày 1 tháng 1 năm 2024</p>
+        <table class="user-schedule__table">
+          <thead>
+            <tr>
+              <th>Ca</th>
+              <th>Thứ 2</th>
+              <th>Thứ 3</th>
+              <th>Thứ 4</th>
+              <th>Thứ 5</th>
+              <th>Thứ 6</th>
+              <th>Thứ 7</th>
+              <th>Chủ nhật</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Sáng</td>
+              <td>[Nội dung]</td>
+              <td>[Nội dung]</td>
+              <td>[Nội dung]</td>
+              <td>[Nội dung]</td>
+              <td>[Nội dung]</td>
+              <td>[Nội dung]</td>
+              <td>[Nội dung]</td>
+            </tr>
+            <tr>
+              <td>Chiều</td>
+              <td>[Nội dung]</td>
+              <td>[Nội dung]</td>
+              <td>[Nội dung]</td>
+              <td>[Nội dung]</td>
+              <td>[Nội dung]</td>
+              <td>[Nội dung]</td>
+              <td>[Nội dung]</td>
+            </tr>
+            <tr>
+              <td>Tối</td>
+              <td>[Nội dung]</td>
+              <td>[Nội dung]</td>
+              <td>[Nội dung]</td>
+              <td>[Nội dung]</td>
+              <td>[Nội dung]</td>
+              <td>[Nội dung]</td>
+              <td>[Nội dung]</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="home-tab" class="tab-panel active">
+      <p>Đây là website quản lý về tour, đặt phòng khách sạn, đặt xe, đặt vé máy bay. Thống kê, chỉnh sửa tour hiển thị,
+        giải quyết các khiếu nại của khách hàng về dịch vụ. </p>
+    </div>
+    <!-- QUAN LI -->
+    <!-- TẠO TOUR -->
+    <div id="create-tour-tab" class="tab-panel">
+      <main class="add-tour-main-content">
+        <section class="add-tour-form-section">
+          <h2 class="add-tour-form-section__title">Thông Tin Tour</h2>
+          <form class="add-tour-form-section__form">
+            <div class="add-tour-form-section__radio-group">
+              <label>
+                <input type="radio" id="domestic-tour" name="tour-type" value="domestic" required />
+                Trong nước
+              </label>
+              <label>
+                <input type="radio" id="international-tour" name="tour-type" value="international" />
+                Ngoài nước
+              </label>
+            </div>
+            <label for="tour-name" class="add-tour-form-section__label">Tên Tour</label>
+            <input type="text" id="tour-name" name="tour-name" class="add-tour-form-section__input"
+              placeholder="Nhập tên tour" required />
+
+            <label for="destination" class="add-tour-form-section__label">Địa Điểm</label>
+            <input type="text" id="destination" name="destination" class="add-tour-form-section__input"
+              placeholder="Nhập địa điểm" required />
+
+            <label for="time" class="add-tour-form-section__label">Thời Gian Bắt ĐầuĐầu</label>
+            <input type="date" id="time" name="time" class="add-tour-form-section__input" required />
+            <label for="time" class="add-tour-form-section__label">Thời Gian Kết Thúc</label>
+            <input type="date" id="time" name="time" class="add-tour-form-section__input" required />
+
+
+            <label for="price" class="add-tour-form-section__label">Giá</label>
+            <input type="number" id="price" name="price" class="add-tour-form-section__input" placeholder="Nhập giá"
+              required />
+            <label for="tour-name" class="add-tour-form-section__label">Chương Trình Ưu Đãi</label>
+            <input type="text" id="tour-name" name="tour-name" class="add-tour-form-section__input"
+              placeholder="Nhập tên tour" required />
+          </form>
+        </section>
+
+        <div class="container">
+          <div class="toolbar">
+            <div class="head">
+              <input type="text" placeholder="Filename" value="untitled" id="filename" />
+              <select onchange="fileHandle(this.value); this.selectedIndex=0">
+                <option value="" selected="" hidden="" disabled="">
+                  File
+                </option>
+                <option value="new">New file</option>
+                <option value="txt">Save as txt</option>
+                <option value="pdf">Save as pdf</option>
+              </select>
+              <select onchange="formatDoc('formatBlock', this.value); this.selectedIndex=0;">
+                <option value="" selected="" hidden="" disabled="">
+                  Format
+                </option>
+                <option value="h1">Heading 1</option>
+                <option value="h2">Heading 2</option>
+                <option value="h3">Heading 3</option>
+                <option value="h4">Heading 4</option>
+                <option value="h5">Heading 5</option>
+                <option value="h6">Heading 6</option>
+                <option value="p">Paragraph</option>
+              </select>
+              <select onchange="formatDoc('fontSize', this.value); this.selectedIndex=0;">
+                <option value="" selected="" hidden="" disabled="">
+                  Font size
+                </option>
+                <option value="1">Extra small</option>
+                <option value="2">Small</option>
+                <option value="3">Regular</option>
+                <option value="4">Medium</option>
+                <option value="5">Large</option>
+                <option value="6">Extra Large</option>
+                <option value="7">Big</option>
+              </select>
+              <div class="color">
+                <span>Color</span>
+                <input type="color" oninput="formatDoc('foreColor', this.value); this.value='#000000';" />
+              </div>
+              <div class="color">
+                <span>Background</span>
+                <input type="color" oninput="formatDoc('hiliteColor', this.value); this.value='#000000';" />
+              </div>
+            </div>
+            <div class="btn-toolbar">
+              <button onclick="formatDoc('upload')">
+                <i class="bx bx-upload"></i>
+              </button>
+              <button onclick="formatDoc('undo')">
+                <i class="bx bx-undo"></i>
+              </button>
+              <button onclick="formatDoc('redo')">
+                <i class="bx bx-redo"></i>
+              </button>
+              <button onclick="formatDoc('bold')">
+                <i class="bx bx-bold"></i>
+              </button>
+              <button onclick="formatDoc('underline')">
+                <i class="bx bx-underline"></i>
+              </button>
+              <button onclick="formatDoc('italic')">
+                <i class="bx bx-italic"></i>
+              </button>
+              <button onclick="formatDoc('strikeThrough')">
+                <i class="bx bx-strikethrough"></i>
+              </button>
+              <button onclick="formatDoc('justifyLeft')">
+                <i class="bx bx-align-left"></i>
+              </button>
+              <button onclick="formatDoc('justifyCenter')">
+                <i class="bx bx-align-middle"></i>
+              </button>
+              <button onclick="formatDoc('justifyRight')">
+                <i class="bx bx-align-right"></i>
+              </button>
+              <button onclick="formatDoc('justifyFull')">
+                <i class="bx bx-align-justify"></i>
+              </button>
+              <button onclick="formatDoc('insertOrderedList')">
+                <i class="bx bx-list-ol"></i>
+              </button>
+              <button onclick="formatDoc('insertUnorderedList')">
+                <i class="bx bx-list-ul"></i>
+              </button>
+              <button onclick="addLink()"><i class="bx bx-link"></i></button>
+              <button onclick="formatDoc('unlink')">
+                <i class="bx bx-unlink"></i>
+              </button>
+              <button id="show-code" data-active="false">&lt;/&gt;</button>
+            </div>
+          </div>
+
+          <div id="content" contenteditable="true" spellcheck="false">
+            abc
+          </div>
+        </div>
+        <button class="button-a-create-tour" id="createTourButton">
+          Tạo Tour
+        </button>
+
+        <div class="modal" id="passwordModal">
+          <div class="modal-content">
+            <h2>Xác Nhận Mật Khẩu</h2>
+            <input type="password" id="passwordInput" placeholder="Nhập mật khẩu" required />
+            <div>
+              <button class="button-confirm" id="confirmButton">
+                Xác Nhận Tạo Tour
+              </button>
+              <button class="button-cancel" id="cancelButton">Hủy</button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div id="edit-tour-tab" class="tab-panel">Chỉnh sửa Content</div>
+    <!-- XÓA TOUR -->
+    <div id="delete-tour-tab" class="tab-panel">
+      <div class="dashboard-container">
         <!-- Left Section -->
         <div class="delete-tour-container">
           <h2 class="delete-tour-header__title">
@@ -545,268 +465,271 @@
           </div>
         </div>
       </div>
+    </div>
 
       <div id="stats-tab" class="tab-panel">
-    <table id="tourTable">
-            <thead>
-                <tr>
-                    <th>Mã</th>
-                    <th>Mã tour</th>
-                    <th>Tour</th>
-                    <th>Khách hàng</th>
-                    <th>Nhân viên chăm sóc</th>
-                    <th>Trạng thái</th>
-                    <th>Ngày giờ</th>
-                    <th>Ghi chú</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>353</td>
-                    <td>3d312A</td>
-                    <td>Châu Âu 10N9D</td>
-                    <td>Nguyễn Văn Phong<br>Sđt:0876543221 </td>
-                    <td>Trần Trung Nghĩa<br>Số máy: 1234</td>
-                    <td>Đã thanh toán</td>
-                    <td>01/11/2024 9h34p pm</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>352</td>
-                    <td>Fe312A</td>
-                    <td>Tour Cao Bằng Trong Ngày: Thác Bản Dốc - Di Tich Pắc Pó - Lũng Luông - Động Ngườm Ngao</td>
-                    <td>Trương Thị Hoa<br>Sđt:0987632415</td>
-                    <td>Lương Thị Thu Hằng<br>Số máy: 12578</td>
-                    <td>Đã thanh toán</td>
-                    <td>10/09/2014 7h00p am</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>569</td>
-                    <td>62A73</td>
-                    <td>Tour Phú Thọ Trong Ngày: Đền Quốc Âu Cơ - Đồi Chè Long Cốc - Hang Lạng </td>
-                    <td>Nguyễn Thị Xoan<br>Sđt:0975382432</td>
-                    <td>Trần Trung Kiên<br>Số máy: 12423</td>
-                    <td>Đã thanh toán.</td>
-                    <td>20/09/2024 8h34p am</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>437</td>
-                    <td>12A35</td>
-                    <td> Châu Phi 18C5A: Ai Cập - Khu Kim Tự Tháp Giza - Sa mạc Trắng  </td>
-                    <td>Nguyễn Đăng Khoa<br>Sđt: 0958603785</td>
-                    <td>Trần Văn Quảng<br>Số máy: 1346</td>
-                    <td>Đã thanh toán</td>
-                    <td>13/11/2024 13h00p am</td>
-                    <td></td>
-                </tr>
+        <table id="tourTable">
+          <thead>
+            <tr>
+              <th>Mã</th>
+              <th>Mã tour</th>
+              <th>Tour</th>
+              <th>Khách hàng</th>
+              <th>Nhân viên chăm sóc</th>
+              <th>Trạng thái</th>
+              <th>Ngày giờ</th>
+              <th>Ghi chú</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>353</td>
+              <td>3d312A</td>
+              <td>Châu Âu 10N9D</td>
+              <td>Nguyễn Văn Phong<br>Sđt:0876543221 </td>
+              <td>Trần Trung Nghĩa<br>Số máy: 1234</td>
+              <td>Đã thanh toán</td>
+              <td>01/11/2024 9h34p pm</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>352</td>
+              <td>Fe312A</td>
+              <td>Tour Cao Bằng Trong Ngày: Thác Bản Dốc - Di Tich Pắc Pó - Lũng Luông - Động Ngườm Ngao</td>
+              <td>Trương Thị Hoa<br>Sđt:0987632415</td>
+              <td>Lương Thị Thu Hằng<br>Số máy: 12578</td>
+              <td>Đã thanh toán</td>
+              <td>10/09/2014 7h00p am</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>569</td>
+              <td>62A73</td>
+              <td>Tour Phú Thọ Trong Ngày: Đền Quốc Âu Cơ - Đồi Chè Long Cốc - Hang Lạng </td>
+              <td>Nguyễn Thị Xoan<br>Sđt:0975382432</td>
+              <td>Trần Trung Kiên<br>Số máy: 12423</td>
+              <td>Đã thanh toán.</td>
+              <td>20/09/2024 8h34p am</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>437</td>
+              <td>12A35</td>
+              <td> Châu Phi 18C5A: Ai Cập - Khu Kim Tự Tháp Giza - Sa mạc Trắng </td>
+              <td>Nguyễn Đăng Khoa<br>Sđt: 0958603785</td>
+              <td>Trần Văn Quảng<br>Số máy: 1346</td>
+              <td>Đã thanh toán</td>
+              <td>13/11/2024 13h00p am</td>
+              <td></td>
+            </tr>
 
-                <tr>
-                    <td>437</td>
-                    <td>12A35</td>
-                    <td>Châu Phi 18C5A: Ai Cập- Sông Nile  </td>
-                    <td>Lê Thị Hân<br>Sđt:0998754321</td>
-                    <td>Trương Thị Kim Ngọc<br>Số máy: 1346</td>
-                    <td>Đã thanh toán</td>
-                    <td>27/11/2024 8h00p am</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>437</td>
-                    <td>12A35</td>
-                    <td> Châu Âu  10N9D: London - Tháp Đồng Hò Big Ben - Lâu Đài Warwick - Cung điện Buckingham -  </td>
-                    <td>Nguyễn Thị Hạnh<br>Sđt:0389765461 </td>
-                    <td>Đỗ Quang Dũng<br>Số máy: 1136</td>
-                    <td>Đã thanh toán</td>
-                    <td>17/12/2024 19h00p pm</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>437</td>
-                    <td>12A35</td>
-                    <td> Châu Âu 10N9D: Ý - Tháp nghiên Pisa   </td>
-                    <td>Nguyễn Văn Trung<br>Sđt: 0321879566</td>
-                    <td>Trần Thị Kim Phụng<br>Số máy: 1575</td>
-                    <td>Đã thanh toán</td>
-                    <td>19/12/2024 17h00p am</td>
-                    <td></td> 
-                </tr>
-                <tr>
-                    <td>437</td>
-                    <td>12A35</td>
-                    <td> Châu Âu 10N9D:  Đức - Thành phố cảng Hamburg </td>
-                    <td>Đoàn Ngọc Phương <br>Sđt: 0918934586</td>
-                    <td>Ngô Thanh Hân<br>Số máy: 1456</td>
-                    <td>Đã thanh toán</td>
-                    <td>30/12/2024 22h00p pm</td>
-                    <td></td>
-                </tr>
-                <!-- Thêm các hàng khác nếu cần -->
-            </tbody>
+            <tr>
+              <td>437</td>
+              <td>12A35</td>
+              <td>Châu Phi 18C5A: Ai Cập- Sông Nile </td>
+              <td>Lê Thị Hân<br>Sđt:0998754321</td>
+              <td>Trương Thị Kim Ngọc<br>Số máy: 1346</td>
+              <td>Đã thanh toán</td>
+              <td>27/11/2024 8h00p am</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>437</td>
+              <td>12A35</td>
+              <td> Châu Âu 10N9D: London - Tháp Đồng Hò Big Ben - Lâu Đài Warwick - Cung điện Buckingham - </td>
+              <td>Nguyễn Thị Hạnh<br>Sđt:0389765461 </td>
+              <td>Đỗ Quang Dũng<br>Số máy: 1136</td>
+              <td>Đã thanh toán</td>
+              <td>17/12/2024 19h00p pm</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>437</td>
+              <td>12A35</td>
+              <td> Châu Âu 10N9D: Ý - Tháp nghiên Pisa </td>
+              <td>Nguyễn Văn Trung<br>Sđt: 0321879566</td>
+              <td>Trần Thị Kim Phụng<br>Số máy: 1575</td>
+              <td>Đã thanh toán</td>
+              <td>19/12/2024 17h00p am</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>437</td>
+              <td>12A35</td>
+              <td> Châu Âu 10N9D: Đức - Thành phố cảng Hamburg </td>
+              <td>Đoàn Ngọc Phương <br>Sđt: 0918934586</td>
+              <td>Ngô Thanh Hân<br>Số máy: 1456</td>
+              <td>Đã thanh toán</td>
+              <td>30/12/2024 22h00p pm</td>
+              <td></td>
+            </tr>
+            <!-- Thêm các hàng khác nếu cần -->
+          </tbody>
         </table>
-    </div>
+      </div>
       <div id="customers-tab" class="tab-panel">
         <label for="filterType">Lọc</label>
-            <select id="filterType" onchange="filterPartners()" class="filter-dropdown">
-            <option value="">Tất cả</option>
-            <option value="Họ và tên">Họ và tên</option>
-            <option value="Mã tour">Mã tour</option>
-            </select>
+        <select id="filterType" onchange="filterPartners()" class="filter-dropdown">
+          <option value="">Tất cả</option>
+          <option value="Họ và tên">Họ và tên</option>
+          <option value="Mã tour">Mã tour</option>
+        </select>
 
-            <input type="text" id="searchPartner" class="search-input" placeholder="Tìm kiếm theo thời gian (VD: 01/01/2024)" onkeyup="searchPartner()">
+        <input type="text" id="searchPartner" class="search-input"
+          placeholder="Tìm kiếm theo thời gian (VD: 01/01/2024)" onkeyup="searchPartner()">
 
-            <form id="partnerForm">
-            <label for="name">Họ và tên:</label>
-            <input type="text" id="name" name="name" required>
-            <br>
+        <form id="partnerForm">
+          <label for="name">Họ và tên:</label>
+          <input type="text" id="name" name="name" required>
+          <br>
 
-            <label for="contact-info">Thông tin liên lạc:</label>
-            <input type="text" id="contact-info" name="contact-info" placeholder="Thông tin liên lạc" required>
-            <br>
+          <label for="contact-info">Thông tin liên lạc:</label>
+          <input type="text" id="contact-info" name="contact-info" placeholder="Thông tin liên lạc" required>
+          <br>
 
-            <label for="noi-song">Nơi sống:</label>
-            <input type="text" id="noi-song" name="noi-song" placeholder="Nơi sống" required>
-            <br>
+          <label for="noi-song">Nơi sống:</label>
+          <input type="text" id="noi-song" name="noi-song" placeholder="Nơi sống" required>
+          <br>
 
-            <label for="ma-tour">Mã tour:</label>
-            <input type="text" id="ma-tour" name="ma-tour" placeholder="Mã tour" required>
-            <br>
+          <label for="ma-tour">Mã tour:</label>
+          <input type="text" id="ma-tour" name="ma-tour" placeholder="Mã tour" required>
+          <br>
 
-            <label for="tour">Tour:</label>
-            <input type="text" id="tour" name="tour" placeholder="Tour" required>
-            <br>
+          <label for="tour">Tour:</label>
+          <input type="text" id="tour" name="tour" placeholder="Tour" required>
+          <br>
 
-            <button type="submit">Thêm khách hàng</button>
-            </form>
+          <button type="submit">Thêm khách hàng</button>
+        </form>
 
-            <table id="tourTable">
-            <tr>
-                <th>STT</th>
-                <th>Họ và tên</th>
-                <th>Thông tin liên lạc</th>
-                <th>Nơi sống</th>
-                <th>Mã tour</th>
-                <th>Tour</th>
-                <th>Thời gian</th>
-            </tr>
-            <tr>
-                <td>353</td>
-                <td>Nguyễn Văn Phong</td>
-                <td>Sđt: 0876543221</td>
-                <td>TP.Hồ Chí Minh</td>
-                <td>3d312A</td>
-                <td>Châu Âu 10N9D</td>
-                <td>01/11/2024 9h34p pm</td>
-            </tr>
-            <tr>
-                <td>352</td>
-                <td>Trương Thị Hoa</td>
-                <td>Sđt: 0987632415</td>
-                <td>Thủ đô Hà Nội</td>
-                <td>Fe312A</td>
-                <td>Tour Cao Bằng Trong Ngày: Thác Bản Dốc - Di Tich Pắc Pó - Lũng Luông - Động Ngườm Ngao</td>
-                <td>10/09/2014 7h00p am</td>
-            </tr>
-            <tr>
-                <td>569</td>
-                <td>Nguyễn Thị Xoan</td>
-                <td>Sđt: 0975382432</td>
-                <td>Hải Phòng</td>
-                <td>62A73</td>
-                <td>Tour Phú Thọ Trong Ngày: Đền Quốc Âu Cơ - Đồi Chè Long Cốc - Hang Lạng</td>
-                <td>20/09/2024 8h34p am</td>
-            </tr>
-            <tr>
-                <td>158</td>
-                <td>Nguyễn Thị Xoan</td>
-                <td>Sđt: 0975382432</td>
-                <td>Quảng Ninh</td>
-                <td>31A09</td>
-                <td>Tour Ninh Bình Trong Ngày: Hà Nội - Hoa Lư - Tràng An - Hang Múa</td>
-                <td>10/01/2024 10h34p pm</td>
-            </tr>
-            <tr>
-                <td>437</td>
-                <td>Nguyễn Đăng Khoa</td>
-                <td>Sđt: 0958603785</td>
-                <td>Hà Nội</td>
-                <td>12A35</td>
-                <td>Châu Phi 18C5A: Ai Cập - Khu Kim Tự Tháp Giza - Sa mạc Trắng</td>
-                <td>13/10/2024 13h00p am</td>
-            </tr>
-            </table>
+        <table id="tourTable">
+          <tr>
+            <th>STT</th>
+            <th>Họ và tên</th>
+            <th>Thông tin liên lạc</th>
+            <th>Nơi sống</th>
+            <th>Mã tour</th>
+            <th>Tour</th>
+            <th>Thời gian</th>
+          </tr>
+          <tr>
+            <td>353</td>
+            <td>Nguyễn Văn Phong</td>
+            <td>Sđt: 0876543221</td>
+            <td>TP.Hồ Chí Minh</td>
+            <td>3d312A</td>
+            <td>Châu Âu 10N9D</td>
+            <td>01/11/2024 9h34p pm</td>
+          </tr>
+          <tr>
+            <td>352</td>
+            <td>Trương Thị Hoa</td>
+            <td>Sđt: 0987632415</td>
+            <td>Thủ đô Hà Nội</td>
+            <td>Fe312A</td>
+            <td>Tour Cao Bằng Trong Ngày: Thác Bản Dốc - Di Tich Pắc Pó - Lũng Luông - Động Ngườm Ngao</td>
+            <td>10/09/2014 7h00p am</td>
+          </tr>
+          <tr>
+            <td>569</td>
+            <td>Nguyễn Thị Xoan</td>
+            <td>Sđt: 0975382432</td>
+            <td>Hải Phòng</td>
+            <td>62A73</td>
+            <td>Tour Phú Thọ Trong Ngày: Đền Quốc Âu Cơ - Đồi Chè Long Cốc - Hang Lạng</td>
+            <td>20/09/2024 8h34p am</td>
+          </tr>
+          <tr>
+            <td>158</td>
+            <td>Nguyễn Thị Xoan</td>
+            <td>Sđt: 0975382432</td>
+            <td>Quảng Ninh</td>
+            <td>31A09</td>
+            <td>Tour Ninh Bình Trong Ngày: Hà Nội - Hoa Lư - Tràng An - Hang Múa</td>
+            <td>10/01/2024 10h34p pm</td>
+          </tr>
+          <tr>
+            <td>437</td>
+            <td>Nguyễn Đăng Khoa</td>
+            <td>Sđt: 0958603785</td>
+            <td>Hà Nội</td>
+            <td>12A35</td>
+            <td>Châu Phi 18C5A: Ai Cập - Khu Kim Tự Tháp Giza - Sa mạc Trắng</td>
+            <td>13/10/2024 13h00p am</td>
+          </tr>
+        </table>
       </div>
       <div id="complaints-tab" class="tab-panel">
         <h2 class="tab-title">Khiếu Nại</h2>
-        
+
         <!-- Form gửi khiếu nại -->
         <form id="complaintForm" class="complaint-form">
-            <label for="customerName">Tên khách hàng:</label>
-            <input type="text" id="customerName" required>
-            
-            <label for="customerEmail">Email:</label>
-            <input type="email" id="customerEmail" required>
-            
-            <label for="customerPhone">Số điện thoại:</label>
-            <input type="text" id="customerPhone" required>
-            
-            <label for="tourCode">Mã Tour:</label> <!-- Thêm trường Mã Tour -->
-            <input type="text" id="tourCode" required>
-            
-            <label for="complaintContent">Nội dung khiếu nại:</label>
-            <textarea id="complaintContent" required></textarea>
-            
-            <button type="submit">Gửi Khiếu Nại</button>
+          <label for="customerName">Tên khách hàng:</label>
+          <input type="text" id="customerName" required>
+
+          <label for="customerEmail">Email:</label>
+          <input type="email" id="customerEmail" required>
+
+          <label for="customerPhone">Số điện thoại:</label>
+          <input type="text" id="customerPhone" required>
+
+          <label for="tourCode">Mã Tour:</label> <!-- Thêm trường Mã Tour -->
+          <input type="text" id="tourCode" required>
+
+          <label for="complaintContent">Nội dung khiếu nại:</label>
+          <textarea id="complaintContent" required></textarea>
+
+          <button type="submit">Gửi Khiếu Nại</button>
         </form>
-        
+
         <!-- Lọc và tìm kiếm -->
         <div class="filter-container">
-            <label for="filterComplaintType">Lọc:</label>
-            <select id="filterComplaintType" onchange="filterComplaints()" class="filter-dropdown">
-                <option value="">Tất cả</option>
-                <option value="Đang xử lý">Đang xử lý</option>
-                <option value="Đã giải quyết">Đã giải quyết</option>
-            </select>
-    
-            <input type="text" id="searchComplaint" class="search-input" placeholder="Tìm kiếm theo tên, mã tour hoặc ngày" onkeyup="searchComplaint()">
-            <button id="searchButton" onclick="searchComplaint()">Tìm kiếm</button> <!-- Nút tìm kiếm -->
+          <label for="filterComplaintType">Lọc:</label>
+          <select id="filterComplaintType" onchange="filterComplaints()" class="filter-dropdown">
+            <option value="">Tất cả</option>
+            <option value="Đang xử lý">Đang xử lý</option>
+            <option value="Đã giải quyết">Đã giải quyết</option>
+          </select>
+
+          <input type="text" id="searchComplaint" class="search-input"
+            placeholder="Tìm kiếm theo tên, mã tour hoặc ngày" onkeyup="searchComplaint()">
+          <button id="searchButton" onclick="searchComplaint()">Tìm kiếm</button> <!-- Nút tìm kiếm -->
         </div>
-        
+
         <!-- Danh sách khiếu nại -->
         <h3 class="list-title">Danh Sách Khiếu Nại</h3>
         <table id="complaintTable" class="complaint-table">
-            <thead>
-                <tr>
-                    <th>STT</th>
-                    <th>Mã tour </th>
-                    <th>Tên khách hàng</th>
-                    <th>Thời gian </th> 
-                    <th>Trạng thái</th>
-                    <th>Nội Dung </th>
-                </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>3d312A</td>
-                <td>Nguyễn Văn Phong</td>
-                <td>21/11/2024 </td> 
-                <td>Đang xử lý </td>
-                <td>Thái độ tiếp tân khách sạn B không tốt. </td>
+          <thead>
+            <tr>
+              <th>STT</th>
+              <th>Mã tour </th>
+              <th>Tên khách hàng</th>
+              <th>Thời gian </th>
+              <th>Trạng thái</th>
+              <th>Nội Dung </th>
             </tr>
-                <td>2</td>
-                <td>Fe312A</td>
-                <td>TRương Thị Hoa </td>
-                <td>21/11/2024 </td> 
-                <td>Đang xử lý </td>
-                <td>Địa điểm du lịch không giống như quảng cáo. </td>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>3d312A</td>
+              <td>Nguyễn Văn Phong</td>
+              <td>21/11/2024 </td>
+              <td>Đang xử lý </td>
+              <td>Thái độ tiếp tân khách sạn B không tốt. </td>
             </tr>
-                <!-- Dữ liệu khiếu nại sẽ được thêm vào đây -->
-            </tbody>
+            <td>2</td>
+            <td>Fe312A</td>
+            <td>TRương Thị Hoa </td>
+            <td>21/11/2024 </td>
+            <td>Đang xử lý </td>
+            <td>Địa điểm du lịch không giống như quảng cáo. </td>
+            </tr>
+            <!-- Dữ liệu khiếu nại sẽ được thêm vào đây -->
+          </tbody>
         </table>
-    </div>
-     
+      </div>
+
       <div id="settings-tab" class="tab-panel">Settings Content</div>
       <div id="profile-tab" class="tab-panel">Profile Content</div>
     </div>
@@ -833,8 +756,8 @@
         }
       }
 
-        // Khách hàng
-            document.getElementById('partnerForm').addEventListener('submit', function(event) {
+      // Khách hàng
+      document.getElementById('partnerForm').addEventListener('submit', function (event) {
         event.preventDefault(); // Ngăn chặn hành động gửi mặc định
 
         const name = document.getElementById('name').value;
@@ -843,7 +766,7 @@
         const maTour = document.getElementById('ma-tour').value;
         const tour = document.getElementById('tour').value;
 
-      
+
         const currentTime = new Date().toLocaleString();
 
         // Tạo một hàng mới trong bảng
@@ -869,91 +792,92 @@
 
         // Xóa nội dung ô input sau khi gửi
         document.getElementById('partnerForm').reset();
-    });
+      });
 
-    function filterPartners() {
+      function filterPartners() {
         const filter = document.getElementById("filterType").value.toLowerCase();
         const table = document.getElementById("tourTable");
         const rows = table.getElementsByTagName("tr");
 
         for (let i = 1; i < rows.length; i++) { // Bắt đầu từ 1 để bỏ qua tiêu đề
-            const cells = rows[i].getElementsByTagName("td");
-            const name = cells[1].textContent.toLowerCase();
-            const maTour = cells[4].textContent.toLowerCase();
+          const cells = rows[i].getElementsByTagName("td");
+          const name = cells[1].textContent.toLowerCase();
+          const maTour = cells[4].textContent.toLowerCase();
 
-            if ((filter === "họ và tên" && name.includes(filter)) || (filter === "mã tour" && maTour.includes(filter)) || filter === "") {
-                rows[i].style.display = ""; // Hiển thị hàng
-            } else {
-                rows[i].style.display = "none"; // Ẩn hàng
-            }
+          if ((filter === "họ và tên" && name.includes(filter)) || (filter === "mã tour" && maTour.includes(filter)) || filter === "") {
+            rows[i].style.display = ""; // Hiển thị hàng
+          } else {
+            rows[i].style.display = "none"; // Ẩn hàng
+          }
         }
-    }
+      }
 
-    function searchPartner() {
+      function searchPartner() {
         const searchText = document.getElementById("searchPartner").value.toLowerCase();
         const table = document.getElementById("tourTable");
         const rows = table.getElementsByTagName("tr");
 
         for (let i = 1; i < rows.length; i++) { // Bắt đầu từ 1 để bỏ qua tiêu đề
-            const cells = rows[i].getElementsByTagName("td");
-            const time = cells[6].textContent.toLowerCase(); // Lấy nội dung ô Thời gian
+          const cells = rows[i].getElementsByTagName("td");
+          const time = cells[6].textContent.toLowerCase(); // Lấy nội dung ô Thời gian
 
-            if (time.includes(searchText)) {
-                rows[i].style.display = ""; // Hiển thị hàng
-            } else {
-                rows[i].style.display = "none"; // Ẩn hàng
-            }
+          if (time.includes(searchText)) {
+            rows[i].style.display = ""; // Hiển thị hàng
+          } else {
+            rows[i].style.display = "none"; // Ẩn hàng
+          }
         }
-    }
+      }
 
-// Hàm hiển thị danh sách khiếu nại
-function displayComplaints(complaintsToDisplay) {
-    const tableBody = document.querySelector("#complaintTable tbody");
-    tableBody.innerHTML = ""; // Xóa nội dung cũ
+      // Hàm hiển thị danh sách khiếu nại
+      function displayComplaints(complaintsToDisplay) {
+        const tableBody = document.querySelector("#complaintTable tbody");
+        tableBody.innerHTML = ""; // Xóa nội dung cũ
 
-    complaintsToDisplay.forEach((complaint, index) => {
-        const row = document.createElement("tr");
-        row.innerHTML = `
+        complaintsToDisplay.forEach((complaint, index) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
             <td>${index + 1}</td>
             <td>${complaint.name}</td>
             <td>${complaint.date}</td>
             <td>${complaint.status}</td>
             <td><button onclick="viewDetails(${complaint.id})">Xem chi tiết</button></td>
         `;
-        tableBody.appendChild(row);
-    });
-}
+          tableBody.appendChild(row);
+        });
+      }
 
-// Hàm lọc khiếu nại
-function filterComplaints() {
-    const filterValue = document.getElementById("filterComplaintType").value;
-    const filteredComplaints = complaints.filter(complaint => {
-        return filterValue === "" || complaint.status === filterValue;
-    });
-    displayComplaints(filteredComplaints);
-}
+      // Hàm lọc khiếu nại
+      function filterComplaints() {
+        const filterValue = document.getElementById("filterComplaintType").value;
+        const filteredComplaints = complaints.filter(complaint => {
+          return filterValue === "" || complaint.status === filterValue;
+        });
+        displayComplaints(filteredComplaints);
+      }
 
-// Hàm tìm kiếm khiếu nại
-function searchComplaint() {
-    const searchValue = document.getElementById("searchComplaint").value.toLowerCase();
-    const searchedComplaints = complaints.filter(complaint => {
-        return complaint.name .toLowerCase().includes(searchValue) || complaint.date.includes(searchValue);
-    });
-    displayComplaints(searchedComplaints);
-}
+      // Hàm tìm kiếm khiếu nại
+      function searchComplaint() {
+        const searchValue = document.getElementById("searchComplaint").value.toLowerCase();
+        const searchedComplaints = complaints.filter(complaint => {
+          return complaint.name.toLowerCase().includes(searchValue) || complaint.date.includes(searchValue);
+        });
+        displayComplaints(searchedComplaints);
+      }
 
-// Hàm xem chi tiết khiếu nại
-function viewDetails(id) {
-    const complaint = complaints.find(c => c.id === id);
-    if (complaint) {
-        alert(`Chi tiết khiếu nại:\nTên: ${complaint.name}\nNgày gửi: ${complaint.date}\nTrạng thái: ${complaint.status}\nNội dung: ${complaint.details}`);
-    }
-}
+      // Hàm xem chi tiết khiếu nại
+      function viewDetails(id) {
+        const complaint = complaints.find(c => c.id === id);
+        if (complaint) {
+          alert(`Chi tiết khiếu nại:\nTên: ${complaint.name}\nNgày gửi: ${complaint.date}\nTrạng thái: ${complaint.status}\nNội dung: ${complaint.details}`);
+        }
+      }
 
-// Khởi động hiển thị danh sách khiếu nại ban đầu
-displayComplaints(complaints);
+      // Khởi động hiển thị danh sách khiếu nại ban đầu
+      displayComplaints(complaints);
 
     </script>
-     <script src="../script/script-project-group/quanli.js"></script>
-  </body>
+    <script src="../script/script-project-group/quanli.js"></script>
+</body>
+
 </html>
