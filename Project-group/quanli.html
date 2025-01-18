@@ -244,7 +244,28 @@
         <main class="add-tour-main-content">
           <section class="add-tour-form-section">
             <h2 class="add-tour-form-section__title">Thông Tin Tour</h2>
-            <form class="add-tour-form-section__form">
+           <form class="add-tour-form-section__form">
+              <div class="add-tour-form-section__radio-group">
+                <label>
+                  <input
+                    type="radio"
+                    id="domestic-tour"
+                    name="tour-type"
+                    value="domestic"
+                    required
+                  />
+                  Trong nước
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    id="international-tour"
+                    name="tour-type"
+                    value="international"
+                  />
+                  Ngoài nước
+                </label>
+              </div>
               <label for="tour-name" class="add-tour-form-section__label"
                 >Tên Tour</label
               >
@@ -270,7 +291,7 @@
               />
 
               <label for="time" class="add-tour-form-section__label"
-                >Thời Gian</label
+                >Thời Gian Bắt ĐầuĐầu</label
               >
               <input
                 type="date"
@@ -279,8 +300,19 @@
                 class="add-tour-form-section__input"
                 required
               />
+              <label for="time" class="add-tour-form-section__label"
+              >Thời Gian Kết Thúc</label
+            >
+            <input
+              type="date"
+              id="time"
+              name="time"
+              class="add-tour-form-section__input"
+              required
+            />
 
-              <label for="price" class="add-tour-form-section__label"
+              
+               <label for="price" class="add-tour-form-section__label"
                 >Giá</label
               >
               <input
@@ -289,6 +321,17 @@
                 name="price"
                 class="add-tour-form-section__input"
                 placeholder="Nhập giá"
+                required
+              />
+              <label for="tour-name" class="add-tour-form-section__label"
+                >Chương Trình Ưu Đãi</label
+              >
+              <input
+                type="text"
+                id="tour-name"
+                name="tour-name"
+                class="add-tour-form-section__input"
+                placeholder="Nhập tên tour"
                 required
               />
             </form>
