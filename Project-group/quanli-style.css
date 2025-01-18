@@ -544,7 +544,10 @@ body {
 }
 
 
-
+.add-tour-form-section__radio-group{
+margin-bottom: 10px;
+font-size: 18px;
+}
 .add-tour-content-section__article {
     margin-top: 1rem;
 }
@@ -579,7 +582,12 @@ a {
 	cursor: pointer;
 }
 
-
+.button-a-create-tour{
+  width: 200px;        /* Đặt chiều rộng */
+  height: 50px;        /* Đặt chiều cao */
+  padding: 10px 20px;  /* Khoảng cách bên trong */
+  font-size: 16px;
+}
 
 
 .container {
@@ -767,7 +775,8 @@ a {
        
 /* XÓA TOUR*/
 
- .dashboard-container {
+
+    .dashboard-container {
       display: flex;
       gap: 24px;
       max-width: 1400px;
@@ -1280,14 +1289,4 @@ a {
 
 #customers-tab .action-buttons button:hover {
     background-color: #45a049;
-}
-.button-a-create-tour{
-  width: 200px;        /* Đặt chiều rộng */
-  height: 50px;        /* Đặt chiều cao */
-  padding: 10px 20px;  /* Khoảng cách bên trong */
-  font-size: 16px;
-}
-.add-tour-form-section__radio-group{
-margin-bottom: 10px;
-font-size: 18px;;
 }
