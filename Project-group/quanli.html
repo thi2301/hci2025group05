@@ -476,158 +476,71 @@
       <div id="edit-tour-tab" class="tab-panel">Chỉnh sửa Content</div>
       <!-- XÓA TOUR -->
       <div id="delete-tour-tab" class="tab-panel">
+        <div class="dashboard-container">
+        <!-- Left Section -->
         <div class="delete-tour-container">
-          <h2 class="delete-tour-header__title">Xóa Tour</h2>
-
-          <!-- Search Bar Section -->
-          <div class="delete-tour-search">
-            <label for="search-bar" class="delete-tour-search__label"
-              >Tìm Tour</label
-            >
-            <div class="delete-tour-search__bar-wrapper">
-              <i class="bx bx-search delete-tour-search__icon"></i>
-              <input
-                type="text"
-                id="search-bar"
-                class="delete-tour-search__input"
-                placeholder="Nhập mã hoặc tên tour"
-              />
-            </div>
-            <ul
-              id="dropdown"
-              class="delete-tour-search__dropdown delete-tour-search__dropdown--hidden"
-            ></ul>
-          </div>
-
-          <!-- Direct Search Input Fields -->
+          <h2 class="delete-tour-header__title">
+            <i class="fas fa-trash-alt" style="color: #e53e3e;"></i>
+            Xóa Tour
+          </h2>
           <div class="delete-tour-fields">
-            <label for="tour-code" class="delete-tour-fields__label"
-              >Mã Tour</label
-            >
-            <input
-              type="text"
-              id="tour-code"
-              class="delete-tour-fields__input"
-              placeholder="Enter Tour Code"
-            />
-            <label for="tour-name" class="delete-tour-fields__label"
-              >Tên Tour</label
-            >
-            <input
-              type="text"
-              id="tour-name"
-              class="delete-tour-fields__input"
-              placeholder="Enter Tour Name"
-            />
+            <label for="tour-code" class="delete-tour-fields__label">Mã tour hoặc tên tour</label>
+            <input type="text" id="tour-code" class="delete-tour-fields__input"
+              placeholder="Nhập mã tour hoặc tên tour">
+
+            <label for="tour-reason" class="delete-tour-fields__label">Nhập mật khẩu xác nhận</label>
+            <input type="text" id="tour-reason" class="delete-tour-fields__input" placeholder="">
           </div>
 
-          <!-- Tour Information Table -->
-          <div class="delete-tour-info">
-            <label class="delete-tour-info__label">Thông Tin Tour</label>
-            <table class="delete-tour-info__table">
-              <thead class="delete-tour-info__table-header">
-                <tr>
-                  <th class="delete-tour-info__header-cell">Mã Tour</th>
-                  <th class="delete-tour-info__header-cell">Tên Tour</th>
-                  <th class="delete-tour-info__header-cell">Địa Điểm</th>
-                  <th class="delete-tour-info__header-cell">Giá</th>
-                  <th class="delete-tour-info__header-cell">Chi Tiết</th>
-                </tr>
-              </thead>
-              <tbody id="tour-data" class="delete-tour-info__table-body">
-                <!-- Dynamic Content Here -->
-              </tbody>
-            </table>
+          <div class="delete-confirm">
+            <input type="checkbox" id="confirm-delete">
+            <label for="confirm-delete">Xác nhận xóa tour này</label>
           </div>
 
-          <!-- Delete Button -->
           <button id="delete-tour-button" class="delete-tour-action__button">
+            <i class="fas fa-trash-alt"></i>
             Xóa Tour
           </button>
-           <div id="delete-modal" class="delete-tour-modal delete-tour-modal--hidden">
-            <div class="delete-tour-modal__content">
-                <h2 class="delete-tour-modal__title">Xác Nhận</h2>
-                <p class="delete-tour-modal__text">Nhập mật khẩu để xác nhận xóa</p>
-                <input type="password" 
-                       id="password" 
-                       class="delete-tour-modal__input" 
-                       placeholder="Nhập mật khẩu">
-                <div class="delete-tour-modal__actions">
-                    <button id="confirm-delete" class="delete-tour-modal__button delete-tour-modal__button--confirm">
-                        Xác Nhận
-                    </button>
-                    <button id="cancel-delete" class="delete-tour-modal__button delete-tour-modal__button--cancel">
-                        Hủy
-                    </button>
-                </div>
-            </div>
         </div>
 
-        <!-- Tour Article Modal -->
-        <div id="article-modal" class="delete-tour-article-modal delete-tour-article-modal--hidden">
-            <div class="delete-tour-article-modal__content">
-                <h2 class="delete-tour-article-modal__title">Tour Article</h2>
-                <p id="tour-article" class="delete-tour-article-modal__text">Loading...</p>
-                <button id="close-article" class="delete-tour-article-modal__button">Close</button>
-            </div>
-        </div>
-    </div>
-     <div class="review-container">
-        <div class="review-container__content">
-            <p class="review-container__title">Vùng hiển thị bài viết về tour trước khi xóa  </p>
-            
-        </div>
-    </div>
-
-          <!-- Delete Confirmation Modal -->
-          <div
-            id="delete-modal"
-            class="delete-tour-modal delete-tour-modal--hidden"
-          >
-            <div class="delete-tour-modal__content">
-              <h2 class="delete-tour-modal__title">Xác Nhận</h2>
-              <p class="delete-tour-modal__text">
-                Nhập mật khẩu để xác nhận xóa
+        <!-- Right Section -->
+        <div class="tour-details-container">
+          <div class="rectangle-container__image-title-content">
+            <img src="tour_img/img11.png" alt="Tour Image" class="rectangle-container__image">
+            <div class="rectangle-container__text-content">
+              <h2 class="rectangle-container__title">Thông Tin Chi Tiết Tour</h2>
+              <p class="rectangle-container__content">
+                Xem thông tin chi tiết về tour du lịch, bao gồm lịch trình, giá cả và các dịch vụ đi kèm.
               </p>
-              <input
-                type="password"
-                id="password"
-                class="delete-tour-modal__input"
-                placeholder="Nhập mật khẩu"
-              />
-              <div class="delete-tour-modal__actions">
-                <button
-                  id="confirm-delete"
-                  class="delete-tour-modal__button delete-tour-modal__button--confirm"
-                >
-                  Xác Nhận
-                </button>
-                <button
-                  id="cancel-delete"
-                  class="delete-tour-modal__button delete-tour-modal__button--cancel"
-                >
-                  Hủy
-                </button>
-              </div>
             </div>
           </div>
-
-          <!-- Tour Article Modal -->
-          <div
-            id="article-modal"
-            class="delete-tour-article-modal delete-tour-article-modal--hidden"
-          >
-            <div class="delete-tour-article-modal__content">
-              <h2 class="delete-tour-article-modal__title">Tour Article</h2>
-              <p id="tour-article" class="delete-tour-article-modal__text">
-                Loading...
-              </p>
-              <button
-                id="close-article"
-                class="delete-tour-article-modal__button"
-              >
-                Close
-              </button>
+          <div class="rectangle-container__text-block">
+            <h3 class="rectangle-container__text-block-title">Chi Tiết Tour</h3>
+            <div class="tour-info-grid">
+              <div class="tour-info-item">
+                <div class="tour-info-label">Mã Tour</div>
+                <div class="tour-info-value"></div>
+              </div>
+              <div class="tour-info-item">
+                <div class="tour-info-label">Tên Tour</div>
+                <div class="tour-info-value"></div>
+              </div>
+              <div class="tour-info-item">
+                <div class="tour-info-label">Thời Gian</div>
+                <div class="tour-info-value"></div>
+              </div>
+              <div class="tour-info-item">
+                <div class="tour-info-label">Giá Tour</div>
+                <div class="tour-info-value"></div>
+              </div>
+              <div class="tour-info-item">
+                <div class="tour-info-label">Khởi Hành</div>
+                <div class="tour-info-value"></div>
+              </div>
+              <div class="tour-info-item">
+                <div class="tour-info-label">Số Lượng Khách</div>
+                <div class="tour-info-value"></div>
+              </div>
             </div>
           </div>
         </div>
