@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Search</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- my css -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        #scrollToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+
+        #scrollToTopBtn:hover {
+            background-color: #0056b3;
+        }
+
+        #scrollToTopBtn:active {
+            transform: scale(0.9);
+        }
+
+
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #FFFCF5;
+
+            width: 100%;
+            z-index: 1000;
+            /* Đảm bảo header nằm trên các phần tử khác */
+        }
+
+        .body {
+            position: relative;
+        }
+
+        .menubar {
+            flex: 10;
+            display: flex;
+            position: relative;
+
+        }
+
+        .logo {
+            background-image: url('./img/Logo_Web-Project.png');
+            width: 8rem;
+            height: 7rem;
+            background-size: cover;
+            /* Đảm bảo ảnh phủ đầy phần tử */
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .navbar li {
+            margin: 0.5rem;
+
+        }
+
+        .navbar li a {
+            text-decoration: none;
+            color: coral;
+            margin: 0.5rem;
+            position: relative;
+
+        }
+
+        .navbar li a::after {
+            content: '';
+            left: 0;
+            bottom: -6px;
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background: coral;
+            transform: scale(0);
+            transition: .5s;
+        }
+
+        .navbar li a:hover::after {
+            transform: scale(1);
+        }
+
+
+        .navbar button {
+            margin-left: 0.2rem;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.3rem;
+            padding: 0.5rem;
+            border-radius: 1rem;
+            border: none;
+            transition: .5s;
+        }
+
+        .btn-login-register {
+            margin-left: 4rem;
+            display: flex;
+            margin: 1rem;
+        }
+
+        #myBtn-login {
+            background-color: antiquewhite;
+            margin-right: .5rem;
+        }
+
+        #myBtn-login:hover {
+            font-size: 1.1rem;
+            border-radius: 1.2rem;
+            color: coral;
+        }
+
+        #myBtn-register {
+            background-color: antiquewhite;
+        }
+
+        #myBtn-register:hover {
+            font-size: 1.11rem;
+            border-radius: 1.2rem;
+            color: coral;
+        }
+
+        .modal {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(20px);
+        }
+
+        .modal-content {
+            background-color: white;
+            width: 500px;
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            /* Bo góc */
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* Hiệu ứng đổ bóng */
+            position: relative;
+            font-size: 1.5rem;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .modal-content h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 0;
+            right: 0;
+            text-align: center;
+            font-size: 2rem;
+            background-color: #000;
+            color: coral;
+            width: 3rem;
+            height: 3rem;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            cursor: pointer;
+        }
+
+        #myModal-register {
+            display: none;
+        }
+
+        #myModal-login {
+            display: none;
+        }
+
+        input {
+            margin-bottom: 1rem;
+            margin-left: .5rem;
+            border: none;
+            outline: none;
+            border-bottom: 2px solid #000;
+            border-radius: 0;
+            background: transparent;
+            /*nền trong suốt*/
+        }
+
+
+
+        .input-user label {
+            position: absolute;
+            left: 6rem;
+            user-select: none;
+            pointer-events: none;
+            /* Để label không chặn tương tác với input */
+            font-weight: 300;
+            opacity: 0.5;
+            padding: 0 0.8rem;
+        }
+
+        .input-password label {
+            position: absolute;
+            left: 6rem;
+            user-select: none;
+            pointer-events: none;
+            /* Để label không chặn tương tác với input */
+            font-weight: 300;
+            opacity: 0.5;
+            padding: 0 0.8rem;
+        }
+
+
+
+        .input-user input:focus~label,
+        .input-user input:valid~label {
+            font-size: 0.8rem;
+            transform: translateY(-1rem);
+            font-weight: 1000;
+            transition: .5s;
+        }
+
+        .input-password input:focus~label,
+        .input-password input:valid~label {
+            font-size: 0.8rem;
+            transform: translateY(-1rem);
+            font-weight: 1000;
+            transition: .5s;
+        }
+
+        .forgot-pass {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.2rem;
+        }
+
+
+        .forgot-pass a {
+            font-size: 1.3rem;
+            text-decoration: none;
+        }
+
+        .forgot-pass a:hover {
+            text-decoration: underline;
+        }
+
+        .modal-content button {
+            width: 20vw;
+        }
+
+        .modal-content button:hover {
+            background-color: coral;
+        }
+
+        .register-new {
+            font-size: 1.2rem;
+            font-weight: 200;
+            margin-top: 1rem;
+        }
+
+        .register-new a {
+            text-decoration: none;
+        }
+
+        .register-new a:hover {
+            text-decoration: underline;
+        }
+
+        /* ------------------sidebar-------------------- */
+
+        .sidebar-open {
+            position: absolute;
+            right: 1rem;
+            cursor: pointer;
+        }
+
+        .sidebar-open i {
+            font-size: 3rem;
+        }
+
+        /* Sidebar mặc định ẩn và nằm ngoài màn hình bên phảiphải */
+        .sidebar {
+            position: fixed;
+            /* Giữ sidebar cố định */
+            top: 0;
+            /* Nằm trên cùng */
+            right: -350px;
+            /* Bắt đầu ở ngoài màn hình */
+            height: 100%;
+            width: 250px;
+            background-color: #fff8e1;
+            /* Màu sidebar */
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+            /* Đổ bóng nhẹ */
+            z-index: 1000;
+            /* Đảm bảo nằm trên mọi thành phần khác */
+            transition: right 0.3s ease;
+            /* Hiệu ứng trượt */
+        }
+
+        /* Khi sidebar mở */
+        .sidebar.open {
+            right: 0;
+            /* Hiện sidebar vào màn hình */
+        }
+
+        /* Backdrop làm mờ trang chính */
+        .backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Nền tối mờ */
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+            /* Dưới sidebar */
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        /* Khi backdrop mở */
+        .backdrop.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Ngăn cuộn trang khi mở sidebar */
+        body.no-scroll {
+            overflow: hidden;
+        }
+
+        .container-sidebar {
+            position: absolute;
+            right: 0;
+            width: 22rem;
+            background-color: #f9f0d9;
+        }
+
+        .container-sidebar .logo-sidebar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #FFFCF5;
+            /* backdrop-filter: blur(20px); */
+        }
+
+        .container-sidebar .logo-sidebar img {
+            width: 5.55rem;
+            height: 6rem;
+        }
+
+        .container-sidebar .logo-sidebar span {
+            font-size: 2rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .container-sidebar .logo-sidebar i {
+            border-radius: 50%;
+            font-size: 3rem;
+            background-color: coral;
+            cursor: pointer;
+        }
+
+        .sidebar-menu {
+            position: relative;
+            overflow-y: auto;
+            height: calc(100vh - 80px);
+            /* Trừ chiều cao logo-sidebar hoặc các phần khác */
+        }
+
+        .sidebar-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-menu ul li {
+            text-align: center;
+            padding: 1.5rem 0;
+        }
+
+        .sidebar-menu ul li:hover {
+            background-color: coral;
+        }
+
+        .sidebar-menu ul li a {
+            text-decoration: none;
+            display: block;
+            /* Biến <a> thành khối để nó chiếm toàn bộ chiều rộng của <li> */
+        }
+
+        .sidebar-menu ul li a {
+            color: black;
+            font-size: 1.2rem;
+            font-weight: 500;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .sidebar-menu ul li a i {
+            color: #00b6f3;
+        }
+
+        :root {
+            --primary-color: #FF7F50;
+            --primary-dark: #FF6B3D;
+            --primary-light: #FFE4D6;
+            --white: #FFFFFF;
+            --gray-light: #F5F5F5;
+            --text-dark: #333333;
+            --border-light: #FFE4D6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+
+            justify-content: flex-start;
+            background-image: url("tour_img/vietnam-5104512.jpg");
+            color: var(--text-dark);
+        }
+
+        .p1 {
+            margin-top: 10px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(255, 127, 80, 0.25);
+        }
+
+        .tour-search {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .tour-search__row {
+            display: flex;
+            gap: 15px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .tour-search__button {
+            padding: 12px 25px;
+            font-size: 16px;
+            border: 2px solid var(--white);
+            border-radius: 8px;
+            background-color: transparent;
+            color: var(--white);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .tour-search__button:hover {
+            background-color: var(--white);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .tour-search__input-container {
+            margin: 15px 0;
+        }
+
+        .tour-search__input {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            border: 2px solid var(--primary-light);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .tour-search__input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(255, 127, 80, 0.2);
+        }
+
+        .tour-search__time-search {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tour-search__time-input {
+            flex: 1;
+            min-width: 200px;
+            padding: 15px;
+            font-size: 16px;
+            border: 2px solid var(--primary-light);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .tour-search__time-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .tour-search__search-button {
+            padding: 15px 30px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            background-color: var(--white);
+            color: var(--primary-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .tour-search__search-button:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        .tour-section {
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 30px;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .tour-section__title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-align: center;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .tour-section__title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .tour-section__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .tour-section__item {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 25px;
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            background-color: var(--white);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .tour-section__item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(255, 127, 80, 0.1);
+        }
+
+        .tour-section__item--featured {
+            display: flex;
+            flex-direction: row;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .tour-section__image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .tour-section__image--featured {
+            width: 250px;
+            height: 250px;
+            margin-right: 25px;
+            border-radius: 10px;
+        }
+
+        .tour-section__info {
+            padding: 15px;
+        }
+
+        .tour-section__info--featured {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex: 1;
+            padding: 0;
+        }
+
+        .tour-section__name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--primary-dark);
+        }
+
+        .tour-section__name--featured {
+            font-size: 24px;
+        }
+
+        .tour-section__location {
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .tour-section__details {
+            margin: 10px 0;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .tour-section__review {
+            font-size: 14px;
+            margin: 10px 0;
+            color: #666;
+            font-style: italic;
+        }
+
+        .tour-section__price {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-top: auto;
+        }
+
+        .tour-section__features {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 10px 0;
+        }
+
+        .tour-section__feature {
+            font-size: 13px;
+            color: #666;
+            background-color: var(--primary-light);
+            padding: 5px 10px;
+            border-radius: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .tour-section__item--featured {
+                flex-direction: column;
+                padding: 0;
+            }
+
+            .tour-section__image--featured {
+                width: 100%;
+                margin-right: 0;
+            }
+
+            .tour-section__info--featured {
+                padding: 15px;
+            }
+
+            .p1 {
+                margin: 10px;
+                padding: 20px;
+            }
+
+            .tour-section {
+                margin: 10px;
+                padding: 20px;
+            }
+
+            .tour-section__grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f9f0d9;
+            width: 100vw;
+            height: 30vh;
+            text-align: center;
+
+        }
+
+        .footer-info {
+            margin-left: 3rem;
+        }
+
+        .footer-c {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .holine {
+            display: inline;
+            justify-content: center;
+            align-items: center;
+            right: 5rem;
+            margin-right: 3rem;
+        }
+
+        .phone {
+            font-size: 2rem;
+        }
+
+        .phone a {
+            text-decoration: none;
+            color: coral;
+        }
+
+        .holine p {
+            text-align: center;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <header>
+        <div class="header">
+            <nav class="menubar">
+                <a class="logo" img crs="Logo_Web-Project.png"></a>
+                <ul class="navbar">
+                    <li><a href="project-group.html">Khách Sạn</a></li>
+                    <li><a href="tour.html">Tour</a></li>
+                    <li><a href="vemaybay.html">Vé Máy Bay</a></li>
+                    <li><a href="khachhang.html">Khách Hàng</a></li>
+                    <li><a href="">Đối Tác</a></li>
+                    <li><a href="quanli.html">Quản Lí</a></li>
+                    <div class="btn-login-register">
+                        <button id="myBtn-login">Login</button>
+                        <form action="">
+                            <!-- The Modal -->
+                            <div id="myModal-login" class="modal">
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                    <span class="close-modal">&times;</span> <!-- Icon đóng modal -->
+                                    <h2>Login</h2>
+                                    <div class="input-user">
+                                        <input type="email" required>
+                                        <label for="email">Email</label>
+                                        <i class="fa-solid fa-user"></i>
+                                    </div>
+                                    <div class="input-password">
+                                        <input type="password" required>
+                                        <label for="password">Passwword</label>
+                                        <i class="fa-solid fa-lock"></i>
+                                    </div>
+                                    <div class="forgot-pass">
+                                        <p style="margin: 0; padding: 1rem;"><input type="checkbox">Remember me <a
+                                                href="">Forgot password?</a></p>
+
+                                    </div>
+                                    <button type="submit">Login</button>
+                                    <div class="register-new">
+                                        <p>Don't have an account? <a href="">Register</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <button id="myBtn-register">Register</button>
+                        <form action="">
+                            <!-- The Modal -->
+                            <div id="myModal-register" class="modal">
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                    <span class="close-modal">&times;</span> <!-- Icon đóng modal -->
+                                    <h2>Register</h2>
+                                    <div class="input-user">
+                                        <input type="text" required>
+                                        <label for="username">UserName</label>
+                                        <i class="fa-solid fa-user"></i>
+                                    </div>
+                                    <div class="input-user">
+                                        <input type="email" required>
+                                        <label for="email">Email</label>
+                                        <i class="fa-solid fa-user"></i>
+                                    </div>
+                                    <div class="input-password">
+                                        <input type="password" required>
+                                        <label for="password">Passwword</label>
+                                        <i class="fa-solid fa-lock"></i>
+                                    </div>
+                                    <div class="forgot-pass">
+                                        <p style="margin: 0; padding: 1rem;"><input type="checkbox">I agree to the
+                                            terms & conditions</p>
+
+                                    </div>
+                                    <button type="submit">Register</button>
+                                    <div class="register-new">
+                                        <p>Already have an account? <a href="">Login</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </ul>
+            </nav>
+
+            <div class="backdrop" id="backdrop"></div>
+            <!-- -----------sidebar----------------- -->
+            <div class="sidebar-open">
+                <i class="fa-solid fa-bars" onclick="openNav()"></i>
+            </div>
+
+            <div class="sidebar">
+                <div class="container-sidebar">
+                    <div class="logo-sidebar">
+                        <img src="tour_img/Logo_Web-Project.png" alt="">
+                        <Span>Travel Everywhre </Span>
+                        <i class="fa-solid fa-circle-xmark" onclick="closeNav()"></i>
+                    </div>
+                    <div class="sidebar-menu">
+                        <ul>
+                            <li><a href="#"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+                            <li><a href=""><i class="fa-solid fa-heart"></i> Yêu Thích</a></li>
+                            <li><a href=""><i class="fa-solid fa-suitcase-rolling"></i> Tour</a></li>
+                            <li><a href="./vemaybay.html"><i class="fa-solid fa-plane"></i> Vé Máy Bay</a></li>
+                            <li><a href=""><i class="fa-solid fa-user"></i> Khách Hàng</a></li>
+                            <li><a href=""><i class="fa-solid fa-users"></i> Đối Tác</a></li>
+                            <li><a href=""><i class="fa-solid fa-bug"></i> Khiếu Nại</a></li>
+                            <li><a href=""><i class="fa-solid fa-book"></i> Cẩm Nang Du Lịch</a></li>
+                            <li><a href=""><i class="fa-solid fa-briefcase"></i> Tuyển Dụng</a></li>
+                            <li><a href=""><i class="fa-solid fa-headset"></i> Hỗ Trợ</a></li>
+                            <li><a href=""><i class="fa-solid fa-money-check-dollar"></i> Trở Thành Đối Tác Liên
+                                    Kết</a></li>
+                            <li><a href=""><i class="fa-solid fa-download"></i> Tải Ứng Dụng</a></li>
+                            <li><a href=""><i class="fa-solid fa-share-nodes"></i> Giới Thiệu Nhận Quà</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+    <div class="p1">
+        <div class="tour-search">
+            <div class="tour-search__row">
+                <button class="tour-search__button">Tour Trong Nước</button>
+                <button class="tour-search__button">Tour Quốc Tế</button>
+            </div>
+            <div class="tour-search__input-container">
+                <input type="text" class="tour-search__input" placeholder="Bạn muốn đi đâu?">
+            </div>
+            <div class="tour-search__time-search">
+                <input type="datetime-local" class="tour-search__time-input">
+                <button class="tour-search__search-button">Tìm Kiếm</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="tour-section">
+        <div class="tour-section__title">Tour Ngày Tết</div>
+        <div class="tour-section__item tour-section__item--featured">
+            <img src="tour_img/hue.jpg" alt="Tour Hà Nội" class="tour-section__image--featured">
+            <div class="tour-section__info tour-section__info--featured">
+                <div class="tour-section__name tour-section__name--featured">Khám Phá Văn Hóa Lịch Sử Con Người Việt Nam
+                </div>
+                <div class="tour-section__location">Địa điểm: Huế</div>
+                <div class="tour-section__details">
+                    Thời gian: 2 ngày 1 đêm<br>
+                    Phương tiện: Máy bay + Xe du lịch<br>
+                    Khởi hành: Mùng 6 Tết
+                </div>
+                <div class="tour-section__features">
+                    <span class="tour-section__feature">Bao gồm bữa ăn</span>
+                    <span class="tour-section__feature">Khách sạn 4 sao</span>
+                    <span class="tour-section__feature">HDV chuyên nghiệp</span>
+                </div>
+                <div class="tour-section__review">Review: Một chuyến đi tuyệt vời với những trải nghiệm văn hóa độc
+                    đáo!</div>
+                <div class="tour-section__price">3,000,000 VND</div>
+            </div>
+        </div>
+        <div class="tour-section__item tour-section__item--featured">
+            <img src="tour_img/tải xuống.jpg" alt="Tour Ninh Bình" class="tour-section__image--featured">
+            <div class="tour-section__info tour-section__info--featured">
+                <div class="tour-section__name tour-section__name--featured">Khám phá lịch sử và thiên nhiên Ninh Bình,
+                    Cố Đô Hoa Lư </div>
+                <div class="tour-section__location">Địa điểm: Ninh Bình</div>
+                <div class="tour-section__details">
+                    Thời gian: 1 Ngày<br>
+                    Phương tiện: Xe du lịch <br>
+                    Khởi hành: Mùng 3 Tết
+                </div>
+                <div class="tour-section__features">
+                    <span class="tour-section__feature">Bao gồm bữa ăn</span>
+                    <span class="tour-section__feature">HDV chuyên nghiệp</span>
+                </div>
+                <div class="tour-section__review">Review: Một chuyến đi tuyệt vời với những trải nghiệm văn hóa độc
+                    đáo!</div>
+                <div class="tour-section__price">2,000,000 VND</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tour-section">
+        <div class="tour-section__title">Tour Trong Nước</div>
+        <div class="tour-section__grid">
+            <div class="tour-section__item">
+                <img src="tour_img/anh-da-lat-19.jpg.webp" alt="Tour Đà Lạt" class="tour-section__image">
+                <div class="tour-section__info">
+                    <div class="tour-section__name">Đà Lạt Mộng Mơ</div>
+                    <div class="tour-section__location">Địa điểm: Đà Lạt</div>
+                    <div class="tour-section__details">
+                        3 ngày 2 đêm<br>
+                        Khởi hành: Thứ 6 hàng tuần
+                    </div>
+                    <div class="tour-section__features">
+                        <span class="tour-section__feature">Bao gồm bữa ăn</span>
+                        <span class="tour-section__feature">Resort 4 sao</span>
+                    </div>
+                    <div class="tour-section__price">2,500,000 VND</div>
+                </div>
+            </div>
+            <div class="tour-section__item">
+                <img src="tour_img/photo-1668570496303-e22d19a17f65.avif" alt="Tour Phú Quốc"
+                    class="tour-section__image">
+                <div class="tour-section__info">
+                    <div class="tour-section__name">Phú Quốc Đảo Ngọc</div>
+                    <div class="tour-section__location">Địa điểm: Phú Quốc</div>
+                    <div class="tour-section__details">
+                        4 ngày 3 đêm<br>
+                        Khởi hành: Chủ nhật hàng tuần
+                    </div>
+                    <div class="tour-section__features">
+                        <span class="tour-section__feature">All-inclusive</span>
+                        <span class="tour-section__feature">Resort 5 sao</span>
+                    </div>
+                    <div class="tour-section__price">5,500,000 VND</div>
+                </div>
+            </div>
+            <div class="tour-section__item">
+                <img src="tour_img/mountain-4690386_1280.jpg" alt="Tour Sapa" class="tour-section__image">
+                <div class="tour-section__info">
+                    <div class="tour-section__name">Sapa Hùng Vĩ</div>
+                    <div class="tour-section__location">Địa điểm: Sapa</div>
+                    <div class="tour-section__details">
+                        2 ngày 1 đêm<br>
+                        Khởi hành: Thứ 7 hàng tuần
+                    </div>
+                    <div class="tour-section__features">
+                        <span class="tour-section__feature">Homestay</span>
+                        <span class="tour-section__feature">Trekking</span>
+                    </div>
+                    <div class="tour-section__price">1,800,000 VND</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tour-section">
+        <div class="tour-section__title">Tour Nước NgoàiNgoài</div>
+        <div class="tour-section__grid">
+            <div class="tour-section__item">
+                <img src="tour_img/nhatban.jpg" alt="Tour a" class="tour-section__image">
+                <div class="tour-section__info">
+                    <div class="tour-section__name"> </div>
+                    <div class="tour-section__location">Địa điểm: Tokyo - Osaka</div>
+                    <div class="tour-section__details">
+                        3 ngày 2 đêm<br>
+                        Khởi hành: Thứ 6 hàng tuần
+                    </div>
+                    <div class="tour-section__features">
+                        <span class="tour-section__feature">Bao gồm bữa ăn</span>
+                        <span class="tour-section__feature">Resort 4 sao</span>
+                    </div>
+                    <div class="tour-section__price">52,500,000 VND</div>
+                </div>
+            </div>
+            <div class="tour-section__item">
+                <img src="tour_img/ts.jpg" alt="Tour bb" class="tour-section__image">
+                <div class="tour-section__info">
+                    <div class="tour-section__name">Ý - Thụy Sĩ - Pháp</div>
+                    <div class="tour-section__location">Địa điểm: Ý - Thụy Sĩ - Pháp</div>
+                    <div class="tour-section__details">
+                        4 ngày 3 đêm<br>
+                        Khởi hành: Chủ nhật hàng tuần
+                    </div>
+                    <div class="tour-section__features">
+                        <span class="tour-section__feature">All-inclusive</span>
+                        <span class="tour-section__feature">Resort 5 sao</span>
+                    </div>
+                    <div class="tour-section__price">77,500,000 VND</div>
+                </div>
+            </div>
+            <div class="tour-section__item">
+                <img src="tour_img/nauy.jpg" alt="Tour c" class="tour-section__image">
+                <div class="tour-section__info">
+                    <div class="tour-section__name">Thụy Điển - Phần Lan - Na Uy - Đan Mạch </div>
+                    <div class="tour-section__location">Địa điểm: Thụy Điển - Phần Lan - Na Uy - Đan Mạch </div>
+                    <div class="tour-section__details">
+                        2 ngày 1 đêm<br>
+                        Khởi hành: Thứ 7 hàng tuần
+                    </div>
+                    <div class="tour-section__features">
+                        <span class="tour-section__feature">Homestay</span>
+                        <span class="tour-section__feature">Trekking</span>
+                    </div>
+                    <div class="tour-section__price">81,800,000 VND</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="height: 2000px;">
+        <p>Cuộn xuống để thấy nút "Lên đầu trang".</p>
+    </div>
+    <button id="scrollToTopBtn" title="Go to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+</body>
+
+<footer>
+
+    <div class="footer-info">
+        <p>Linh Trung - Thủ Đức - TP.Hồ Chí Minh - Việt Nam</p>
+        <p>Phone: +84 829860053</p>
+        <p>email: traveleverywhere@gmail.com</p>
+    </div>
+    <div class="footer-c">
+        <p>© Copyright GROUP05</p>
+        <p>All Rights Reserved Designed by GROUP05</p>
+    </div>
+
+    <div class="holine">
+        <div class="phone"><a href=""><i class="fa-solid fa-phone"></i> 1900 XXXX</a></div>
+        <p><i class="fa-regular fa-clock"></i> 24/7</p>
+    </div>
+
+</footer>
+
+<script>
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+    // Hiển thị nút khi cuộn xuống 300px
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'block';
+        } else {
+            scrollToTopBtn.style.display = 'none';
+        }
+    });
+
+    // Chuyển về đầu trang khi bấm nút
+    scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+</script>
+
+</html>
