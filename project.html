@@ -242,7 +242,7 @@
        <div id="KhachHang" class="projectTabContent" style="display:none;">
            <h4>Khách hàng</h4>
 
-    <form id="partnerForm" onsubmit="addPartner(event)">
+    <form id="partForm" onsubmit="addPartner(event)">
         <label for="name">Họ tên:</label>
         <input type="text" id="name" name="name" required>
         <br>
@@ -613,7 +613,7 @@ function showProjectTabs() {
             <td><button onclick="deleteRow(this)">Xóa</button></td>
         `;
 
-        document.getElementById('partnerForm').reset();
+        document.getElementById('partForm').reset();
     }
 
     function deleteRow(button) {
