@@ -237,6 +237,90 @@
             </tr>
             </table>
             </div>
+
+
+        // Khách hàng
+       <div id="KhachHang" class="projectTabContent" style="display:none;">
+           <h4>Khách hàng</h4>
+        <div class="filter-container">
+        <label for="filterType">Lọc</label>
+        <select id="filterType" onchange="filterPartners()" class="filter-dropdown">
+            <option value="">Tất cả</option>
+            <option value="Họ và tên">Họ và tên</option>
+            <option value="Mã tour">Mã tour</option>
+        </select>
+
+        <input type="text" id="searchPartner" class="search-input" placeholder="Tìm kiếm theo thời gian (VD: 01/01/2024)" onkeyup="searchPartner()">
+    </div>
+
+    <form id="partnerForm" onsubmit="addPartner(event)">
+        <label for="name">Họ tên:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+
+        <label for="contact-info">Liên lạc:</label>
+        <input type="text" id="contact-info" name="contact-info" placeholder="Thông tin liên lạc" required>
+        <br>
+
+        <label for="noi-song">Nơi ở:</label>
+        <input type="text" id="noi-song" name="noi-song" placeholder="Nơi sống" required>
+        <br>
+
+        <label for="ma-tour">Mã:</label>
+        <input type="text" id="ma-tour" name="ma-tour" placeholder="Mã tour" required>
+        <br>
+
+        <label for="tour">Tour:</label>
+        <input type="text" id="tour" name="tour" placeholder="Tour" required>
+        <br>
+
+        <button type="submit">Thêm khách hàng</button>
+    </form>
+
+    <table id="tourTable">
+        <tr>
+            <th>STT</th>
+            <th>Họ tên</th>
+            <th>Liên lạc</th>
+            <th>Nơi ở</th>
+            <th>Mã</th>
+            <th>Tour</th>
+            <th>Thời gian</th>
+            <th>Hành động</th>
+        </tr>
+        <tr>
+            <td>353</td>
+            <td>Nguyễn Văn Phong</td>
+            <td>Sđt: 0876543221</td>
+            <td>TP.Hồ Chí Minh</td>
+            <td>3d312A</td>
+            <td>Châu Âu 10N9D</td>
+            <td>01/11/2024 9h34p pm</td>
+            <td><button onclick="deleteRow(this)">Xóa</button></td>
+        </tr>
+               <tr>
+                <td>352</td>
+                <td>Trương Thị Hoa</td>
+                <td>Sđt: 0987632415</td>
+                <td>Thủ đô Hà Nội</td>
+                <td>Fe312A</td>
+                <td>Tour Cao Bằng Trong Ngày: Thác Bản Dốc - Di Tich Pắc Pó - Lũng Luông - Động Ngườm Ngao</td>
+                <td>10/09/2014 7h00p am</td>
+                <td><button onclick="deleteRow(this)">Xóa</button></td>
+            </tr>
+            <tr>
+                <td>569</td>
+                <td>Nguyễn Thị Xoan</td>
+                <td>Sđt: 0975382432</td>
+                <td>Hải Phòng</td>
+                <td>62A73</td>
+                <td>Tour Phú Thọ Trong Ngày: Đền Quốc Âu Cơ - Đồi Chè Long Cốc - Hang Lạng</td>
+                <td>20/09/2024 8h34p am</td>
+                <td><button onclick="deleteRow(this)">Xóa</button></td>
+            </tr>
+    </table>
+        </div>
+
         
         <div id="DoiTac" class="projectTabContent" style="display:none;">
             <h4>Đối Tác</h4>
